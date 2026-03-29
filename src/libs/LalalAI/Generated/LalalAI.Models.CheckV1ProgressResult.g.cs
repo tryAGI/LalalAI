@@ -1,0 +1,80 @@
+
+#nullable enable
+
+namespace LalalAI
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CheckV1ProgressResult
+    {
+        /// <summary>
+        /// ID of the source file associated with the task
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string SourceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("presets")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.Presets3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LalalAI.Presets3 Presets { get; set; }
+
+        /// <summary>
+        /// Default Value: progress
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        public string? Status { get; set; }
+
+        /// <summary>
+        /// Progress percentage of the task, integer number. Zero progress means task is in queue.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("progress")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Progress { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckV1ProgressResult" /> class.
+        /// </summary>
+        /// <param name="sourceId">
+        /// ID of the source file associated with the task
+        /// </param>
+        /// <param name="presets"></param>
+        /// <param name="progress">
+        /// Progress percentage of the task, integer number. Zero progress means task is in queue.
+        /// </param>
+        /// <param name="status">
+        /// Default Value: progress
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public CheckV1ProgressResult(
+            string sourceId,
+            global::LalalAI.Presets3 presets,
+            int progress,
+            string? status)
+        {
+            this.SourceId = sourceId ?? throw new global::System.ArgumentNullException(nameof(sourceId));
+            this.Presets = presets;
+            this.Status = status;
+            this.Progress = progress;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckV1ProgressResult" /> class.
+        /// </summary>
+        public CheckV1ProgressResult()
+        {
+        }
+    }
+}
