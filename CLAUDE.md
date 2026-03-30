@@ -14,7 +14,7 @@ dotnet test src/tests/IntegrationTests/
 
 ## Auth
 
-API key via `X-License-Key` header. Constructor uses Bearer internally, converted via `Authorized` hook:
+API key auth via `X-License-Key` header (native via `--security-scheme`):
 
 ```csharp
 var client = new LalalAIClient(apiKey); // LALALAI_API_KEY env var
@@ -25,7 +25,6 @@ var client = new LalalAIClient(apiKey); // LALALAI_API_KEY env var
 - `src/libs/LalalAI/openapi.json` -- Source OpenAPI spec (downloaded + auth-fixed)
 - `src/libs/LalalAI/generate.sh` -- Downloads spec, fixes auth with jq, runs autosdk
 - `src/libs/LalalAI/Generated/` -- **Never edit** -- auto-generated code
-- `src/libs/LalalAI/Extensions/LalalAIClient.PrepareRequest.cs` -- Auth hook (Bearer -> X-License-Key)
 - `src/libs/LalalAI/Extensions/LalalAIClient.Tools.cs` -- MEAI `AIFunction` tools
 - `src/tests/IntegrationTests/Examples/` -- Example tests (also generate docs)
 
@@ -70,7 +69,7 @@ AIFunction tools for use with any `IChatClient`:
 
 - Base URL: `https://www.lalal.ai`
 - 15 endpoints across 4 groups: Common, Stem Separation, Batch Stem Separation, Voice Change
-- Auth: `X-License-Key` header -- `Authorized` hook sets header on HttpClient.DefaultRequestHeaders
+- Auth: `X-License-Key` header -- native via `--security-scheme ApiKey:Header:X-License-Key`
 - Async task pattern: upload -> split -> poll check -> download
 - Splitter models: andromeda, perseus, orion, phoenix, lyra
 - Stems: vocals, drum, piano, bass, electric_guitar, acoustic_guitar, synthesizer, strings, wind
