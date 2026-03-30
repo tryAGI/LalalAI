@@ -68,7 +68,7 @@
         ],
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ],
         "requestBody": {
@@ -157,7 +157,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -222,7 +222,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -267,7 +267,7 @@
         ],
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -333,7 +333,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -388,7 +388,7 @@
         ],
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -444,7 +444,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -500,7 +500,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -566,7 +566,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -632,7 +632,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -690,7 +690,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -748,7 +748,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -806,7 +806,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -872,7 +872,7 @@
         },
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -928,7 +928,7 @@
         ],
         "security": [
           {
-            "BearerAuth": []
+            "ApiKeyHeaderAuth": []
           }
         ]
       }
@@ -2602,20 +2602,16 @@
       }
     },
     "securitySchemes": {
-      "BearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
+      "ApiKeyHeaderAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-License-Key"
       }
     }
   },
   "servers": [
     {
       "url": "https://www.lalal.ai"
-    }
-  ],
-  "security": [
-    {
-      "BearerAuth": []
     }
   ]
 }

@@ -6,7 +6,7 @@ namespace LalalAI
     public sealed partial class LalalAIClient
     {
         /// <inheritdoc/>
-        public void AuthorizeUsingBearer(
+        public void AuthorizeUsingApiKeyInHeader(
             string apiKey)
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
@@ -14,9 +14,9 @@ namespace LalalAI
             Authorizations.Clear();
             Authorizations.Add(new global::LalalAI.EndPointAuthorization
             {
-                Type = "Http",
+                Type = "ApiKey",
                 Location = "Header",
-                Name = "Bearer",
+                Name = "X-License-Key",
                 Value = apiKey,
             });
         }

@@ -6,10 +6,10 @@ namespace LalalAI
     public partial interface ILalalAIClient
     {
         /// <summary>
-        /// Authorize using bearer authentication.
+        /// Authorize using ApiKey authentication.
         /// </summary>
         /// <param name="apiKey"></param>
-        public void AuthorizeUsingBearer(
+        public void AuthorizeUsingApiKeyInHeader(
             string apiKey);
     }
 }
