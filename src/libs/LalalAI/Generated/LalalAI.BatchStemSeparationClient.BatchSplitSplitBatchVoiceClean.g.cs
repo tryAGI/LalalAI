@@ -281,6 +281,7 @@ namespace LalalAI
             global::System.Collections.Generic.IList<global::LalalAI.VoiceCleanSplitParameters> items,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LalalAI.BatchVoiceCleanSplitParameters
             {
                 Items = items,

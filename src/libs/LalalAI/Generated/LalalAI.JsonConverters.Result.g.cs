@@ -86,31 +86,31 @@ namespace LalalAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ProgressResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ProgressResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1ProgressResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Progress, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Progress!, typeInfo);
             }
             else if (value.IsError1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ErrorResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1ErrorResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error1!, typeInfo);
             }
             else if (value.IsCancelled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1CancelledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1CancelledResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1CancelledResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cancelled, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cancelled!, typeInfo);
             }
             else if (value.IsSuccess)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1SuccessResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1SuccessResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1SuccessResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
             }
             else if (value.IsError2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.ErrorResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.ErrorResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error2!, typeInfo);
             }
         }
     }
