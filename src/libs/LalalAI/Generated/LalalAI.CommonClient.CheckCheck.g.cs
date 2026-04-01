@@ -311,7 +311,6 @@ namespace LalalAI
             global::System.Collections.Generic.IList<string> taskIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LalalAI.CheckV1Request
             {
                 TaskIds = taskIds,
