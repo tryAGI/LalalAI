@@ -59,13 +59,13 @@ namespace LalalAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CancelSuccess), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CancelSuccess?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CancelSuccess).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
             }
             else if (value.IsServerError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.ErrorResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.ErrorResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerError!, typeInfo);
             }
         }
     }
