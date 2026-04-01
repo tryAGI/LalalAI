@@ -278,7 +278,6 @@ namespace LalalAI
             string sourceId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LalalAI.DeleteParameters
             {
                 SourceId = sourceId,
