@@ -39,7 +39,7 @@ namespace LalalAI.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::LalalAI.VoiceChangePresetsV1? voiceChangePresetsV1 = default;
-            global::LalalAI.PresetsVariant23? value2 = default;
+            global::LalalAI.PresetsVariant23? presetsVariant23 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -63,7 +63,7 @@ namespace LalalAI.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.PresetsVariant23), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.PresetsVariant23> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.PresetsVariant23).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        presetsVariant23 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +74,7 @@ namespace LalalAI.JsonConverters
                 }
             }
 
-            if (voiceChangePresetsV1 == null && value2 == null)
+            if (voiceChangePresetsV1 == null && presetsVariant23 == null)
             {
                 try
                 {
@@ -93,7 +93,7 @@ namespace LalalAI.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.PresetsVariant23), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.PresetsVariant23> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.PresetsVariant23).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    presetsVariant23 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,7 +106,7 @@ namespace LalalAI.JsonConverters
             var __value = new global::LalalAI.Presets3(
                 voiceChangePresetsV1,
 
-                value2
+                presetsVariant23
                 );
 
             return __value;
@@ -127,11 +127,11 @@ namespace LalalAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.VoiceChangePresetsV1).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceChangePresetsV1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsPresetsVariant23)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.PresetsVariant23), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.PresetsVariant23> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.PresetsVariant23).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PresetsVariant23!.Value, typeInfo);
             }
         }
     }
