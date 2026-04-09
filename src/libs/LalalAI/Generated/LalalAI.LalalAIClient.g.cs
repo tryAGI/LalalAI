@@ -23,7 +23,7 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://www.lalal.ai";
+        public const string DefaultBaseUrl = "https://www.lalal.ai/";
 
         private bool _disposeHttpClient = true;
 

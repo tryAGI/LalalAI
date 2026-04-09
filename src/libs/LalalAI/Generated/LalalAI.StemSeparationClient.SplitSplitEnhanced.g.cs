@@ -5,6 +5,25 @@ namespace LalalAI
 {
     public partial class StemSeparationClient
     {
+
+
+        private static readonly global::LalalAI.EndPointSecurityRequirement s_SplitSplitEnhancedSecurityRequirement0 =
+            new global::LalalAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LalalAI.EndPointAuthorizationRequirement[]
+                {                    new global::LalalAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-License-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LalalAI.EndPointSecurityRequirement[] s_SplitSplitEnhancedSecurityRequirements =
+            new global::LalalAI.EndPointSecurityRequirement[]
+            {                s_SplitSplitEnhancedSecurityRequirement0,
+            };
         partial void PrepareSplitSplitEnhancedArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LalalAI.StemSeparatorSplitParameters request);
@@ -51,9 +70,15 @@ namespace LalalAI
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::LalalAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SplitSplitEnhancedSecurityRequirements,
+                operationName: "SplitSplitEnhancedAsync");
+
             var __pathBuilder = new global::LalalAI.PathBuilder(
                 path: "/api/v1/split/stem_separator/",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -63,7 +88,7 @@ namespace LalalAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

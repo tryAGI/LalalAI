@@ -6,6 +6,7 @@ namespace LalalAI
     public sealed partial class LalalAIClient
     {
         /// <inheritdoc cref="LalalAIClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::LalalAI.EndPointAuthorization}?, bool)"/>
+
         public LalalAIClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
