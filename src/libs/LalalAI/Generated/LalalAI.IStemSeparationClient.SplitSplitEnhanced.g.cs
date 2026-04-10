@@ -19,11 +19,13 @@ namespace LalalAI
         ///     
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LalalAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LalalAI.Task> SplitSplitEnhancedAsync(
 
             global::LalalAI.StemSeparatorSplitParameters request,
+            global::LalalAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Split a file into stems using the stem separator presets<br/>
@@ -50,12 +52,14 @@ namespace LalalAI
         /// Can be reused until the task starts. Once processing begins, reusing this key will return an error.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LalalAI.Task> SplitSplitEnhancedAsync(
             string sourceId,
             global::LalalAI.StemSeparatorSplitterPresetsV1 presets,
             string? idempotencyKey = default,
+            global::LalalAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
