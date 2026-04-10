@@ -26,6 +26,7 @@ namespace LalalAI
             Authorizations.Add(new global::LalalAI.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyXLicenseKey",
                 Location = "Header",
                 Name = "X-License-Key",
                 Value = apiKey,
