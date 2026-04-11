@@ -1,0 +1,15 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Upload a file to the server.",
+      "Slug": "upload-upload",
+      "Description": "The uploaded file in other endpoints is called a \u0022source file\u0022.\n    You can use the source file ID from the response to create split tasks.\n    The file will be deleted when the expiration time from the response is reached.\n    Upload limit is 10GB per request.",
+      "Language": "http",
+      "Code": "### Upload a file to the server.\n# @name upload_upload\nPOST {{host}}/api/v1/upload/\nX-License-Key: {{api_key}}\nContent-Disposition: attachment; filename=song.mp3\nContent-Type: application/octet-stream\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "upload_upload",
+      "Setup": null
+    }
+  ]
+}
