@@ -9,8 +9,8 @@ namespace LalalAI
     public sealed partial class StemSeparatorSplitterPresetsV1
     {
         /// <summary>
-        /// Splitter model to use. If None - the latest available model for the selected stems will be used.<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("splitter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.SplitterTypeJsonConverter))]
@@ -19,7 +19,7 @@ namespace LalalAI
         /// <summary>
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'voice', 'vocals'} stems.<br/>
+        /// Only for {'vocals', 'voice'} stems.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dereverb_enabled")]
@@ -73,13 +73,13 @@ namespace LalalAI
         /// Example: vocals
         /// </param>
         /// <param name="splitter">
-        /// Splitter model to use. If None - the latest available model for the selected stems will be used.<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="dereverbEnabled">
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'voice', 'vocals'} stems.<br/>
+        /// Only for {'vocals', 'voice'} stems.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="encoderFormat">

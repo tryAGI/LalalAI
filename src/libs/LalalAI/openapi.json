@@ -1543,12 +1543,12 @@
                 "$ref": "#/components/schemas/SplitterType"
               }
             ],
-            "default": null,
-            "description": "Splitter model to use. If None - the latest available model for the selected stems will be used."
+            "default": "auto",
+            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1639,12 +1639,12 @@
                 "$ref": "#/components/schemas/SplitterType"
               }
             ],
-            "default": null,
-            "description": "Splitter model to use. If None - the latest available model for the selected stems will be used."
+            "default": "auto",
+            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1803,7 +1803,8 @@
           "perseus",
           "orion",
           "phoenix",
-          "lyra"
+          "lyra",
+          "lynx"
         ],
         "title": "SplitterType",
         "type": "string"
@@ -1816,12 +1817,12 @@
                 "$ref": "#/components/schemas/SplitterType"
               }
             ],
-            "default": null,
-            "description": "Splitter model to use. If None - the latest available model for the selected stems will be used."
+            "default": "auto",
+            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1995,12 +1996,12 @@
                 "$ref": "#/components/schemas/SplitterType"
               }
             ],
-            "default": null,
-            "description": "Splitter model to use. If None - the latest available model for the selected stems will be used."
+            "default": "auto",
+            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
