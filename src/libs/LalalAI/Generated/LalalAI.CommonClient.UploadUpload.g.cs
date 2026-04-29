@@ -144,7 +144,7 @@ namespace LalalAI
                 PrepareUploadUploadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentDisposition: contentDisposition,
+                    contentDisposition: contentDisposition!,
                     request: request);
 
                 return __httpRequest;
