@@ -31,6 +31,24 @@ namespace LalalAI
         ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>
         ///     
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LalalAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LalalAI.AutoSDKHttpResponse<global::LalalAI.Task>> SplitSplitVoiceCleanAsResponseAsync(
+
+            global::LalalAI.VoiceCleanSplitParameters request,
+            global::LalalAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Clean voice from background noise<br/>
+        ///     Typical usage case - is voice with background noise.<br/>
+        ///     Voice clean will separate clean voice (stem) and noise (back).<br/>
+        ///     Result of /check/ includes 2 tracks:<br/>
+        ///     - stem:{"type":"stem", "label":"voice", "url":"..."}<br/>
+        ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>
+        ///     
+        /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>
         /// Example: 2fe8f214-1771-4900-9e7e-570f823bd359

@@ -53,7 +53,7 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
-        public BatchStemSeparationClient BatchStemSeparation => new BatchStemSeparationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BatchStemSeparationClient BatchStemSeparation => new BatchStemSeparationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -62,7 +62,7 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
-        public CommonClient Common => new CommonClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CommonClient Common => new CommonClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -71,7 +71,7 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
-        public StemSeparationClient StemSeparation => new StemSeparationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public StemSeparationClient StemSeparation => new StemSeparationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -80,7 +80,7 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
-        public VoiceChangeClient VoiceChange => new VoiceChangeClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoiceChangeClient VoiceChange => new VoiceChangeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -119,10 +119,10 @@ namespace LalalAI
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public LalalAIClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::LalalAI.EndPointAuthorization>? authorizations = null,
-            global::LalalAI.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::LalalAI.EndPointAuthorization>? authorizations,
+            global::LalalAI.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
