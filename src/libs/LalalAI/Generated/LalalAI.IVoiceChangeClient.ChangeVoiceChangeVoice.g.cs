@@ -27,6 +27,22 @@ namespace LalalAI
         ///     {"label":"converted_mix", "type":"back", "url":"..."}<br/>
         ///     
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LalalAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LalalAI.AutoSDKHttpResponse<global::LalalAI.TaskResponse>> ChangeVoiceChangeVoiceAsResponseAsync(
+
+            global::LalalAI.VoiceChangeParameters request,
+            global::LalalAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Changes voice in the audio file using voice pack<br/>
+        ///     For 'voice_pack_id' parameter use 'pack_id' from /voice_packs/list/ endpoint or one of legal packs: ['ALEX_KAYE', 'STASIA_FAYE', 'NICOLAAS_HAAS', 'NIK_ZEL', 'OLIA_CHEBO', 'YVAR_DE_GROOT', 'VETRANA']<br/>
+        ///     Result of /check/ includes 1 track with label 'converted_mix'.<br/>
+        ///     {"label":"converted_mix", "type":"back", "url":"..."}<br/>
+        ///     
+        /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>
         /// Example: 2fe8f214-1771-4900-9e7e-570f823bd359

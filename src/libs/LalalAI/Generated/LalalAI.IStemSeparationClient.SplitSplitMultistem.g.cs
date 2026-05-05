@@ -39,6 +39,28 @@ namespace LalalAI
         ///     - rest of source:{"type":"back", "label":"no_multistem", "url":"..."}<br/>
         ///     
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LalalAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LalalAI.AutoSDKHttpResponse<global::LalalAI.Task>> SplitSplitMultistemAsResponseAsync(
+
+            global::LalalAI.MultistemSplitParameters request,
+            global::LalalAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Split a file into multiple stems in one request (multistem feature)<br/>
+        ///     WARNING: The stems are internally extracted one by one, so the processing time is proportional to the number of stems selected.<br/>
+        ///     You will be charged an equal amount of minutes for each stem.<br/>
+        ///     For example, if you have an audio file with a duration of 1 minute,<br/>
+        ///     with stem_list=["vocals", "drum"], you will be charged 2 minutes (1 minute for "vocals", 1 minute for "drum").<br/>
+        ///     At the /check/ endpoint you will receive &lt;number_of_stems&gt; tracks with 1 additional track which is the source without all selected stems.<br/>
+        ///     Example response tracks for stem_list=["vocals", "drum"]:<br/>
+        ///     - stem:{"type":"stem", "label":"vocals", "url":"..."}<br/>
+        ///     - stem:{"type":"stem", "label":"drum", "url":"..."}<br/>
+        ///     - rest of source:{"type":"back", "label":"no_multistem", "url":"..."}<br/>
+        ///     
+        /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>
         /// Example: 2fe8f214-1771-4900-9e7e-570f823bd359
