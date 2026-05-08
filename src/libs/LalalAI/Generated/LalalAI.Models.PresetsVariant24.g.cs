@@ -34,6 +34,19 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDemuser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.DemuserSplitterPresetsV1? value)
+        {
+            value = Demuser;
+            return IsDemuser;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.VoiceCleanPresetsV1? VoiceClean { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace LalalAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VoiceClean))]
 #endif
         public bool IsVoiceClean => VoiceClean != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVoiceClean(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.VoiceCleanPresetsV1? value)
+        {
+            value = VoiceClean;
+            return IsVoiceClean;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStemSeparator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.StemSeparatorSplitterPresetsV1? value)
+        {
+            value = StemSeparator;
+            return IsStemSeparator;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.MultistemSplitterPresetsV1? Multistem { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace LalalAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Multistem))]
 #endif
         public bool IsMultistem => Multistem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMultistem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.MultistemSplitterPresetsV1? value)
+        {
+            value = Multistem;
+            return IsMultistem;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -204,10 +256,10 @@ namespace LalalAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LalalAI.DemuserSplitterPresetsV1?, TResult>? demuser = null,
-            global::System.Func<global::LalalAI.VoiceCleanPresetsV1?, TResult>? voiceClean = null,
-            global::System.Func<global::LalalAI.StemSeparatorSplitterPresetsV1?, TResult>? stemSeparator = null,
-            global::System.Func<global::LalalAI.MultistemSplitterPresetsV1?, TResult>? multistem = null,
+            global::System.Func<global::LalalAI.DemuserSplitterPresetsV1, TResult>? demuser = null,
+            global::System.Func<global::LalalAI.VoiceCleanPresetsV1, TResult>? voiceClean = null,
+            global::System.Func<global::LalalAI.StemSeparatorSplitterPresetsV1, TResult>? stemSeparator = null,
+            global::System.Func<global::LalalAI.MultistemSplitterPresetsV1, TResult>? multistem = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +291,46 @@ namespace LalalAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LalalAI.DemuserSplitterPresetsV1?>? demuser = null,
-            global::System.Action<global::LalalAI.VoiceCleanPresetsV1?>? voiceClean = null,
-            global::System.Action<global::LalalAI.StemSeparatorSplitterPresetsV1?>? stemSeparator = null,
-            global::System.Action<global::LalalAI.MultistemSplitterPresetsV1?>? multistem = null,
+            global::System.Action<global::LalalAI.DemuserSplitterPresetsV1>? demuser = null,
+
+            global::System.Action<global::LalalAI.VoiceCleanPresetsV1>? voiceClean = null,
+
+            global::System.Action<global::LalalAI.StemSeparatorSplitterPresetsV1>? stemSeparator = null,
+
+            global::System.Action<global::LalalAI.MultistemSplitterPresetsV1>? multistem = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDemuser)
+            {
+                demuser?.Invoke(Demuser!);
+            }
+            else if (IsVoiceClean)
+            {
+                voiceClean?.Invoke(VoiceClean!);
+            }
+            else if (IsStemSeparator)
+            {
+                stemSeparator?.Invoke(StemSeparator!);
+            }
+            else if (IsMultistem)
+            {
+                multistem?.Invoke(Multistem!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LalalAI.DemuserSplitterPresetsV1>? demuser = null,
+            global::System.Action<global::LalalAI.VoiceCleanPresetsV1>? voiceClean = null,
+            global::System.Action<global::LalalAI.StemSeparatorSplitterPresetsV1>? stemSeparator = null,
+            global::System.Action<global::LalalAI.MultistemSplitterPresetsV1>? multistem = null,
             bool validate = true)
         {
             if (validate)

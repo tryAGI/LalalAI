@@ -34,6 +34,19 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.CheckV1ProgressResult? value)
+        {
+            value = Progress;
+            return IsProgress;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.CheckV1ErrorResult? Error1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace LalalAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error1))]
 #endif
         public bool IsError1 => Error1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.CheckV1ErrorResult? value)
+        {
+            value = Error1;
+            return IsError1;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCancelled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.CheckV1CancelledResult? value)
+        {
+            value = Cancelled;
+            return IsCancelled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.CheckV1SuccessResult? Success { get; init; }
 #else
@@ -85,6 +124,19 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.CheckV1SuccessResult? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.ErrorResult? Error2 { get; init; }
 #else
@@ -98,6 +150,19 @@ namespace LalalAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error2))]
 #endif
         public bool IsError2 => Error2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.ErrorResult? value)
+        {
+            value = Error2;
+            return IsError2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -243,11 +308,11 @@ namespace LalalAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LalalAI.CheckV1ProgressResult?, TResult>? progress = null,
-            global::System.Func<global::LalalAI.CheckV1ErrorResult?, TResult>? error1 = null,
-            global::System.Func<global::LalalAI.CheckV1CancelledResult?, TResult>? cancelled = null,
-            global::System.Func<global::LalalAI.CheckV1SuccessResult?, TResult>? success = null,
-            global::System.Func<global::LalalAI.ErrorResult?, TResult>? error2 = null,
+            global::System.Func<global::LalalAI.CheckV1ProgressResult, TResult>? progress = null,
+            global::System.Func<global::LalalAI.CheckV1ErrorResult, TResult>? error1 = null,
+            global::System.Func<global::LalalAI.CheckV1CancelledResult, TResult>? cancelled = null,
+            global::System.Func<global::LalalAI.CheckV1SuccessResult, TResult>? success = null,
+            global::System.Func<global::LalalAI.ErrorResult, TResult>? error2 = null,
             bool validate = true)
         {
             if (validate)
@@ -283,11 +348,53 @@ namespace LalalAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LalalAI.CheckV1ProgressResult?>? progress = null,
-            global::System.Action<global::LalalAI.CheckV1ErrorResult?>? error1 = null,
-            global::System.Action<global::LalalAI.CheckV1CancelledResult?>? cancelled = null,
-            global::System.Action<global::LalalAI.CheckV1SuccessResult?>? success = null,
-            global::System.Action<global::LalalAI.ErrorResult?>? error2 = null,
+            global::System.Action<global::LalalAI.CheckV1ProgressResult>? progress = null,
+
+            global::System.Action<global::LalalAI.CheckV1ErrorResult>? error1 = null,
+
+            global::System.Action<global::LalalAI.CheckV1CancelledResult>? cancelled = null,
+
+            global::System.Action<global::LalalAI.CheckV1SuccessResult>? success = null,
+
+            global::System.Action<global::LalalAI.ErrorResult>? error2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProgress)
+            {
+                progress?.Invoke(Progress!);
+            }
+            else if (IsError1)
+            {
+                error1?.Invoke(Error1!);
+            }
+            else if (IsCancelled)
+            {
+                cancelled?.Invoke(Cancelled!);
+            }
+            else if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsError2)
+            {
+                error2?.Invoke(Error2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LalalAI.CheckV1ProgressResult>? progress = null,
+            global::System.Action<global::LalalAI.CheckV1ErrorResult>? error1 = null,
+            global::System.Action<global::LalalAI.CheckV1CancelledResult>? cancelled = null,
+            global::System.Action<global::LalalAI.CheckV1SuccessResult>? success = null,
+            global::System.Action<global::LalalAI.ErrorResult>? error2 = null,
             bool validate = true)
         {
             if (validate)
