@@ -34,6 +34,19 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.SuccessfulTaskStart? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.FailedTaskStart? Error { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace LalalAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.FailedTaskStart? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace LalalAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LalalAI.SuccessfulTaskStart?, TResult>? success = null,
-            global::System.Func<global::LalalAI.FailedTaskStart?, TResult>? error = null,
+            global::System.Func<global::LalalAI.SuccessfulTaskStart, TResult>? success = null,
+            global::System.Func<global::LalalAI.FailedTaskStart, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace LalalAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LalalAI.SuccessfulTaskStart?>? success = null,
-            global::System.Action<global::LalalAI.FailedTaskStart?>? error = null,
+            global::System.Action<global::LalalAI.SuccessfulTaskStart>? success = null,
+
+            global::System.Action<global::LalalAI.FailedTaskStart>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LalalAI.SuccessfulTaskStart>? success = null,
+            global::System.Action<global::LalalAI.FailedTaskStart>? error = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVoiceChangePresetsV1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.VoiceChangePresetsV1? value)
+        {
+            value = VoiceChangePresetsV1;
+            return IsVoiceChangePresetsV1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.PresetsVariant23? PresetsVariant23 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace LalalAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PresetsVariant23))]
 #endif
         public bool IsPresetsVariant23 => PresetsVariant23 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPresetsVariant23(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.PresetsVariant23? value)
+        {
+            value = PresetsVariant23;
+            return IsPresetsVariant23;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,7 +144,7 @@ namespace LalalAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LalalAI.VoiceChangePresetsV1?, TResult>? voiceChangePresetsV1 = null,
+            global::System.Func<global::LalalAI.VoiceChangePresetsV1, TResult>? voiceChangePresetsV1 = null,
             global::System.Func<global::LalalAI.PresetsVariant23?, TResult>? presetsVariant23 = null,
             bool validate = true)
         {
@@ -143,7 +169,31 @@ namespace LalalAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LalalAI.VoiceChangePresetsV1?>? voiceChangePresetsV1 = null,
+            global::System.Action<global::LalalAI.VoiceChangePresetsV1>? voiceChangePresetsV1 = null,
+
+            global::System.Action<global::LalalAI.PresetsVariant23?>? presetsVariant23 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVoiceChangePresetsV1)
+            {
+                voiceChangePresetsV1?.Invoke(VoiceChangePresetsV1!);
+            }
+            else if (IsPresetsVariant23)
+            {
+                presetsVariant23?.Invoke(PresetsVariant23!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LalalAI.VoiceChangePresetsV1>? voiceChangePresetsV1 = null,
             global::System.Action<global::LalalAI.PresetsVariant23?>? presetsVariant23 = null,
             bool validate = true)
         {
