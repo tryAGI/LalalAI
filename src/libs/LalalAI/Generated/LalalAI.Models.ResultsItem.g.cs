@@ -47,6 +47,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.SuccessfulTaskStart PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.FailedTaskStart? Error { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace LalalAI
             value = Error;
             return IsError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.FailedTaskStart PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

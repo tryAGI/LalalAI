@@ -102,5 +102,6 @@ namespace LalalAI
         public VoiceCleanPresetsV1()
         {
         }
+
     }
 }

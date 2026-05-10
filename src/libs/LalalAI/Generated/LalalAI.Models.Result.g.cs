@@ -47,6 +47,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.CheckV1ProgressResult PickProgress() => IsProgress
+            ? Progress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Progress' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.CheckV1ErrorResult? Error1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace LalalAI
             value = Error1;
             return IsError1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.CheckV1ErrorResult PickError1() => IsError1
+            ? Error1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.CheckV1CancelledResult PickCancelled() => IsCancelled
+            ? Cancelled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cancelled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.CheckV1SuccessResult? Success { get; init; }
 #else
@@ -137,6 +158,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.CheckV1SuccessResult PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.ErrorResult? Error2 { get; init; }
 #else
@@ -163,6 +191,13 @@ namespace LalalAI
             value = Error2;
             return IsError2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.ErrorResult PickError2() => IsError2
+            ? Error2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

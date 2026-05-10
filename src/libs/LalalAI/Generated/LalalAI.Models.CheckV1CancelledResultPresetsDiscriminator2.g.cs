@@ -39,5 +39,6 @@ namespace LalalAI
         public CheckV1CancelledResultPresetsDiscriminator2()
         {
         }
+
     }
 }

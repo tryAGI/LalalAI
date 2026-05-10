@@ -42,6 +42,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.VoiceChangePresetsV1 PickVoiceChangePresetsV1() => IsVoiceChangePresetsV1
+            ? VoiceChangePresetsV1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceChangePresetsV1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.PresetsVariant23? PresetsVariant23 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace LalalAI
             value = PresetsVariant23;
             return IsPresetsVariant23;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.PresetsVariant23 PickPresetsVariant23() => IsPresetsVariant23
+            ? PresetsVariant23!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PresetsVariant23' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
