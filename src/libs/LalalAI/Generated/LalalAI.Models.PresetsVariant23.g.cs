@@ -154,6 +154,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static PresetsVariant23 FromDemuser(global::LalalAI.DemuserSplitterPresetsV1? value) => new PresetsVariant23(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PresetsVariant23(global::LalalAI.VoiceCleanPresetsV1 value) => new PresetsVariant23((global::LalalAI.VoiceCleanPresetsV1?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace LalalAI
         {
             VoiceClean = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PresetsVariant23 FromVoiceClean(global::LalalAI.VoiceCleanPresetsV1? value) => new PresetsVariant23(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static PresetsVariant23 FromStemSeparator(global::LalalAI.StemSeparatorSplitterPresetsV1? value) => new PresetsVariant23(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PresetsVariant23(global::LalalAI.MultistemSplitterPresetsV1 value) => new PresetsVariant23((global::LalalAI.MultistemSplitterPresetsV1?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace LalalAI
         {
             Multistem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PresetsVariant23 FromMultistem(global::LalalAI.MultistemSplitterPresetsV1? value) => new PresetsVariant23(value);
 
         /// <summary>
         /// 

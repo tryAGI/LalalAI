@@ -184,6 +184,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromProgress(global::LalalAI.CheckV1ProgressResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::LalalAI.CheckV1ErrorResult value) => new Result((global::LalalAI.CheckV1ErrorResult?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace LalalAI
         {
             Error1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result FromError1(global::LalalAI.CheckV1ErrorResult? value) => new Result(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromCancelled(global::LalalAI.CheckV1CancelledResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::LalalAI.CheckV1SuccessResult value) => new Result((global::LalalAI.CheckV1SuccessResult?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromSuccess(global::LalalAI.CheckV1SuccessResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::LalalAI.ErrorResult value) => new Result((global::LalalAI.ErrorResult?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace LalalAI
         {
             Error2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result FromError2(global::LalalAI.ErrorResult? value) => new Result(value);
 
         /// <summary>
         /// 

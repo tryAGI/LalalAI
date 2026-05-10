@@ -89,6 +89,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static Presets3 FromVoiceChangePresetsV1(global::LalalAI.VoiceChangePresetsV1? value) => new Presets3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Presets3(global::LalalAI.PresetsVariant23 value) => new Presets3((global::LalalAI.PresetsVariant23?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace LalalAI
         {
             PresetsVariant23 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Presets3 FromPresetsVariant23(global::LalalAI.PresetsVariant23? value) => new Presets3(value);
 
         /// <summary>
         /// 

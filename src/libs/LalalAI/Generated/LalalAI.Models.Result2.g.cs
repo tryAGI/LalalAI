@@ -94,6 +94,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static Result2 FromSuccess(global::LalalAI.CancelSuccess? value) => new Result2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result2(global::LalalAI.ErrorResult value) => new Result2((global::LalalAI.ErrorResult?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace LalalAI
         {
             ServerError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result2 FromServerError(global::LalalAI.ErrorResult? value) => new Result2(value);
 
         /// <summary>
         /// 
