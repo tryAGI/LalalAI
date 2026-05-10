@@ -47,6 +47,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.DemuserSplitterPresetsV1 PickDemuser() => IsDemuser
+            ? Demuser!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Demuser' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.VoiceCleanPresetsV1? VoiceClean { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace LalalAI
             value = VoiceClean;
             return IsVoiceClean;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.VoiceCleanPresetsV1 PickVoiceClean() => IsVoiceClean
+            ? VoiceClean!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceClean' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.StemSeparatorSplitterPresetsV1 PickStemSeparator() => IsStemSeparator
+            ? StemSeparator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StemSeparator' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.MultistemSplitterPresetsV1? Multistem { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace LalalAI
             value = Multistem;
             return IsMultistem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.MultistemSplitterPresetsV1 PickMultistem() => IsMultistem
+            ? Multistem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Multistem' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

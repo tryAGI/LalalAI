@@ -53,5 +53,6 @@ namespace LalalAI
         public ErrorResult()
         {
         }
+
     }
 }

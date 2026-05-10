@@ -45,5 +45,6 @@ namespace LalalAI
         public LimitsResponse()
         {
         }
+
     }
 }

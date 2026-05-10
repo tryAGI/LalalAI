@@ -74,5 +74,6 @@ namespace LalalAI
         public VoiceChangeParameters()
         {
         }
+
     }
 }

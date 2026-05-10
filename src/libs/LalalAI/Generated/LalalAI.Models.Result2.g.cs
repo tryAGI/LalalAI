@@ -47,6 +47,13 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public global::LalalAI.CancelSuccess PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.ErrorResult? ServerError { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace LalalAI
             value = ServerError;
             return IsServerError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.ErrorResult PickServerError() => IsServerError
+            ? ServerError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
