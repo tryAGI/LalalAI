@@ -94,6 +94,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResultsItem FromSuccess(global::LalalAI.SuccessfulTaskStart? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultsItem(global::LalalAI.FailedTaskStart value) => new ResultsItem((global::LalalAI.FailedTaskStart?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace LalalAI
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultsItem FromError(global::LalalAI.FailedTaskStart? value) => new ResultsItem(value);
 
         /// <summary>
         /// 
