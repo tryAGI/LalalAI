@@ -31,6 +31,24 @@ namespace LalalAI
         ///     - back:{"type":"back", "label":"no_music", "url":"..."}<br/>
         ///     
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LalalAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LalalAI.AutoSDKHttpResponse<global::LalalAI.Task>> SplitSplitDemuserAsResponseAsync(
+
+            global::LalalAI.DemuserSplitParameters request,
+            global::LalalAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Clean voice from background music<br/>
+        ///     Typical usage case - is voice with background music.<br/>
+        ///     Demuser will separate voice (stem) and music (back).<br/>
+        ///     Result of /check/ includes 2 tracks:<br/>
+        ///     - stem:{"type":"stem", "label":"music", "url":"..."}<br/>
+        ///     - back:{"type":"back", "label":"no_music", "url":"..."}<br/>
+        ///     
+        /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>
         /// Example: 2fe8f214-1771-4900-9e7e-570f823bd359

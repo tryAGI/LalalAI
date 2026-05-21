@@ -41,5 +41,6 @@ namespace LalalAI
         public CancelSuccess()
         {
         }
+
     }
 }

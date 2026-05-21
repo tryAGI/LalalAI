@@ -40,5 +40,6 @@ namespace LalalAI
         public CancelResponse()
         {
         }
+
     }
 }

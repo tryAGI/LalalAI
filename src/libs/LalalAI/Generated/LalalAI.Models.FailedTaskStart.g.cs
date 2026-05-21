@@ -87,5 +87,6 @@ namespace LalalAI
         public FailedTaskStart()
         {
         }
+
     }
 }

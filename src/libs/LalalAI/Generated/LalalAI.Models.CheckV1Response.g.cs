@@ -45,5 +45,6 @@ namespace LalalAI
         public CheckV1Response()
         {
         }
+
     }
 }

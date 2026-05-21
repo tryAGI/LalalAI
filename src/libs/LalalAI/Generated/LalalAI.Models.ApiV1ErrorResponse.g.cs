@@ -60,5 +60,6 @@ namespace LalalAI
         public ApiV1ErrorResponse()
         {
         }
+
     }
 }

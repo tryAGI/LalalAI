@@ -64,5 +64,6 @@ namespace LalalAI
         public CheckV1CancelledResult()
         {
         }
+
     }
 }

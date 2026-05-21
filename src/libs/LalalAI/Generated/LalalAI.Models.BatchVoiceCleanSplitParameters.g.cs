@@ -42,5 +42,6 @@ namespace LalalAI
         public BatchVoiceCleanSplitParameters()
         {
         }
+
     }
 }

@@ -106,5 +106,6 @@ namespace LalalAI
         public VoiceChangePresetsV1()
         {
         }
+
     }
 }

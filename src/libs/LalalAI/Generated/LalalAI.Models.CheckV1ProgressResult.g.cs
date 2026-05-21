@@ -76,5 +76,6 @@ namespace LalalAI
         public CheckV1ProgressResult()
         {
         }
+
     }
 }

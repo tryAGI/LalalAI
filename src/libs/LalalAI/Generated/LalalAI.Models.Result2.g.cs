@@ -34,6 +34,26 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.CancelSuccess? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.CancelSuccess PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.ErrorResult? ServerError { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace LalalAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerError))]
 #endif
         public bool IsServerError => ServerError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickServerError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LalalAI.ErrorResult? value)
+        {
+            value = ServerError;
+            return IsServerError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LalalAI.ErrorResult PickServerError() => IsServerError
+            ? ServerError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace LalalAI
         /// <summary>
         /// 
         /// </summary>
+        public static Result2 FromSuccess(global::LalalAI.CancelSuccess? value) => new Result2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result2(global::LalalAI.ErrorResult value) => new Result2((global::LalalAI.ErrorResult?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace LalalAI
         {
             ServerError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result2 FromServerError(global::LalalAI.ErrorResult? value) => new Result2(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace LalalAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LalalAI.CancelSuccess?, TResult>? success = null,
-            global::System.Func<global::LalalAI.ErrorResult?, TResult>? serverError = null,
+            global::System.Func<global::LalalAI.CancelSuccess, TResult>? success = null,
+            global::System.Func<global::LalalAI.ErrorResult, TResult>? serverError = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace LalalAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LalalAI.CancelSuccess?>? success = null,
-            global::System.Action<global::LalalAI.ErrorResult?>? serverError = null,
+            global::System.Action<global::LalalAI.CancelSuccess>? success = null,
+
+            global::System.Action<global::LalalAI.ErrorResult>? serverError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsServerError)
+            {
+                serverError?.Invoke(ServerError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LalalAI.CancelSuccess>? success = null,
+            global::System.Action<global::LalalAI.ErrorResult>? serverError = null,
             bool validate = true)
         {
             if (validate)

@@ -46,5 +46,6 @@ namespace LalalAI
         public CommonErrorResponse()
         {
         }
+
     }
 }
