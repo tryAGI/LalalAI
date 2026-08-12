@@ -4,7 +4,7 @@
 namespace LalalAI
 {
     /// <summary>
-    /// Stem to extract. ['synthesizer', 'strings', 'wind'] are available only phoenix splitter.<br/>
+    /// Stem to extract. ['synthesizer', 'strings', 'wind'] are available only phoenix splitter. 'guitar' is available only andromeda splitter.<br/>
     /// Example: vocals
     /// </summary>
     public enum StemSeparatorSplitterPresetsV1Stem
@@ -25,6 +25,10 @@ namespace LalalAI
         /// 
         /// </summary>
         ElectricGuitar,
+        /// <summary>
+        /// 
+        /// </summary>
+        Guitar,
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +67,7 @@ namespace LalalAI
                 StemSeparatorSplitterPresetsV1Stem.Bass => "bass",
                 StemSeparatorSplitterPresetsV1Stem.Drum => "drum",
                 StemSeparatorSplitterPresetsV1Stem.ElectricGuitar => "electric_guitar",
+                StemSeparatorSplitterPresetsV1Stem.Guitar => "guitar",
                 StemSeparatorSplitterPresetsV1Stem.Piano => "piano",
                 StemSeparatorSplitterPresetsV1Stem.Strings => "strings",
                 StemSeparatorSplitterPresetsV1Stem.Synthesizer => "synthesizer",
@@ -82,6 +87,7 @@ namespace LalalAI
                 "bass" => StemSeparatorSplitterPresetsV1Stem.Bass,
                 "drum" => StemSeparatorSplitterPresetsV1Stem.Drum,
                 "electric_guitar" => StemSeparatorSplitterPresetsV1Stem.ElectricGuitar,
+                "guitar" => StemSeparatorSplitterPresetsV1Stem.Guitar,
                 "piano" => StemSeparatorSplitterPresetsV1Stem.Piano,
                 "strings" => StemSeparatorSplitterPresetsV1Stem.Strings,
                 "synthesizer" => StemSeparatorSplitterPresetsV1Stem.Synthesizer,
