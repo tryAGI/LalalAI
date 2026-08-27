@@ -49,7 +49,7 @@ namespace LalalAI
         ///     You can use the source file ID from the response to create split tasks.<br/>
         ///     The file will be deleted when the expiration time from the response is reached.<br/>
         ///     Upload limit is 10GB per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="contentDisposition"></param>
         /// <param name="request"></param>
@@ -79,7 +79,7 @@ namespace LalalAI
         ///     You can use the source file ID from the response to create split tasks.<br/>
         ///     The file will be deleted when the expiration time from the response is reached.<br/>
         ///     Upload limit is 10GB per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="contentDisposition"></param>
         /// <param name="request"></param>
@@ -155,7 +155,7 @@ namespace LalalAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
                 __httpRequest.Headers.TryAddWithoutValidation("Content-Disposition", contentDisposition.ToString());

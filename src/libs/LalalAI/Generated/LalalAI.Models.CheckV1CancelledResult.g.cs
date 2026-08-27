@@ -4,7 +4,7 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CheckV1CancelledResult
     {
@@ -16,7 +16,7 @@ namespace LalalAI
         public required string SourceId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presets")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.PresetsJsonConverter))]

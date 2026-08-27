@@ -49,7 +49,7 @@ namespace LalalAI
         ///     Each result contains either:<br/>
         ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
         ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -78,7 +78,7 @@ namespace LalalAI
         ///     Each result contains either:<br/>
         ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
         ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -151,7 +151,7 @@ namespace LalalAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -527,7 +527,7 @@ namespace LalalAI
         ///     Each result contains either:<br/>
         ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
         ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="items">
         /// List of split parameters to process.

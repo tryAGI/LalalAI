@@ -4,16 +4,16 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ExtractionLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClearCut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeepExtraction,
     }

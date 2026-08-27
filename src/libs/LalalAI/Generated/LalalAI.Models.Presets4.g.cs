@@ -5,12 +5,12 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Presets4 : global::System.IEquatable<Presets4>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.VoiceChangePresetsV1? VoiceChangePresetsV1 { get; init; }
@@ -19,7 +19,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VoiceChangePresetsV1))]
@@ -27,7 +27,7 @@ namespace LalalAI
         public bool IsVoiceChangePresetsV1 => VoiceChangePresetsV1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVoiceChangePresetsV1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.VoiceChangePresetsV1 PickVoiceChangePresetsV1() => IsVoiceChangePresetsV1
             ? VoiceChangePresetsV1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceChangePresetsV1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.PresetsVariant24? PresetsVariant24 { get; init; }
@@ -56,7 +56,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PresetsVariant24))]
@@ -64,7 +64,7 @@ namespace LalalAI
         public bool IsPresetsVariant24 => PresetsVariant24 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPresetsVariant24(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.PresetsVariant24 PickPresetsVariant24() => IsPresetsVariant24
             ? PresetsVariant24!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PresetsVariant24' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Presets4(global::LalalAI.VoiceChangePresetsV1 value) => new Presets4((global::LalalAI.VoiceChangePresetsV1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.VoiceChangePresetsV1?(Presets4 @this) => @this.VoiceChangePresetsV1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Presets4(global::LalalAI.VoiceChangePresetsV1? value)
         {
@@ -101,22 +101,22 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Presets4 FromVoiceChangePresetsV1(global::LalalAI.VoiceChangePresetsV1? value) => new Presets4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Presets4(global::LalalAI.PresetsVariant24 value) => new Presets4((global::LalalAI.PresetsVariant24?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.PresetsVariant24?(Presets4 @this) => @this.PresetsVariant24;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Presets4(global::LalalAI.PresetsVariant24? value)
         {
@@ -124,12 +124,12 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Presets4 FromPresetsVariant24(global::LalalAI.PresetsVariant24? value) => new Presets4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Presets4(
             global::LalalAI.VoiceChangePresetsV1? voiceChangePresetsV1,
@@ -141,23 +141,23 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             PresetsVariant24 as object ??
-            VoiceChangePresetsV1 as object 
+            VoiceChangePresetsV1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VoiceChangePresetsV1?.ToString() ??
-            PresetsVariant24?.ToString() 
+            PresetsVariant24?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LalalAI.VoiceChangePresetsV1, TResult>? voiceChangePresetsV1 = null,
@@ -190,7 +190,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LalalAI.VoiceChangePresetsV1>? voiceChangePresetsV1 = null,
@@ -214,7 +214,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LalalAI.VoiceChangePresetsV1>? voiceChangePresetsV1 = null,
@@ -237,7 +237,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Presets4 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.VoiceChangePresetsV1?>.Default.Equals(VoiceChangePresetsV1, other.VoiceChangePresetsV1) &&
-                global::System.Collections.Generic.EqualityComparer<global::LalalAI.PresetsVariant24?>.Default.Equals(PresetsVariant24, other.PresetsVariant24) 
+                global::System.Collections.Generic.EqualityComparer<global::LalalAI.PresetsVariant24?>.Default.Equals(PresetsVariant24, other.PresetsVariant24)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Presets4 obj1, Presets4 obj2)
         {
@@ -277,7 +277,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Presets4 obj1, Presets4 obj2)
         {
@@ -285,7 +285,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,24 +4,24 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CheckV1ErrorResultPresetsDiscriminatorLabel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Demuser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Multistem,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StemSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VoiceClean,
     }

@@ -12,7 +12,7 @@ namespace LalalAI
         ///     Each result contains either:<br/>
         ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
         ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,7 +31,7 @@ namespace LalalAI
         ///     Each result contains either:<br/>
         ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
         ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -50,7 +50,7 @@ namespace LalalAI
         ///     Each result contains either:<br/>
         ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
         ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="items">
         /// List of split parameters to process.

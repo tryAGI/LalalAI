@@ -46,7 +46,7 @@ namespace LalalAI
         ///     This endpoint allows you to check the status of a specific task by its ID.<br/>
         ///     Checking is only possible within 24h after task creation, otherwise an error will be returned.<br/>
         ///     The current rate limit for this endpoint is 30 requests per minute. This limit may be increased in the future.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -72,7 +72,7 @@ namespace LalalAI
         ///     This endpoint allows you to check the status of a specific task by its ID.<br/>
         ///     Checking is only possible within 24h after task creation, otherwise an error will be returned.<br/>
         ///     The current rate limit for this endpoint is 30 requests per minute. This limit may be increased in the future.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -145,7 +145,7 @@ namespace LalalAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -555,7 +555,7 @@ namespace LalalAI
         ///     This endpoint allows you to check the status of a specific task by its ID.<br/>
         ///     Checking is only possible within 24h after task creation, otherwise an error will be returned.<br/>
         ///     The current rate limit for this endpoint is 30 requests per minute. This limit may be increased in the future.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="taskIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

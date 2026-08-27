@@ -4,7 +4,7 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DemuserSplitParameters
     {
@@ -18,7 +18,7 @@ namespace LalalAI
         public required string SourceId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presets")]
         [global::System.Text.Json.Serialization.JsonRequired]

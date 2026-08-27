@@ -4,16 +4,16 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SplitTrackType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Back,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stem,
     }

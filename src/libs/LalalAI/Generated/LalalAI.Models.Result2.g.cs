@@ -5,17 +5,17 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Result2 : global::System.IEquatable<Result2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.CancelResponseResultDiscriminatorStatus? Status { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.CancelSuccess? Success { get; init; }
@@ -24,7 +24,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Success))]
@@ -32,7 +32,7 @@ namespace LalalAI
         public bool IsSuccess => Success != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSuccess(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.CancelSuccess PickSuccess() => IsSuccess
             ? Success!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.ErrorResult? ServerError { get; init; }
@@ -61,7 +61,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerError))]
@@ -69,7 +69,7 @@ namespace LalalAI
         public bool IsServerError => ServerError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickServerError(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.ErrorResult PickServerError() => IsServerError
             ? ServerError!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServerError' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Result2(global::LalalAI.CancelSuccess value) => new Result2((global::LalalAI.CancelSuccess?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.CancelSuccess?(Result2 @this) => @this.Success;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result2(global::LalalAI.CancelSuccess? value)
         {
@@ -106,22 +106,22 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Result2 FromSuccess(global::LalalAI.CancelSuccess? value) => new Result2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Result2(global::LalalAI.ErrorResult value) => new Result2((global::LalalAI.ErrorResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.ErrorResult?(Result2 @this) => @this.ServerError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result2(global::LalalAI.ErrorResult? value)
         {
@@ -129,12 +129,12 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Result2 FromServerError(global::LalalAI.ErrorResult? value) => new Result2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result2(
             global::LalalAI.CancelResponseResultDiscriminatorStatus? status,
@@ -149,23 +149,23 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ServerError as object ??
-            Success as object 
+            Success as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Success?.ToString() ??
-            ServerError?.ToString() 
+            ServerError?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LalalAI.CancelSuccess, TResult>? success = null,
@@ -198,7 +198,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LalalAI.CancelSuccess>? success = null,
@@ -222,7 +222,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LalalAI.CancelSuccess>? success = null,
@@ -245,7 +245,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Result2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.CancelSuccess?>.Default.Equals(Success, other.Success) &&
-                global::System.Collections.Generic.EqualityComparer<global::LalalAI.ErrorResult?>.Default.Equals(ServerError, other.ServerError) 
+                global::System.Collections.Generic.EqualityComparer<global::LalalAI.ErrorResult?>.Default.Equals(ServerError, other.ServerError)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Result2 obj1, Result2 obj2)
         {
@@ -285,7 +285,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Result2 obj1, Result2 obj2)
         {
@@ -293,7 +293,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

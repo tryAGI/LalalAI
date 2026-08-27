@@ -4,16 +4,16 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TonalityReference
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SourceFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VoicePack,
     }

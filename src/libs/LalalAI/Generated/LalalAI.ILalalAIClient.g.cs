@@ -50,28 +50,28 @@ namespace LalalAI
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BatchStemSeparationClient BatchStemSeparation { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CommonClient Common { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StemSeparationClient StemSeparation { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoiceChangeClient VoiceChange { get; }
 

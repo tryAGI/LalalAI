@@ -4,32 +4,32 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SplitterType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Andromeda,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lynx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lyra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Orion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Perseus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phoenix,
     }

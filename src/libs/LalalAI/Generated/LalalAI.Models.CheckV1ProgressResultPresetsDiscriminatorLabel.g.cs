@@ -4,24 +4,24 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CheckV1ProgressResultPresetsDiscriminatorLabel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Demuser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Multistem,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StemSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VoiceClean,
     }
