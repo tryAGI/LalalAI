@@ -16,7 +16,7 @@ namespace LalalAI
         ///     backing vocals:{"type":"stem", "label":"vocals@1", "url":"..."}<br/>
         ///     instrumental:{"type":"back", "label":"no_vocals", "url":"..."}<br/>
         ///     instrumental + backing vocals:{"type":"back", "label":"mix_no_lead", "url":"..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -39,7 +39,7 @@ namespace LalalAI
         ///     backing vocals:{"type":"stem", "label":"vocals@1", "url":"..."}<br/>
         ///     instrumental:{"type":"back", "label":"no_vocals", "url":"..."}<br/>
         ///     instrumental + backing vocals:{"type":"back", "label":"mix_no_lead", "url":"..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -62,7 +62,7 @@ namespace LalalAI
         ///     backing vocals:{"type":"stem", "label":"vocals@1", "url":"..."}<br/>
         ///     instrumental:{"type":"back", "label":"no_vocals", "url":"..."}<br/>
         ///     instrumental + backing vocals:{"type":"back", "label":"mix_no_lead", "url":"..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>

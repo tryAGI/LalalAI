@@ -20,7 +20,7 @@ namespace LalalAI.JsonConverters
                     {
                         return global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabelExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

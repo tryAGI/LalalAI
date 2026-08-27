@@ -4,7 +4,7 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SuccessfulTaskStart
     {

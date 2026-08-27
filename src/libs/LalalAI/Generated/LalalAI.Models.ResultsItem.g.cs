@@ -5,17 +5,17 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ResultsItem : global::System.IEquatable<ResultsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.BatchTasksResponseResultDiscriminatorStatus? Status { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.SuccessfulTaskStart? Success { get; init; }
@@ -24,7 +24,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Success))]
@@ -32,7 +32,7 @@ namespace LalalAI
         public bool IsSuccess => Success != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSuccess(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.SuccessfulTaskStart PickSuccess() => IsSuccess
             ? Success!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.FailedTaskStart? Error { get; init; }
@@ -61,7 +61,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
@@ -69,7 +69,7 @@ namespace LalalAI
         public bool IsError => Error != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.FailedTaskStart PickError() => IsError
             ? Error!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::LalalAI.SuccessfulTaskStart value) => new ResultsItem((global::LalalAI.SuccessfulTaskStart?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.SuccessfulTaskStart?(ResultsItem @this) => @this.Success;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::LalalAI.SuccessfulTaskStart? value)
         {
@@ -106,22 +106,22 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromSuccess(global::LalalAI.SuccessfulTaskStart? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::LalalAI.FailedTaskStart value) => new ResultsItem((global::LalalAI.FailedTaskStart?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.FailedTaskStart?(ResultsItem @this) => @this.Error;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::LalalAI.FailedTaskStart? value)
         {
@@ -129,12 +129,12 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromError(global::LalalAI.FailedTaskStart? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(
             global::LalalAI.BatchTasksResponseResultDiscriminatorStatus? status,
@@ -149,23 +149,23 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Error as object ??
-            Success as object 
+            Success as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Success?.ToString() ??
-            Error?.ToString() 
+            Error?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LalalAI.SuccessfulTaskStart, TResult>? success = null,
@@ -198,7 +198,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LalalAI.SuccessfulTaskStart>? success = null,
@@ -222,7 +222,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LalalAI.SuccessfulTaskStart>? success = null,
@@ -245,7 +245,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResultsItem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.SuccessfulTaskStart?>.Default.Equals(Success, other.Success) &&
-                global::System.Collections.Generic.EqualityComparer<global::LalalAI.FailedTaskStart?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::LalalAI.FailedTaskStart?>.Default.Equals(Error, other.Error)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResultsItem obj1, ResultsItem obj2)
         {
@@ -285,7 +285,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResultsItem obj1, ResultsItem obj2)
         {
@@ -293,7 +293,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

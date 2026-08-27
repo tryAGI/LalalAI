@@ -10,7 +10,7 @@ namespace LalalAI
         ///     This only deletes the media files, not the database records.<br/>
         ///     The files are removed from storage immediately, but download links will remain valid for one hour after deletion due to CDN caching.<br/>
         ///     The /check/ endpoint will still return a valid check result for 24 hours, but the download links will lead to a 404 error after deletion.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -27,7 +27,7 @@ namespace LalalAI
         ///     This only deletes the media files, not the database records.<br/>
         ///     The files are removed from storage immediately, but download links will remain valid for one hour after deletion due to CDN caching.<br/>
         ///     The /check/ endpoint will still return a valid check result for 24 hours, but the download links will lead to a 404 error after deletion.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -44,7 +44,7 @@ namespace LalalAI
         ///     This only deletes the media files, not the database records.<br/>
         ///     The files are removed from storage immediately, but download links will remain valid for one hour after deletion due to CDN caching.<br/>
         ///     The /check/ endpoint will still return a valid check result for 24 hours, but the download links will lead to a 404 error after deletion.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file.<br/>

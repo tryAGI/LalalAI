@@ -5,17 +5,17 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct PresetsVariant24 : global::System.IEquatable<PresetsVariant24>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? Label { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.DemuserSplitterPresetsV1? Demuser { get; init; }
@@ -24,7 +24,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Demuser))]
@@ -32,7 +32,7 @@ namespace LalalAI
         public bool IsDemuser => Demuser != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDemuser(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.DemuserSplitterPresetsV1 PickDemuser() => IsDemuser
             ? Demuser!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Demuser' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.VoiceCleanPresetsV1? VoiceClean { get; init; }
@@ -61,7 +61,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VoiceClean))]
@@ -69,7 +69,7 @@ namespace LalalAI
         public bool IsVoiceClean => VoiceClean != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVoiceClean(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.VoiceCleanPresetsV1 PickVoiceClean() => IsVoiceClean
             ? VoiceClean!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceClean' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.StemSeparatorSplitterPresetsV1? StemSeparator { get; init; }
@@ -98,7 +98,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StemSeparator))]
@@ -106,7 +106,7 @@ namespace LalalAI
         public bool IsStemSeparator => StemSeparator != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStemSeparator(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.StemSeparatorSplitterPresetsV1 PickStemSeparator() => IsStemSeparator
             ? StemSeparator!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StemSeparator' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::LalalAI.MultistemSplitterPresetsV1? Multistem { get; init; }
@@ -135,7 +135,7 @@ namespace LalalAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Multistem))]
@@ -143,7 +143,7 @@ namespace LalalAI
         public bool IsMultistem => Multistem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMultistem(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LalalAI.MultistemSplitterPresetsV1 PickMultistem() => IsMultistem
             ? Multistem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Multistem' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PresetsVariant24(global::LalalAI.DemuserSplitterPresetsV1 value) => new PresetsVariant24((global::LalalAI.DemuserSplitterPresetsV1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.DemuserSplitterPresetsV1?(PresetsVariant24 @this) => @this.Demuser;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PresetsVariant24(global::LalalAI.DemuserSplitterPresetsV1? value)
         {
@@ -180,22 +180,22 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PresetsVariant24 FromDemuser(global::LalalAI.DemuserSplitterPresetsV1? value) => new PresetsVariant24(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PresetsVariant24(global::LalalAI.VoiceCleanPresetsV1 value) => new PresetsVariant24((global::LalalAI.VoiceCleanPresetsV1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.VoiceCleanPresetsV1?(PresetsVariant24 @this) => @this.VoiceClean;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PresetsVariant24(global::LalalAI.VoiceCleanPresetsV1? value)
         {
@@ -203,22 +203,22 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PresetsVariant24 FromVoiceClean(global::LalalAI.VoiceCleanPresetsV1? value) => new PresetsVariant24(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PresetsVariant24(global::LalalAI.StemSeparatorSplitterPresetsV1 value) => new PresetsVariant24((global::LalalAI.StemSeparatorSplitterPresetsV1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.StemSeparatorSplitterPresetsV1?(PresetsVariant24 @this) => @this.StemSeparator;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PresetsVariant24(global::LalalAI.StemSeparatorSplitterPresetsV1? value)
         {
@@ -226,22 +226,22 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PresetsVariant24 FromStemSeparator(global::LalalAI.StemSeparatorSplitterPresetsV1? value) => new PresetsVariant24(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PresetsVariant24(global::LalalAI.MultistemSplitterPresetsV1 value) => new PresetsVariant24((global::LalalAI.MultistemSplitterPresetsV1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LalalAI.MultistemSplitterPresetsV1?(PresetsVariant24 @this) => @this.Multistem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PresetsVariant24(global::LalalAI.MultistemSplitterPresetsV1? value)
         {
@@ -249,12 +249,12 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PresetsVariant24 FromMultistem(global::LalalAI.MultistemSplitterPresetsV1? value) => new PresetsVariant24(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PresetsVariant24(
             global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? label,
@@ -273,27 +273,27 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Multistem as object ??
             StemSeparator as object ??
             VoiceClean as object ??
-            Demuser as object 
+            Demuser as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Demuser?.ToString() ??
             VoiceClean?.ToString() ??
             StemSeparator?.ToString() ??
-            Multistem?.ToString() 
+            Multistem?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LalalAI.DemuserSplitterPresetsV1, TResult>? demuser = null,
@@ -336,7 +336,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LalalAI.DemuserSplitterPresetsV1>? demuser = null,
@@ -372,7 +372,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LalalAI.DemuserSplitterPresetsV1>? demuser = null,
@@ -405,7 +405,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PresetsVariant24 other)
         {
@@ -438,12 +438,12 @@ namespace LalalAI
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.DemuserSplitterPresetsV1?>.Default.Equals(Demuser, other.Demuser) &&
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.VoiceCleanPresetsV1?>.Default.Equals(VoiceClean, other.VoiceClean) &&
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.StemSeparatorSplitterPresetsV1?>.Default.Equals(StemSeparator, other.StemSeparator) &&
-                global::System.Collections.Generic.EqualityComparer<global::LalalAI.MultistemSplitterPresetsV1?>.Default.Equals(Multistem, other.Multistem) 
+                global::System.Collections.Generic.EqualityComparer<global::LalalAI.MultistemSplitterPresetsV1?>.Default.Equals(Multistem, other.Multistem)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PresetsVariant24 obj1, PresetsVariant24 obj2)
         {
@@ -451,7 +451,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PresetsVariant24 obj1, PresetsVariant24 obj2)
         {
@@ -459,7 +459,7 @@ namespace LalalAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,43 +10,43 @@ namespace LalalAI
     public enum StemSeparatorSplitterPresetsV1Stem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AcousticGuitar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Drum,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ElectricGuitar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Guitar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Piano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Strings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Synthesizer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vocals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wind,
     }

@@ -4,24 +4,24 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LicenseErrorCodes
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchNotAvaliable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExceededDuration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExceededSize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxDuration,
     }

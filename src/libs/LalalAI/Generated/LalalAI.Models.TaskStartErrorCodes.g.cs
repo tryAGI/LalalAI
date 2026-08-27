@@ -4,16 +4,16 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TaskStartErrorCodes
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdempotencyKeyUsed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InternalError,
     }

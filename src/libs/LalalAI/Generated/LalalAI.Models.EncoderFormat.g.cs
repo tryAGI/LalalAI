@@ -4,28 +4,28 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EncoderFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Aac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ogg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

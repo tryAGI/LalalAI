@@ -4,32 +4,32 @@
 namespace LalalAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MultistemSplitterPresetsV1StemListItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AcousticGuitar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Drum,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ElectricGuitar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Piano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vocals,
     }

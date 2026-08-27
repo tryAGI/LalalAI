@@ -48,7 +48,7 @@ namespace LalalAI
         ///     Result of /check/ includes 2 tracks:<br/>
         ///     - stem:{"type":"stem", "label":"voice", "url":"..."}<br/>
         ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -76,7 +76,7 @@ namespace LalalAI
         ///     Result of /check/ includes 2 tracks:<br/>
         ///     - stem:{"type":"stem", "label":"voice", "url":"..."}<br/>
         ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -149,7 +149,7 @@ namespace LalalAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -524,7 +524,7 @@ namespace LalalAI
         ///     Result of /check/ includes 2 tracks:<br/>
         ///     - stem:{"type":"stem", "label":"voice", "url":"..."}<br/>
         ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>
