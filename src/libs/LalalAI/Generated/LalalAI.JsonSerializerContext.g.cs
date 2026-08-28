@@ -177,7 +177,7 @@ namespace LalalAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.SplitTracksResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.SplitterType), TypeInfoPropertyName = "SplitterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.EncoderFormat))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.EncoderFormat), TypeInfoPropertyName = "EncoderFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.ExtractionLevel), TypeInfoPropertyName = "ExtractionLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LalalAI.MultistemSplitterPresetsV1StemListItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.MultistemSplitterPresetsV1StemListItem), TypeInfoPropertyName = "MultistemSplitterPresetsV1StemListItem2")]
