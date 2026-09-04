@@ -69,351 +69,355 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1CancelledResult? Type9 { get; set; }
+        public global::LalalAI.InternalErrorResponse? Type9 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Presets? Type10 { get; set; }
+        public global::LalalAI.CheckV1CancelledResult? Type10 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoiceChangePresetsV1? Type11 { get; set; }
+        public global::LalalAI.Presets? Type11 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant2? Type12 { get; set; }
+        public global::LalalAI.VoiceChangePresetsV1? Type12 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.DemuserSplitterPresetsV1? Type13 { get; set; }
+        public global::LalalAI.PresetsVariant2? Type13 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoiceCleanPresetsV1? Type14 { get; set; }
+        public global::LalalAI.DemuserSplitterPresetsV1? Type14 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.StemSeparatorSplitterPresetsV1? Type15 { get; set; }
+        public global::LalalAI.VoiceCleanPresetsV1? Type15 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.MultistemSplitterPresetsV1? Type16 { get; set; }
+        public global::LalalAI.StemSeparatorSplitterPresetsV1? Type16 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator? Type17 { get; set; }
+        public global::LalalAI.MultistemSplitterPresetsV1? Type17 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel? Type18 { get; set; }
+        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator? Type18 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator2? Type19 { get; set; }
+        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel? Type19 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResult? Type20 { get; set; }
+        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator2? Type20 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Presets2? Type21 { get; set; }
+        public global::LalalAI.CheckV1ErrorResult? Type21 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant22? Type22 { get; set; }
+        public global::LalalAI.Presets2? Type22 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator? Type23 { get; set; }
+        public global::LalalAI.PresetsVariant22? Type23 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel? Type24 { get; set; }
+        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator? Type24 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2? Type25 { get; set; }
+        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel? Type25 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.TaskMetaError? Type26 { get; set; }
+        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2? Type26 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ProgressResult? Type27 { get; set; }
+        public global::LalalAI.TaskMetaError? Type27 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Presets3? Type28 { get; set; }
+        public global::LalalAI.CheckV1ProgressResult? Type28 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant23? Type29 { get; set; }
+        public global::LalalAI.Presets3? Type29 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator? Type30 { get; set; }
+        public global::LalalAI.PresetsVariant23? Type30 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminatorLabel? Type31 { get; set; }
+        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator? Type31 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator2? Type32 { get; set; }
+        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminatorLabel? Type32 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1Response? Type33 { get; set; }
+        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator2? Type33 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Result? Type34 { get; set; }
+        public global::LalalAI.CheckV1Response? Type34 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1SuccessResult? Type35 { get; set; }
+        public global::LalalAI.Result? Type35 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.ErrorResult? Type36 { get; set; }
+        public global::LalalAI.CheckV1SuccessResult? Type36 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ResponseResultDiscriminator? Type37 { get; set; }
+        public global::LalalAI.ErrorResult? Type37 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ResponseResultDiscriminatorStatus? Type38 { get; set; }
+        public global::LalalAI.CheckV1ResponseResultDiscriminator? Type38 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Presets4? Type39 { get; set; }
+        public global::LalalAI.CheckV1ResponseResultDiscriminatorStatus? Type39 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant24? Type40 { get; set; }
+        public global::LalalAI.Presets4? Type40 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator? Type41 { get; set; }
+        public global::LalalAI.PresetsVariant24? Type41 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? Type42 { get; set; }
+        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator? Type42 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator2? Type43 { get; set; }
+        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? Type43 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.SplitTracksResult? Type44 { get; set; }
+        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator2? Type44 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.SplitterType? Type45 { get; set; }
+        public global::LalalAI.SplitTracksResult? Type45 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public bool? Type46 { get; set; }
+        public global::LalalAI.SplitterType? Type46 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.EncoderFormat? Type47 { get; set; }
+        public bool? Type47 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.ExtractionLevel? Type48 { get; set; }
+        public global::LalalAI.EncoderFormat? Type48 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LalalAI.MultistemSplitterPresetsV1StemListItem>? Type49 { get; set; }
+        public global::LalalAI.ExtractionLevel? Type49 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.MultistemSplitterPresetsV1StemListItem? Type50 { get; set; }
+        public global::System.Collections.Generic.IList<global::LalalAI.MultistemSplitterPresetsV1StemListItem>? Type50 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.SplitTrack? Type51 { get; set; }
+        public global::LalalAI.MultistemSplitterPresetsV1StemListItem? Type51 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.SplitTrackType? Type52 { get; set; }
+        public global::LalalAI.SplitTrack? Type52 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LalalAI.SplitTrack>? Type53 { get; set; }
+        public global::LalalAI.SplitTrackType? Type53 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.StemSeparatorSplitterPresetsV1Stem? Type54 { get; set; }
+        public global::System.Collections.Generic.IList<global::LalalAI.SplitTrack>? Type54 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.TonalityReference? Type55 { get; set; }
+        public global::LalalAI.StemSeparatorSplitterPresetsV1Stem? Type55 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public double? Type56 { get; set; }
+        public global::LalalAI.TonalityReference? Type56 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1Request? Type57 { get; set; }
+        public double? Type57 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type58 { get; set; }
+        public global::LalalAI.CheckV1Request? Type58 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CancelResponse? Type59 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type59 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Result2? Type60 { get; set; }
+        public global::LalalAI.CancelResponse? Type60 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CancelSuccess? Type61 { get; set; }
+        public global::LalalAI.Result2? Type61 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CancelResponseResultDiscriminator? Type62 { get; set; }
+        public global::LalalAI.CancelSuccess? Type62 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CancelResponseResultDiscriminatorStatus? Type63 { get; set; }
+        public global::LalalAI.CancelResponseResultDiscriminator? Type63 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CancelRequest? Type64 { get; set; }
+        public global::LalalAI.CancelResponseResultDiscriminatorStatus? Type64 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.SuccessResponse? Type65 { get; set; }
+        public global::LalalAI.CancelRequest? Type65 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.DeleteParameters? Type66 { get; set; }
+        public global::LalalAI.SuccessResponse? Type66 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.LimitsResponse? Type67 { get; set; }
+        public global::LalalAI.DeleteParameters? Type67 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Task? Type68 { get; set; }
+        public global::LalalAI.LimitsResponse? Type68 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.StemSeparatorSplitParameters? Type69 { get; set; }
+        public global::LalalAI.Task? Type69 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.DemuserSplitParameters? Type70 { get; set; }
+        public global::LalalAI.StemSeparatorSplitParameters? Type70 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoiceCleanSplitParameters? Type71 { get; set; }
+        public global::LalalAI.DemuserSplitParameters? Type71 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.MultistemSplitParameters? Type72 { get; set; }
+        public global::LalalAI.VoiceCleanSplitParameters? Type72 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.BatchTasksResponse? Type73 { get; set; }
+        public global::LalalAI.MultistemSplitParameters? Type73 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LalalAI.ResultsItem>? Type74 { get; set; }
+        public global::LalalAI.BatchTasksResponse? Type74 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.ResultsItem? Type75 { get; set; }
+        public global::System.Collections.Generic.IList<global::LalalAI.ResultsItem>? Type75 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.SuccessfulTaskStart? Type76 { get; set; }
+        public global::LalalAI.ResultsItem? Type76 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.FailedTaskStart? Type77 { get; set; }
+        public global::LalalAI.SuccessfulTaskStart? Type77 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.BatchTasksResponseResultDiscriminator? Type78 { get; set; }
+        public global::LalalAI.FailedTaskStart? Type78 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.BatchTasksResponseResultDiscriminatorStatus? Type79 { get; set; }
+        public global::LalalAI.BatchTasksResponseResultDiscriminator? Type79 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.AnyOf<global::LalalAI.TaskStartErrorCodes?, global::LalalAI.LicenseErrorCodes?>? Type80 { get; set; }
+        public global::LalalAI.BatchTasksResponseResultDiscriminatorStatus? Type80 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.TaskStartErrorCodes? Type81 { get; set; }
+        public global::LalalAI.AnyOf<global::LalalAI.TaskStartErrorCodes?, global::LalalAI.LicenseErrorCodes?>? Type81 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.LicenseErrorCodes? Type82 { get; set; }
+        public global::LalalAI.TaskStartErrorCodes? Type82 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.BatchStemSeparatorSplitParameters? Type83 { get; set; }
+        public global::LalalAI.LicenseErrorCodes? Type83 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LalalAI.StemSeparatorSplitParameters>? Type84 { get; set; }
+        public global::LalalAI.BatchStemSeparatorSplitParameters? Type84 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.BatchDemuserSplitParameters? Type85 { get; set; }
+        public global::System.Collections.Generic.IList<global::LalalAI.StemSeparatorSplitParameters>? Type85 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LalalAI.DemuserSplitParameters>? Type86 { get; set; }
+        public global::LalalAI.BatchDemuserSplitParameters? Type86 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.BatchVoiceCleanSplitParameters? Type87 { get; set; }
+        public global::System.Collections.Generic.IList<global::LalalAI.DemuserSplitParameters>? Type87 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LalalAI.VoiceCleanSplitParameters>? Type88 { get; set; }
+        public global::LalalAI.BatchVoiceCleanSplitParameters? Type88 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.TaskResponse? Type89 { get; set; }
+        public global::System.Collections.Generic.IList<global::LalalAI.VoiceCleanSplitParameters>? Type89 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoiceChangeParameters? Type90 { get; set; }
+        public global::LalalAI.TaskResponse? Type90 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoicePackInfo? Type91 { get; set; }
+        public global::LalalAI.VoiceChangeParameters? Type91 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoicePackListResponse? Type92 { get; set; }
+        public global::LalalAI.VoicePackInfo? Type92 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LalalAI.VoicePackInfo>? Type93 { get; set; }
+        public global::LalalAI.VoicePackListResponse? Type93 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public byte[]? Type94 { get; set; }
+        public global::System.Collections.Generic.IList<global::LalalAI.VoicePackInfo>? Type94 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.AnyOf<global::LalalAI.ApiV1ErrorResponse, global::LalalAI.CommonErrorResponse>? Type95 { get; set; }
+        public byte[]? Type95 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::LalalAI.AnyOf<global::LalalAI.ApiV1ErrorResponse, global::LalalAI.CommonErrorResponse>? Type96 { get; set; }
 
         /// <summary>
         ///
