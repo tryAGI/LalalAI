@@ -140,6 +140,7 @@ namespace LalalAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.AnyOf<string, object, global::System.Collections.Generic.IList<object>>), TypeInfoPropertyName = "AnyOfStringObjectIListObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.InternalErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1CancelledResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets), TypeInfoPropertyName = "Presets2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.VoiceChangePresetsV1))]
