@@ -42,8 +42,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoiceChangePresetsV1 PickVoiceChangePresetsV1() => IsVoiceChangePresetsV1
-            ? VoiceChangePresetsV1!
+        public global::LalalAI.VoiceChangePresetsV1 PickVoiceChangePresetsV1() => VoiceChangePresetsV1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceChangePresetsV1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant22 PickPresetsVariant22() => IsPresetsVariant22
-            ? PresetsVariant22!.Value
+        public global::LalalAI.PresetsVariant22 PickPresetsVariant22() => PresetsVariant22 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PresetsVariant22' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsVoiceChangePresetsV1 && voiceChangePresetsV1 != null)
+            if (VoiceChangePresetsV1 is { } __value0 && voiceChangePresetsV1 != null)
             {
-                return voiceChangePresetsV1(VoiceChangePresetsV1!);
+                return voiceChangePresetsV1(__value0);
             }
-            else if (IsPresetsVariant22 && presetsVariant22 != null)
+            else if (PresetsVariant22 is { } __value1 && presetsVariant22 != null)
             {
-                return presetsVariant22(PresetsVariant22!);
+                return presetsVariant22(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsVoiceChangePresetsV1)
+            if (VoiceChangePresetsV1 is { } __value0)
             {
-                voiceChangePresetsV1?.Invoke(VoiceChangePresetsV1!);
+                voiceChangePresetsV1?.Invoke(__value0);
             }
-            else if (IsPresetsVariant22)
+            else if (PresetsVariant22 is { } __value1)
             {
-                presetsVariant22?.Invoke(PresetsVariant22!);
+                presetsVariant22?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsVoiceChangePresetsV1)
+            if (VoiceChangePresetsV1 is { } __value0)
             {
-                voiceChangePresetsV1?.Invoke(VoiceChangePresetsV1!);
+                voiceChangePresetsV1?.Invoke(__value0);
             }
-            else if (IsPresetsVariant22)
+            else if (PresetsVariant22 is { } __value1)
             {
-                presetsVariant22?.Invoke(PresetsVariant22!);
+                presetsVariant22?.Invoke(__value1);
             }
         }
 

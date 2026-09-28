@@ -47,8 +47,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.DemuserSplitterPresetsV1 PickDemuser() => IsDemuser
-            ? Demuser!
+        public global::LalalAI.DemuserSplitterPresetsV1 PickDemuser() => Demuser is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Demuser' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.VoiceCleanPresetsV1 PickVoiceClean() => IsVoiceClean
-            ? VoiceClean!
+        public global::LalalAI.VoiceCleanPresetsV1 PickVoiceClean() => VoiceClean is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceClean' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.StemSeparatorSplitterPresetsV1 PickStemSeparator() => IsStemSeparator
-            ? StemSeparator!
+        public global::LalalAI.StemSeparatorSplitterPresetsV1 PickStemSeparator() => StemSeparator is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StemSeparator' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.MultistemSplitterPresetsV1 PickMultistem() => IsMultistem
-            ? Multistem!
+        public global::LalalAI.MultistemSplitterPresetsV1 PickMultistem() => Multistem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Multistem' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsDemuser && demuser != null)
+            if (Demuser is { } __value0 && demuser != null)
             {
-                return demuser(Demuser!);
+                return demuser(__value0);
             }
-            else if (IsVoiceClean && voiceClean != null)
+            else if (VoiceClean is { } __value1 && voiceClean != null)
             {
-                return voiceClean(VoiceClean!);
+                return voiceClean(__value1);
             }
-            else if (IsStemSeparator && stemSeparator != null)
+            else if (StemSeparator is { } __value2 && stemSeparator != null)
             {
-                return stemSeparator(StemSeparator!);
+                return stemSeparator(__value2);
             }
-            else if (IsMultistem && multistem != null)
+            else if (Multistem is { } __value3 && multistem != null)
             {
-                return multistem(Multistem!);
+                return multistem(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsDemuser)
+            if (Demuser is { } __value0)
             {
-                demuser?.Invoke(Demuser!);
+                demuser?.Invoke(__value0);
             }
-            else if (IsVoiceClean)
+            else if (VoiceClean is { } __value1)
             {
-                voiceClean?.Invoke(VoiceClean!);
+                voiceClean?.Invoke(__value1);
             }
-            else if (IsStemSeparator)
+            else if (StemSeparator is { } __value2)
             {
-                stemSeparator?.Invoke(StemSeparator!);
+                stemSeparator?.Invoke(__value2);
             }
-            else if (IsMultistem)
+            else if (Multistem is { } __value3)
             {
-                multistem?.Invoke(Multistem!);
+                multistem?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsDemuser)
+            if (Demuser is { } __value0)
             {
-                demuser?.Invoke(Demuser!);
+                demuser?.Invoke(__value0);
             }
-            else if (IsVoiceClean)
+            else if (VoiceClean is { } __value1)
             {
-                voiceClean?.Invoke(VoiceClean!);
+                voiceClean?.Invoke(__value1);
             }
-            else if (IsStemSeparator)
+            else if (StemSeparator is { } __value2)
             {
-                stemSeparator?.Invoke(StemSeparator!);
+                stemSeparator?.Invoke(__value2);
             }
-            else if (IsMultistem)
+            else if (Multistem is { } __value3)
             {
-                multistem?.Invoke(Multistem!);
+                multistem?.Invoke(__value3);
             }
         }
 
