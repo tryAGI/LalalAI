@@ -47,8 +47,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CancelSuccess PickSuccess() => IsSuccess
-            ? Success!
+        public global::LalalAI.CancelSuccess PickSuccess() => Success is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.ErrorResult PickServerError() => IsServerError
-            ? ServerError!
+        public global::LalalAI.ErrorResult PickServerError() => ServerError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServerError' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsSuccess && success != null)
+            if (Success is { } __value0 && success != null)
             {
-                return success(Success!);
+                return success(__value0);
             }
-            else if (IsServerError && serverError != null)
+            else if (ServerError is { } __value1 && serverError != null)
             {
-                return serverError(ServerError!);
+                return serverError(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsServerError)
+            else if (ServerError is { } __value1)
             {
-                serverError?.Invoke(ServerError!);
+                serverError?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsServerError)
+            else if (ServerError is { } __value1)
             {
-                serverError?.Invoke(ServerError!);
+                serverError?.Invoke(__value1);
             }
         }
 

@@ -131,13 +131,13 @@ namespace LalalAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.VoiceChangePresetsV1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.VoiceChangePresetsV1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.VoiceChangePresetsV1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceChangePresetsV1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVoiceChangePresetsV1(), typeInfo);
             }
             else if (value.IsPresetsVariant22)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.PresetsVariant22), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.PresetsVariant22> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.PresetsVariant22).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PresetsVariant22!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPresetsVariant22(), typeInfo);
             }
         }
     }

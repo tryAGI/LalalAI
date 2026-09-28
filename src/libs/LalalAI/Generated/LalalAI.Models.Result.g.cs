@@ -47,8 +47,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ProgressResult PickProgress() => IsProgress
-            ? Progress!
+        public global::LalalAI.CheckV1ProgressResult PickProgress() => Progress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Progress' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResult PickError1() => IsError1
-            ? Error1!
+        public global::LalalAI.CheckV1ErrorResult PickError1() => Error1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error1' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1CancelledResult PickCancelled() => IsCancelled
-            ? Cancelled!
+        public global::LalalAI.CheckV1CancelledResult PickCancelled() => Cancelled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cancelled' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1SuccessResult PickSuccess() => IsSuccess
-            ? Success!
+        public global::LalalAI.CheckV1SuccessResult PickSuccess() => Success is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.ErrorResult PickError2() => IsError2
-            ? Error2!
+        public global::LalalAI.ErrorResult PickError2() => Error2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsProgress && progress != null)
+            if (Progress is { } __value0 && progress != null)
             {
-                return progress(Progress!);
+                return progress(__value0);
             }
-            else if (IsError1 && error1 != null)
+            else if (Error1 is { } __value1 && error1 != null)
             {
-                return error1(Error1!);
+                return error1(__value1);
             }
-            else if (IsCancelled && cancelled != null)
+            else if (Cancelled is { } __value2 && cancelled != null)
             {
-                return cancelled(Cancelled!);
+                return cancelled(__value2);
             }
-            else if (IsSuccess && success != null)
+            else if (Success is { } __value3 && success != null)
             {
-                return success(Success!);
+                return success(__value3);
             }
-            else if (IsError2 && error2 != null)
+            else if (Error2 is { } __value4 && error2 != null)
             {
-                return error2(Error2!);
+                return error2(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsProgress)
+            if (Progress is { } __value0)
             {
-                progress?.Invoke(Progress!);
+                progress?.Invoke(__value0);
             }
-            else if (IsError1)
+            else if (Error1 is { } __value1)
             {
-                error1?.Invoke(Error1!);
+                error1?.Invoke(__value1);
             }
-            else if (IsCancelled)
+            else if (Cancelled is { } __value2)
             {
-                cancelled?.Invoke(Cancelled!);
+                cancelled?.Invoke(__value2);
             }
-            else if (IsSuccess)
+            else if (Success is { } __value3)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value3);
             }
-            else if (IsError2)
+            else if (Error2 is { } __value4)
             {
-                error2?.Invoke(Error2!);
+                error2?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace LalalAI
                 Validate();
             }
 
-            if (IsProgress)
+            if (Progress is { } __value0)
             {
-                progress?.Invoke(Progress!);
+                progress?.Invoke(__value0);
             }
-            else if (IsError1)
+            else if (Error1 is { } __value1)
             {
-                error1?.Invoke(Error1!);
+                error1?.Invoke(__value1);
             }
-            else if (IsCancelled)
+            else if (Cancelled is { } __value2)
             {
-                cancelled?.Invoke(Cancelled!);
+                cancelled?.Invoke(__value2);
             }
-            else if (IsSuccess)
+            else if (Success is { } __value3)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value3);
             }
-            else if (IsError2)
+            else if (Error2 is { } __value4)
             {
-                error2?.Invoke(Error2!);
+                error2?.Invoke(__value4);
             }
         }
 
