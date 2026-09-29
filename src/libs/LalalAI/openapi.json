@@ -650,7 +650,7 @@
             }
           }
         },
-        "description": "\n    Typical usage case - is voice with background noise.\n    Voice clean will separate clean voice (stem) and noise (back).\n    Result of /check/ includes 2 tracks:\n    - stem:{\"type\":\"stem\", \"label\":\"voice\", \"url\":\"...\"}\n    - back:{\"type\":\"back\", \"label\":\"no_voice\", \"url\":\"...\"}\n    ",
+        "description": "\n    Typical usage case - is voice with background noise.\n    Voice clean will separate clean voice (stem) and noise (back).\n    Use it for speech with non-musical background noise, such as crowds, traffic, or office noise.\n    To extract vocals from music, use /split/stem_separator/ with stem 'vocals'.\n    Result of /check/ includes 2 tracks:\n    - stem:{\"type\":\"stem\", \"label\":\"voice\", \"url\":\"...\"}\n    - back:{\"type\":\"back\", \"label\":\"no_voice\", \"url\":\"...\"}\n    ",
         "tags": [
           "Stem Separation"
         ],
@@ -1719,11 +1719,11 @@
               }
             ],
             "default": "auto",
-            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1815,11 +1815,11 @@
               }
             ],
             "default": "auto",
-            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1993,11 +1993,11 @@
               }
             ],
             "default": "auto",
-            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -2014,7 +2014,7 @@
             "description": "Format for output audio. If None - convert to source file format."
           },
           "stem": {
-            "description": "Stem to extract. ['synthesizer', 'strings', 'wind'] are available only phoenix splitter. 'guitar' is available only andromeda splitter.",
+            "description": "\nStem to extract.\n\n'vocals' extracts vocals from music, typically songs. To extract speech from non-musical noise, use /split/voice_clean/.\n\nChoose the stem that best matches your task: to extract guitars of any type, use 'guitar', not 'electric_guitar',\neven if you expect only an electric guitar.\nA broader stem can work better with a newer model: even if you only want electric guitar,\n'guitar' on andromeda gives better results than 'electric_guitar' on perseus,\nas long as there is no acoustic guitar you need to separate from it.\n\n'guitar' is available only with andromeda. 'synthesizer', 'strings', and 'wind' are available only with phoenix.\n",
             "enum": [
               "vocals",
               "drum",
@@ -2173,11 +2173,11 @@
               }
             ],
             "default": "auto",
-            "description": "Splitter model to use. 'auto' selects the latest available model for the selected stems."
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -2207,7 +2207,7 @@
               }
             ],
             "default": 0,
-            "description": "Level of noise cancelling to apply."
+            "description": "\nHow much to boost a quiet voice after noise removal.\n\n0 (Mild): leaves the volume unchanged.\n\n1 (Normal): moderate boost.\n\n2 (Aggressive): noticeably stronger boost.\n"
           }
         },
         "required": [
