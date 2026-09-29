@@ -4,7 +4,14 @@
 namespace LalalAI
 {
     /// <summary>
-    /// Stem to extract. ['synthesizer', 'strings', 'wind'] are available only phoenix splitter. 'guitar' is available only andromeda splitter.<br/>
+    /// Stem to extract.<br/>
+    /// 'vocals' extracts vocals from music, typically songs. To extract speech from non-musical noise, use /split/voice_clean/.<br/>
+    /// Choose the stem that best matches your task: to extract guitars of any type, use 'guitar', not 'electric_guitar',<br/>
+    /// even if you expect only an electric guitar.<br/>
+    /// A broader stem can work better with a newer model: even if you only want electric guitar,<br/>
+    /// 'guitar' on andromeda gives better results than 'electric_guitar' on perseus,<br/>
+    /// as long as there is no acoustic guitar you need to separate from it.<br/>
+    /// 'guitar' is available only with andromeda. 'synthesizer', 'strings', and 'wind' are available only with phoenix.<br/>
     /// Example: vocals
     /// </summary>
     public enum StemSeparatorSplitterPresetsV1Stem
@@ -22,11 +29,11 @@ namespace LalalAI
         /// </summary>
         Drum,
         /// <summary>
-        ///
+        /// to extract guitars of any type, use 'guitar', not 'electric_guitar',
         /// </summary>
         ElectricGuitar,
         /// <summary>
-        ///
+        /// to extract guitars of any type, use 'guitar', not 'electric_guitar',
         /// </summary>
         Guitar,
         /// <summary>

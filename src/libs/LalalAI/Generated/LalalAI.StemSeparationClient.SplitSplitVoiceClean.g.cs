@@ -45,6 +45,8 @@ namespace LalalAI
         /// Clean voice from background noise<br/>
         ///     Typical usage case - is voice with background noise.<br/>
         ///     Voice clean will separate clean voice (stem) and noise (back).<br/>
+        ///     Use it for speech with non-musical background noise, such as crowds, traffic, or office noise.<br/>
+        ///     To extract vocals from music, use /split/stem_separator/ with stem 'vocals'.<br/>
         ///     Result of /check/ includes 2 tracks:<br/>
         ///     - stem:{"type":"stem", "label":"voice", "url":"..."}<br/>
         ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>
@@ -73,6 +75,8 @@ namespace LalalAI
         /// Clean voice from background noise<br/>
         ///     Typical usage case - is voice with background noise.<br/>
         ///     Voice clean will separate clean voice (stem) and noise (back).<br/>
+        ///     Use it for speech with non-musical background noise, such as crowds, traffic, or office noise.<br/>
+        ///     To extract vocals from music, use /split/stem_separator/ with stem 'vocals'.<br/>
         ///     Result of /check/ includes 2 tracks:<br/>
         ///     - stem:{"type":"stem", "label":"voice", "url":"..."}<br/>
         ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>
@@ -558,6 +562,8 @@ namespace LalalAI
         /// Clean voice from background noise<br/>
         ///     Typical usage case - is voice with background noise.<br/>
         ///     Voice clean will separate clean voice (stem) and noise (back).<br/>
+        ///     Use it for speech with non-musical background noise, such as crowds, traffic, or office noise.<br/>
+        ///     To extract vocals from music, use /split/stem_separator/ with stem 'vocals'.<br/>
         ///     Result of /check/ includes 2 tracks:<br/>
         ///     - stem:{"type":"stem", "label":"voice", "url":"..."}<br/>
         ///     - back:{"type":"back", "label":"no_voice", "url":"..."}<br/>

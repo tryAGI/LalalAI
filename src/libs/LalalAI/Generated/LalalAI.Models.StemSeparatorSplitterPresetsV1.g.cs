@@ -10,6 +10,12 @@ namespace LalalAI
     {
         /// <summary>
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
+        /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
+        /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
+        /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
+        /// on noisy vintage recordings. Test with your own audio.<br/>
+        /// lynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.<br/>
+        /// lyra is a separate model for the 'music' stem.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("splitter")]
@@ -19,7 +25,7 @@ namespace LalalAI
         /// <summary>
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'vocals', 'voice'} stems.<br/>
+        /// Only for {'voice', 'vocals'} stems.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dereverb_enabled")]
@@ -33,7 +39,14 @@ namespace LalalAI
         public global::LalalAI.EncoderFormat? EncoderFormat { get; set; }
 
         /// <summary>
-        /// Stem to extract. ['synthesizer', 'strings', 'wind'] are available only phoenix splitter. 'guitar' is available only andromeda splitter.<br/>
+        /// Stem to extract.<br/>
+        /// 'vocals' extracts vocals from music, typically songs. To extract speech from non-musical noise, use /split/voice_clean/.<br/>
+        /// Choose the stem that best matches your task: to extract guitars of any type, use 'guitar', not 'electric_guitar',<br/>
+        /// even if you expect only an electric guitar.<br/>
+        /// A broader stem can work better with a newer model: even if you only want electric guitar,<br/>
+        /// 'guitar' on andromeda gives better results than 'electric_guitar' on perseus,<br/>
+        /// as long as there is no acoustic guitar you need to separate from it.<br/>
+        /// 'guitar' is available only with andromeda. 'synthesizer', 'strings', and 'wind' are available only with phoenix.<br/>
         /// Example: vocals
         /// </summary>
         /// <example>vocals</example>
@@ -69,17 +82,30 @@ namespace LalalAI
         /// Initializes a new instance of the <see cref="StemSeparatorSplitterPresetsV1" /> class.
         /// </summary>
         /// <param name="stem">
-        /// Stem to extract. ['synthesizer', 'strings', 'wind'] are available only phoenix splitter. 'guitar' is available only andromeda splitter.<br/>
+        /// Stem to extract.<br/>
+        /// 'vocals' extracts vocals from music, typically songs. To extract speech from non-musical noise, use /split/voice_clean/.<br/>
+        /// Choose the stem that best matches your task: to extract guitars of any type, use 'guitar', not 'electric_guitar',<br/>
+        /// even if you expect only an electric guitar.<br/>
+        /// A broader stem can work better with a newer model: even if you only want electric guitar,<br/>
+        /// 'guitar' on andromeda gives better results than 'electric_guitar' on perseus,<br/>
+        /// as long as there is no acoustic guitar you need to separate from it.<br/>
+        /// 'guitar' is available only with andromeda. 'synthesizer', 'strings', and 'wind' are available only with phoenix.<br/>
         /// Example: vocals
         /// </param>
         /// <param name="splitter">
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
+        /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
+        /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
+        /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
+        /// on noisy vintage recordings. Test with your own audio.<br/>
+        /// lynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.<br/>
+        /// lyra is a separate model for the 'music' stem.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="dereverbEnabled">
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'vocals', 'voice'} stems.<br/>
+        /// Only for {'voice', 'vocals'} stems.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="encoderFormat">
