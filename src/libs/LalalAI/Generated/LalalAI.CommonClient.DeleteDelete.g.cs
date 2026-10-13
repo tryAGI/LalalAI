@@ -42,12 +42,11 @@ namespace LalalAI
             ref string content);
 
         /// <summary>
-        /// Delete source file and resulting tracks from storage.<br/>
-        ///     WARNING: All running tasks related to the source file will be cancelled. Do not call delete on source files with processing tasks.<br/>
-        ///     This only deletes the media files, not the database records.<br/>
-        ///     The files are removed from storage immediately, but download links will remain valid for one hour after deletion due to CDN caching.<br/>
-        ///     The /check/ endpoint will still return a valid check result for 24 hours, but the download links will lead to a 404 error after deletion.<br/>
-        ///
+        /// Delete source file and resulting tracks from storage<br/>
+        /// Deletes the source file and all its result files from our servers.<br/>
+        /// - Call it only when the tasks of this file are done: it cancels running tasks started with the same license key, and the others lose their file.<br/>
+        /// - Only the files are deleted, not the processing history.<br/>
+        /// - `/check/` keeps returning the task with its download links. Because of CDN caching the links can work for up to one hour after deletion, then they return 404.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -69,12 +68,11 @@ namespace LalalAI
             return __response.Body;
         }
         /// <summary>
-        /// Delete source file and resulting tracks from storage.<br/>
-        ///     WARNING: All running tasks related to the source file will be cancelled. Do not call delete on source files with processing tasks.<br/>
-        ///     This only deletes the media files, not the database records.<br/>
-        ///     The files are removed from storage immediately, but download links will remain valid for one hour after deletion due to CDN caching.<br/>
-        ///     The /check/ endpoint will still return a valid check result for 24 hours, but the download links will lead to a 404 error after deletion.<br/>
-        ///
+        /// Delete source file and resulting tracks from storage<br/>
+        /// Deletes the source file and all its result files from our servers.<br/>
+        /// - Call it only when the tasks of this file are done: it cancels running tasks started with the same license key, and the others lose their file.<br/>
+        /// - Only the files are deleted, not the processing history.<br/>
+        /// - `/check/` keeps returning the task with its download links. Because of CDN caching the links can work for up to one hour after deletion, then they return 404.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -553,12 +551,11 @@ namespace LalalAI
             }
         }
         /// <summary>
-        /// Delete source file and resulting tracks from storage.<br/>
-        ///     WARNING: All running tasks related to the source file will be cancelled. Do not call delete on source files with processing tasks.<br/>
-        ///     This only deletes the media files, not the database records.<br/>
-        ///     The files are removed from storage immediately, but download links will remain valid for one hour after deletion due to CDN caching.<br/>
-        ///     The /check/ endpoint will still return a valid check result for 24 hours, but the download links will lead to a 404 error after deletion.<br/>
-        ///
+        /// Delete source file and resulting tracks from storage<br/>
+        /// Deletes the source file and all its result files from our servers.<br/>
+        /// - Call it only when the tasks of this file are done: it cancels running tasks started with the same license key, and the others lose their file.<br/>
+        /// - Only the files are deleted, not the processing history.<br/>
+        /// - `/check/` keeps returning the task with its download links. Because of CDN caching the links can work for up to one hour after deletion, then they return 404.
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file.<br/>

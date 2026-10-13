@@ -43,13 +43,16 @@ namespace LalalAI
 
         /// <summary>
         /// Clean voice from background music for multiple files<br/>
-        ///     Batch version of /split/demuser/. Accepts a list of split parameters and returns results for each item.<br/>
-        ///     Each item is processed independently - if one fails, others will still be processed.<br/>
-        ///     Results are returned in the same order as input items.<br/>
-        ///     Each result contains either:<br/>
-        ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
-        ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///
+        /// Batch version of `/split/demuser/`: starts up to 100 tasks in one request.<br/>
+        /// Each item takes the same parameters as `/split/demuser/`.<br/>
+        /// The whole request is rejected if any item has invalid parameters.<br/>
+        /// Valid items are started independently: if one fails to start, the others still start.<br/>
+        /// `results` keeps the order of `items`, and each result is either of:<br/>
+        /// ```<br/>
+        /// {"status": "success", "task_id": "...", "source_id": "..."}<br/>
+        /// {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
+        /// ```<br/>
+        /// Poll the `task_id` values with `/check/`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -72,13 +75,16 @@ namespace LalalAI
         }
         /// <summary>
         /// Clean voice from background music for multiple files<br/>
-        ///     Batch version of /split/demuser/. Accepts a list of split parameters and returns results for each item.<br/>
-        ///     Each item is processed independently - if one fails, others will still be processed.<br/>
-        ///     Results are returned in the same order as input items.<br/>
-        ///     Each result contains either:<br/>
-        ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
-        ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///
+        /// Batch version of `/split/demuser/`: starts up to 100 tasks in one request.<br/>
+        /// Each item takes the same parameters as `/split/demuser/`.<br/>
+        /// The whole request is rejected if any item has invalid parameters.<br/>
+        /// Valid items are started independently: if one fails to start, the others still start.<br/>
+        /// `results` keeps the order of `items`, and each result is either of:<br/>
+        /// ```<br/>
+        /// {"status": "success", "task_id": "...", "source_id": "..."}<br/>
+        /// {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
+        /// ```<br/>
+        /// Poll the `task_id` values with `/check/`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -558,13 +564,16 @@ namespace LalalAI
         }
         /// <summary>
         /// Clean voice from background music for multiple files<br/>
-        ///     Batch version of /split/demuser/. Accepts a list of split parameters and returns results for each item.<br/>
-        ///     Each item is processed independently - if one fails, others will still be processed.<br/>
-        ///     Results are returned in the same order as input items.<br/>
-        ///     Each result contains either:<br/>
-        ///     - success: {"status": "success", "task_id": "...", "source_id": "..."}<br/>
-        ///     - error: {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
-        ///
+        /// Batch version of `/split/demuser/`: starts up to 100 tasks in one request.<br/>
+        /// Each item takes the same parameters as `/split/demuser/`.<br/>
+        /// The whole request is rejected if any item has invalid parameters.<br/>
+        /// Valid items are started independently: if one fails to start, the others still start.<br/>
+        /// `results` keeps the order of `items`, and each result is either of:<br/>
+        /// ```<br/>
+        /// {"status": "success", "task_id": "...", "source_id": "..."}<br/>
+        /// {"status": "error", "error": "...", "code": "...", "source_id": "..."}<br/>
+        /// ```<br/>
+        /// Poll the `task_id` values with `/check/`.
         /// </summary>
         /// <param name="items">
         /// List of split parameters to process.

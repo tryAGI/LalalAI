@@ -43,10 +43,13 @@ namespace LalalAI
 
         /// <summary>
         /// Changes voice in the audio file using voice pack<br/>
-        ///     For 'voice_pack_id' parameter use 'pack_id' from /voice_packs/list/ endpoint or one of legal packs: ['ALEX_KAYE', 'STASIA_FAYE', 'NICOLAAS_HAAS', 'NIK_ZEL', 'OLIA_CHEBO', 'YVAR_DE_GROOT', 'VETRANA']<br/>
-        ///     Result of /check/ includes 1 track with label 'converted_mix'.<br/>
-        ///     {"label":"converted_mix", "type":"back", "url":"..."}<br/>
-        ///
+        /// Replaces the voice in the file with the voice from a voice pack.<br/>
+        /// For `voice_pack_id`, use the `pack_id` of your own pack from `/voice_packs/list/`, or one of the ready-made packs: `ALEX_KAYE`, `STASIA_FAYE`, `NICOLAAS_HAAS`, `NIK_ZEL`, `OLIA_CHEBO`, `YVAR_DE_GROOT`, `VETRANA`.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 1 track:<br/>
+        /// ```<br/>
+        /// {"type": "back", "label": "converted_mix", "url": "..."}<br/>
+        /// ```
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -69,10 +72,13 @@ namespace LalalAI
         }
         /// <summary>
         /// Changes voice in the audio file using voice pack<br/>
-        ///     For 'voice_pack_id' parameter use 'pack_id' from /voice_packs/list/ endpoint or one of legal packs: ['ALEX_KAYE', 'STASIA_FAYE', 'NICOLAAS_HAAS', 'NIK_ZEL', 'OLIA_CHEBO', 'YVAR_DE_GROOT', 'VETRANA']<br/>
-        ///     Result of /check/ includes 1 track with label 'converted_mix'.<br/>
-        ///     {"label":"converted_mix", "type":"back", "url":"..."}<br/>
-        ///
+        /// Replaces the voice in the file with the voice from a voice pack.<br/>
+        /// For `voice_pack_id`, use the `pack_id` of your own pack from `/voice_packs/list/`, or one of the ready-made packs: `ALEX_KAYE`, `STASIA_FAYE`, `NICOLAAS_HAAS`, `NIK_ZEL`, `OLIA_CHEBO`, `YVAR_DE_GROOT`, `VETRANA`.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 1 track:<br/>
+        /// ```<br/>
+        /// {"type": "back", "label": "converted_mix", "url": "..."}<br/>
+        /// ```
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -552,10 +558,13 @@ namespace LalalAI
         }
         /// <summary>
         /// Changes voice in the audio file using voice pack<br/>
-        ///     For 'voice_pack_id' parameter use 'pack_id' from /voice_packs/list/ endpoint or one of legal packs: ['ALEX_KAYE', 'STASIA_FAYE', 'NICOLAAS_HAAS', 'NIK_ZEL', 'OLIA_CHEBO', 'YVAR_DE_GROOT', 'VETRANA']<br/>
-        ///     Result of /check/ includes 1 track with label 'converted_mix'.<br/>
-        ///     {"label":"converted_mix", "type":"back", "url":"..."}<br/>
-        ///
+        /// Replaces the voice in the file with the voice from a voice pack.<br/>
+        /// For `voice_pack_id`, use the `pack_id` of your own pack from `/voice_packs/list/`, or one of the ready-made packs: `ALEX_KAYE`, `STASIA_FAYE`, `NICOLAAS_HAAS`, `NIK_ZEL`, `OLIA_CHEBO`, `YVAR_DE_GROOT`, `VETRANA`.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 1 track:<br/>
+        /// ```<br/>
+        /// {"type": "back", "label": "converted_mix", "url": "..."}<br/>
+        /// ```
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>

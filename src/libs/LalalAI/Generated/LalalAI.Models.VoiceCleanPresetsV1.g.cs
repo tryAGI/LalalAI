@@ -10,6 +10,8 @@ namespace LalalAI
     {
         /// <summary>
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
+        /// Keep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.<br/>
+        /// 'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.<br/>
         /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
         /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
         /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
@@ -25,7 +27,7 @@ namespace LalalAI
         /// <summary>
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'vocals', 'voice'} stems.<br/>
+        /// Only for {'voice', 'vocals'} stems.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dereverb_enabled")]
@@ -68,6 +70,8 @@ namespace LalalAI
         /// </summary>
         /// <param name="splitter">
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
+        /// Keep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.<br/>
+        /// 'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.<br/>
         /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
         /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
         /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
@@ -79,7 +83,7 @@ namespace LalalAI
         /// <param name="dereverbEnabled">
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'vocals', 'voice'} stems.<br/>
+        /// Only for {'voice', 'vocals'} stems.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="encoderFormat">

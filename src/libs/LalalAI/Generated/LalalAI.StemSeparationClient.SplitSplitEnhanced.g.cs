@@ -43,17 +43,37 @@ namespace LalalAI
 
         /// <summary>
         /// Split a file into stems using the stem separator presets<br/>
-        ///     Result of /check/ includes 2 tracks:<br/>
-        ///     - stem:{"type":"stem", "label":"&lt;stem_name&gt;", "url":"..."}<br/>
-        ///     - without stem:{"type":"back", "label":"no_&lt;stem_name&gt;", "url":"..."}<br/>
-        ///     LEAD_BACK VOCALS:<br/>
-        ///     For 'vocals' stem you can use parameter multivocal="lead_back" and receive both lead and backing vocals as separate stems.<br/>
-        ///     Result of /check/ includes 4 tracks. Backing vocals track is optional and could be suppressed if not found in the audio:<br/>
-        ///     lead vocals:{"type":"stem", "label":"vocals@0", "url":"..."}<br/>
-        ///     backing vocals:{"type":"stem", "label":"vocals@1", "url":"..."}<br/>
-        ///     instrumental:{"type":"back", "label":"no_vocals", "url":"..."}<br/>
-        ///     instrumental + backing vocals:{"type":"back", "label":"mix_no_lead", "url":"..."}<br/>
-        ///
+        /// Extracts one stem from a song. You get two files: the stem and the rest of the song without it.<br/>
+        /// For speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).<br/>
+        /// **Stems**<br/>
+        /// | Stem | What it extracts | `auto` currently picks |<br/>
+        /// |---|---|---|<br/>
+        /// | `vocals` | Singing: lead and backing vocals | andromeda |<br/>
+        /// | `drum` | Drums | andromeda |<br/>
+        /// | `bass` | Bass | andromeda |<br/>
+        /// | `piano` | Piano | andromeda |<br/>
+        /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
+        /// | `electric_guitar` | Electric guitar only | perseus |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | perseus |<br/>
+        /// | `synthesizer` | Synthesizers | phoenix |<br/>
+        /// | `strings` | String instruments | phoenix |<br/>
+        /// | `wind` | Wind instruments | phoenix |<br/>
+        /// To extract a guitar, use `guitar` even if you expect only an electric one: it runs on a newer model.<br/>
+        /// Use `electric_guitar` or `acoustic_guitar` only to separate the two kinds of guitar from each other.<br/>
+        /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 2 tracks:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "&lt;stem&gt;", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_&lt;stem&gt;", "url": "..."}<br/>
+        /// ```<br/>
+        /// **Lead and backing vocals**<br/>
+        /// For the `vocals` stem, set `multivocal: "lead_back"` to get lead and backing vocals as separate tracks.<br/>
+        /// `/check/` then returns 4 tracks. The backing vocals track is left out if the song has none.<br/>
+        /// - `vocals@0` (`stem`): lead vocals.<br/>
+        /// - `vocals@1` (`stem`): backing vocals.<br/>
+        /// - `no_vocals` (`back`): instrumental.<br/>
+        /// - `mix_no_lead` (`back`): instrumental with backing vocals.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -76,17 +96,37 @@ namespace LalalAI
         }
         /// <summary>
         /// Split a file into stems using the stem separator presets<br/>
-        ///     Result of /check/ includes 2 tracks:<br/>
-        ///     - stem:{"type":"stem", "label":"&lt;stem_name&gt;", "url":"..."}<br/>
-        ///     - without stem:{"type":"back", "label":"no_&lt;stem_name&gt;", "url":"..."}<br/>
-        ///     LEAD_BACK VOCALS:<br/>
-        ///     For 'vocals' stem you can use parameter multivocal="lead_back" and receive both lead and backing vocals as separate stems.<br/>
-        ///     Result of /check/ includes 4 tracks. Backing vocals track is optional and could be suppressed if not found in the audio:<br/>
-        ///     lead vocals:{"type":"stem", "label":"vocals@0", "url":"..."}<br/>
-        ///     backing vocals:{"type":"stem", "label":"vocals@1", "url":"..."}<br/>
-        ///     instrumental:{"type":"back", "label":"no_vocals", "url":"..."}<br/>
-        ///     instrumental + backing vocals:{"type":"back", "label":"mix_no_lead", "url":"..."}<br/>
-        ///
+        /// Extracts one stem from a song. You get two files: the stem and the rest of the song without it.<br/>
+        /// For speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).<br/>
+        /// **Stems**<br/>
+        /// | Stem | What it extracts | `auto` currently picks |<br/>
+        /// |---|---|---|<br/>
+        /// | `vocals` | Singing: lead and backing vocals | andromeda |<br/>
+        /// | `drum` | Drums | andromeda |<br/>
+        /// | `bass` | Bass | andromeda |<br/>
+        /// | `piano` | Piano | andromeda |<br/>
+        /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
+        /// | `electric_guitar` | Electric guitar only | perseus |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | perseus |<br/>
+        /// | `synthesizer` | Synthesizers | phoenix |<br/>
+        /// | `strings` | String instruments | phoenix |<br/>
+        /// | `wind` | Wind instruments | phoenix |<br/>
+        /// To extract a guitar, use `guitar` even if you expect only an electric one: it runs on a newer model.<br/>
+        /// Use `electric_guitar` or `acoustic_guitar` only to separate the two kinds of guitar from each other.<br/>
+        /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 2 tracks:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "&lt;stem&gt;", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_&lt;stem&gt;", "url": "..."}<br/>
+        /// ```<br/>
+        /// **Lead and backing vocals**<br/>
+        /// For the `vocals` stem, set `multivocal: "lead_back"` to get lead and backing vocals as separate tracks.<br/>
+        /// `/check/` then returns 4 tracks. The backing vocals track is left out if the song has none.<br/>
+        /// - `vocals@0` (`stem`): lead vocals.<br/>
+        /// - `vocals@1` (`stem`): backing vocals.<br/>
+        /// - `no_vocals` (`back`): instrumental.<br/>
+        /// - `mix_no_lead` (`back`): instrumental with backing vocals.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -529,17 +569,37 @@ namespace LalalAI
         }
         /// <summary>
         /// Split a file into stems using the stem separator presets<br/>
-        ///     Result of /check/ includes 2 tracks:<br/>
-        ///     - stem:{"type":"stem", "label":"&lt;stem_name&gt;", "url":"..."}<br/>
-        ///     - without stem:{"type":"back", "label":"no_&lt;stem_name&gt;", "url":"..."}<br/>
-        ///     LEAD_BACK VOCALS:<br/>
-        ///     For 'vocals' stem you can use parameter multivocal="lead_back" and receive both lead and backing vocals as separate stems.<br/>
-        ///     Result of /check/ includes 4 tracks. Backing vocals track is optional and could be suppressed if not found in the audio:<br/>
-        ///     lead vocals:{"type":"stem", "label":"vocals@0", "url":"..."}<br/>
-        ///     backing vocals:{"type":"stem", "label":"vocals@1", "url":"..."}<br/>
-        ///     instrumental:{"type":"back", "label":"no_vocals", "url":"..."}<br/>
-        ///     instrumental + backing vocals:{"type":"back", "label":"mix_no_lead", "url":"..."}<br/>
-        ///
+        /// Extracts one stem from a song. You get two files: the stem and the rest of the song without it.<br/>
+        /// For speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).<br/>
+        /// **Stems**<br/>
+        /// | Stem | What it extracts | `auto` currently picks |<br/>
+        /// |---|---|---|<br/>
+        /// | `vocals` | Singing: lead and backing vocals | andromeda |<br/>
+        /// | `drum` | Drums | andromeda |<br/>
+        /// | `bass` | Bass | andromeda |<br/>
+        /// | `piano` | Piano | andromeda |<br/>
+        /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
+        /// | `electric_guitar` | Electric guitar only | perseus |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | perseus |<br/>
+        /// | `synthesizer` | Synthesizers | phoenix |<br/>
+        /// | `strings` | String instruments | phoenix |<br/>
+        /// | `wind` | Wind instruments | phoenix |<br/>
+        /// To extract a guitar, use `guitar` even if you expect only an electric one: it runs on a newer model.<br/>
+        /// Use `electric_guitar` or `acoustic_guitar` only to separate the two kinds of guitar from each other.<br/>
+        /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 2 tracks:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "&lt;stem&gt;", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_&lt;stem&gt;", "url": "..."}<br/>
+        /// ```<br/>
+        /// **Lead and backing vocals**<br/>
+        /// For the `vocals` stem, set `multivocal: "lead_back"` to get lead and backing vocals as separate tracks.<br/>
+        /// `/check/` then returns 4 tracks. The backing vocals track is left out if the song has none.<br/>
+        /// - `vocals@0` (`stem`): lead vocals.<br/>
+        /// - `vocals@1` (`stem`): backing vocals.<br/>
+        /// - `no_vocals` (`back`): instrumental.<br/>
+        /// - `mix_no_lead` (`back`): instrumental with backing vocals.
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>

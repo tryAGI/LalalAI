@@ -4,6 +4,11 @@
 namespace LalalAI
 {
     /// <summary>
+    /// Starts up to 100 tasks in one request, for example the same stem from 100 songs.<br/>
+    /// - Choose the endpoint, stem and splitter as for a single file: see [Stem Separation](#tag/stem-separation).<br/>
+    /// - Each started item becomes an ordinary task with its own `task_id` and is charged like a single start. There is no batch ID and no archive.<br/>
+    /// - Poll the returned `task_id` values with `/check/`.<br/>
+    /// - There is no batch version of `/split/multistem/`.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
