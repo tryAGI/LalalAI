@@ -3,13 +3,13 @@
   "info": {
     "title": "LALAL.AI API",
     "version": "1.1.0",
-    "description": "\nThis is the LALAL.AI API.\n\nTo authenticate, provide your license key in the `X-License-Key` header of each request.\n\nTypical usage example:\n1) Upload a file using the '/upload/' endpoint to get a 'source_id'.\n2) Start a splitting task using the '/split/' endpoint with the obtained 'source_id' and desired presets.\n3) Check the status of your task using the '/check/' endpoint with the returned 'task_id'.\n4) Once the task is complete, download the processed files using urls from the '/check/' response.\n5) (If needed), you can delete the source file and all its resulting tracks from our servers, using the '/delete/' endpoint with the 'source_id'.\n\nNotes:\n\nYou can use the same source_id for concurrent splitting tasks.\n\nYou can check multiple task IDs in a single '/check/' request by providing a list of 'task_ids'.\n\n"
+    "description": "\nThe LALAL.AI API splits audio into stems, such as vocals, instruments, or a voice and its background noise, and changes voices.\n\n**Authentication**: send your license key in the `X-License-Key` header of every request.\n\n**Quick start**\n\n1. Upload a file with `/upload/`. The `id` from the response is your `source_id`.\n2. Start a task with this `source_id` and get a `task_id`.\n   Which endpoint fits your audio is explained in [Stem Separation](#tag/stem-separation): for a song it is `/split/stem_separator/`, for speech with noise `/split/voice_clean/`.\n3. Poll `/check/` with the `task_id` until the task is done.\n4. Download the result files from the URLs in the `/check/` response.\n5. Optionally, delete the file and its results from our servers with `/delete/`.\n"
   },
   "paths": {
     "/api/v1/upload/": {
       "post": {
         "operationId": "upload_upload",
-        "summary": "Upload a file to the server.",
+        "summary": "Upload a file to the server",
         "parameters": [
           {
             "name": "Content-Disposition",
@@ -82,7 +82,7 @@
             }
           }
         },
-        "description": "\n    The uploaded file in other endpoints is called a \"source file\".\n    You can use the source file ID from the response to create split tasks.\n    The file will be deleted when the expiration time from the response is reached.\n    Upload limit is 10GB per request.\n    ",
+        "description": "\nUploads a file, up to 10 GB. Other endpoints call it the source file.\n\nUse the `id` from the response as `source_id` to start tasks. One file can start several tasks.\nThe file is deleted at the `expires` time from the response.\n",
         "tags": [
           "Common"
         ],
@@ -171,7 +171,7 @@
             }
           }
         },
-        "description": "\n    This endpoint allows you to check the status of a specific task by its ID.\n    Checking is only possible within 24h after task creation, otherwise an error will be returned.\n    The current rate limit for this endpoint is 30 requests per minute. This limit may be increased in the future.\n    ",
+        "description": "\nReturns the status of your tasks: in progress, done, failed or cancelled. Done tasks include the URLs of the result files.\n\n- Pass all your `task_ids` in one request, up to 200: the limit is 30 requests per minute.\n- A task stays here for 24 hours after it finishes. After that `/check/` returns an error for it.\n",
         "tags": [
           "Common"
         ],
@@ -325,7 +325,7 @@
     "/api/v1/delete/": {
       "post": {
         "operationId": "delete_delete",
-        "summary": "Delete source file and resulting tracks from storage.",
+        "summary": "Delete source file and resulting tracks from storage",
         "parameters": [],
         "responses": {
           "200": {
@@ -377,7 +377,7 @@
             }
           }
         },
-        "description": "\n    WARNING: All running tasks related to the source file will be cancelled. Do not call delete on source files with processing tasks.\n    This only deletes the media files, not the database records.\n    The files are removed from storage immediately, but download links will remain valid for one hour after deletion due to CDN caching.\n    The /check/ endpoint will still return a valid check result for 24 hours, but the download links will lead to a 404 error after deletion.\n    ",
+        "description": "\nDeletes the source file and all its result files from our servers.\n\n- Call it only when the tasks of this file are done: it cancels running tasks started with the same license key, and the others lose their file.\n- Only the files are deleted, not the processing history.\n- `/check/` keeps returning the task with its download links. Because of CDN caching the links can work for up to one hour after deletion, then they return 404.\n",
         "tags": [
           "Common"
         ],
@@ -401,7 +401,7 @@
     "/api/v1/limits/minutes_left/": {
       "post": {
         "operationId": "limits_get_minutes_left",
-        "summary": "Get number of processing minutes available to consume.",
+        "summary": "Get number of processing minutes available to consume",
         "parameters": [],
         "responses": {
           "200": {
@@ -508,7 +508,7 @@
             }
           }
         },
-        "description": "\n    Result of /check/ includes 2 tracks:\n    - stem:{\"type\":\"stem\", \"label\":\"<stem_name>\", \"url\":\"...\"}\n    - without stem:{\"type\":\"back\", \"label\":\"no_<stem_name>\", \"url\":\"...\"}\n\n    LEAD_BACK VOCALS:\n    For 'vocals' stem you can use parameter multivocal=\"lead_back\" and receive both lead and backing vocals as separate stems.\n    Result of /check/ includes 4 tracks. Backing vocals track is optional and could be suppressed if not found in the audio:\n    lead vocals:{\"type\":\"stem\", \"label\":\"vocals@0\", \"url\":\"...\"}\n    backing vocals:{\"type\":\"stem\", \"label\":\"vocals@1\", \"url\":\"...\"}\n    instrumental:{\"type\":\"back\", \"label\":\"no_vocals\", \"url\":\"...\"}\n    instrumental + backing vocals:{\"type\":\"back\", \"label\":\"mix_no_lead\", \"url\":\"...\"}\n    ",
+        "description": "\nExtracts one stem from a song. You get two files: the stem and the rest of the song without it.\n\nFor speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).\n\n**Stems**\n\n| Stem | What it extracts | `auto` currently picks |\n|---|---|---|\n| `vocals` | Singing: lead and backing vocals | andromeda |\n| `drum` | Drums | andromeda |\n| `bass` | Bass | andromeda |\n| `piano` | Piano | andromeda |\n| `guitar` | Any guitar, electric and acoustic together | andromeda |\n| `electric_guitar` | Electric guitar only | perseus |\n| `acoustic_guitar` | Acoustic guitar only | perseus |\n| `synthesizer` | Synthesizers | phoenix |\n| `strings` | String instruments | phoenix |\n| `wind` | Wind instruments | phoenix |\n\nTo extract a guitar, use `guitar` even if you expect only an electric one: it runs on a newer model.\nUse `electric_guitar` or `acoustic_guitar` only to separate the two kinds of guitar from each other.\n\nLeave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).\n\n**Result**\n\n`/check/` returns 2 tracks:\n\n```\n{\"type\": \"stem\", \"label\": \"<stem>\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_<stem>\", \"url\": \"...\"}\n```\n\n**Lead and backing vocals**\n\nFor the `vocals` stem, set `multivocal: \"lead_back\"` to get lead and backing vocals as separate tracks.\n`/check/` then returns 4 tracks. The backing vocals track is left out if the song has none.\n\n- `vocals@0` (`stem`): lead vocals.\n- `vocals@1` (`stem`): backing vocals.\n- `no_vocals` (`back`): instrumental.\n- `mix_no_lead` (`back`): instrumental with backing vocals.\n",
         "tags": [
           "Stem Separation"
         ],
@@ -574,7 +574,7 @@
             }
           }
         },
-        "description": "\n    Typical usage case - is voice with background music.\n    Demuser will separate voice (stem) and music (back).\n    Result of /check/ includes 2 tracks:\n    - stem:{\"type\":\"stem\", \"label\":\"music\", \"url\":\"...\"}\n    - back:{\"type\":\"back\", \"label\":\"no_music\", \"url\":\"...\"}\n    ",
+        "description": "\nSeparates a voice from background music, for example in a video or a podcast.\nYou get two files: the music, and the rest of the recording without it, usually the voice.\n\nFor speech with non-musical noise use `/split/voice_clean/`. For vocals in a song use `/split/stem_separator/`.\n\nThe only stem is `music`. With `splitter: auto` the request currently uses lyra, the model made for this stem.\n\n**Result**\n\n`/check/` returns 2 tracks:\n\n```\n{\"type\": \"stem\", \"label\": \"music\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_music\", \"url\": \"...\"}    the voice\n```\n",
         "tags": [
           "Stem Separation"
         ],
@@ -650,7 +650,7 @@
             }
           }
         },
-        "description": "\n    Typical usage case - is voice with background noise.\n    Voice clean will separate clean voice (stem) and noise (back).\n    Use it for speech with non-musical background noise, such as crowds, traffic, or office noise.\n    To extract vocals from music, use /split/stem_separator/ with stem 'vocals'.\n    Result of /check/ includes 2 tracks:\n    - stem:{\"type\":\"stem\", \"label\":\"voice\", \"url\":\"...\"}\n    - back:{\"type\":\"back\", \"label\":\"no_voice\", \"url\":\"...\"}\n    ",
+        "description": "\nRemoves background noise from speech: crowd, traffic, office and other non-musical noise.\nYou get two files: the clean voice and the noise.\n\nFor singing in a song use `/split/stem_separator/` with the `vocals` stem. For speech over music use `/split/demuser/`.\n\nThe only stem is `voice`. With `splitter: auto` the request currently uses lynx, the model made for this stem.\n\n**noise_cancelling_level** sets how much to boost a quiet voice after the noise is removed:\n\n- `0` Mild (default): leaves the volume as is.\n- `1` Normal: moderate boost.\n- `2` Aggressive: noticeably stronger boost.\n\n**Result**\n\n`/check/` returns 2 tracks:\n\n```\n{\"type\": \"stem\", \"label\": \"voice\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_voice\", \"url\": \"...\"}    the noise\n```\n",
         "tags": [
           "Stem Separation"
         ],
@@ -726,7 +726,7 @@
             }
           }
         },
-        "description": "\n    WARNING: The stems are internally extracted one by one, so the processing time is proportional to the number of stems selected.\n\n    You will be charged an equal amount of minutes for each stem.\n    For example, if you have an audio file with a duration of 1 minute,\n    with stem_list=[\"vocals\", \"drum\"], you will be charged 2 minutes (1 minute for \"vocals\", 1 minute for \"drum\").\n    At the /check/ endpoint you will receive <number_of_stems> tracks with 1 additional track which is the source without all selected stems.\n    Example response tracks for stem_list=[\"vocals\", \"drum\"]:\n    - stem:{\"type\":\"stem\", \"label\":\"vocals\", \"url\":\"...\"}\n    - stem:{\"type\":\"stem\", \"label\":\"drum\", \"url\":\"...\"}\n    - rest of source:{\"type\":\"back\", \"label\":\"no_multistem\", \"url\":\"...\"}\n    ",
+        "description": "\nExtracts several stems from a song in one request, for example vocals, drums and bass.\n\nStems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.\n\nWith `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.\n`/split/stem_separator/` currently runs `vocals`, `drum`, `bass` and `piano` on the newer andromeda:\nif quality matters more than the number of requests, start it once per stem.\n\n**Time and price**\n\nStems are extracted one by one, so processing time grows with the number of stems.\nEach stem is charged separately: a 1-minute file with `stem_list: [\"vocals\", \"drum\"]` costs 2 minutes.\n\n**Result**\n\n`/check/` returns one track per stem and one track with the rest of the song. For `stem_list: [\"vocals\", \"drum\"]`:\n\n```\n{\"type\": \"stem\", \"label\": \"vocals\", \"url\": \"...\"}\n{\"type\": \"stem\", \"label\": \"drum\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_multistem\", \"url\": \"...\"}\n```\n",
         "tags": [
           "Stem Separation"
         ],
@@ -794,7 +794,7 @@
             }
           }
         },
-        "description": "\n    Batch version of /split/stem_separator/. Accepts a list of split parameters and returns results for each item.\n    Each item is processed independently - if one fails, others will still be processed.\n    Results are returned in the same order as input items.\n\n    Each result contains either:\n    - success: {\"status\": \"success\", \"task_id\": \"...\", \"source_id\": \"...\"}\n    - error: {\"status\": \"error\", \"error\": \"...\", \"code\": \"...\", \"source_id\": \"...\"}\n    ",
+        "description": "\nBatch version of `/split/stem_separator/`: starts up to 100 tasks in one request.\nEach item takes the same parameters as `/split/stem_separator/`.\n\nThe whole request is rejected if any item has invalid parameters.\nValid items are started independently: if one fails to start, the others still start.\n`results` keeps the order of `items`, and each result is either of:\n\n```\n{\"status\": \"success\", \"task_id\": \"...\", \"source_id\": \"...\"}\n{\"status\": \"error\", \"error\": \"...\", \"code\": \"...\", \"source_id\": \"...\"}\n```\n\nPoll the `task_id` values with `/check/`.\n",
         "tags": [
           "Batch Stem Separation"
         ],
@@ -862,7 +862,7 @@
             }
           }
         },
-        "description": "\n    Batch version of /split/demuser/. Accepts a list of split parameters and returns results for each item.\n    Each item is processed independently - if one fails, others will still be processed.\n    Results are returned in the same order as input items.\n\n    Each result contains either:\n    - success: {\"status\": \"success\", \"task_id\": \"...\", \"source_id\": \"...\"}\n    - error: {\"status\": \"error\", \"error\": \"...\", \"code\": \"...\", \"source_id\": \"...\"}\n    ",
+        "description": "\nBatch version of `/split/demuser/`: starts up to 100 tasks in one request.\nEach item takes the same parameters as `/split/demuser/`.\n\nThe whole request is rejected if any item has invalid parameters.\nValid items are started independently: if one fails to start, the others still start.\n`results` keeps the order of `items`, and each result is either of:\n\n```\n{\"status\": \"success\", \"task_id\": \"...\", \"source_id\": \"...\"}\n{\"status\": \"error\", \"error\": \"...\", \"code\": \"...\", \"source_id\": \"...\"}\n```\n\nPoll the `task_id` values with `/check/`.\n",
         "tags": [
           "Batch Stem Separation"
         ],
@@ -930,7 +930,7 @@
             }
           }
         },
-        "description": "\n    Batch version of /split/voice_clean/. Accepts a list of split parameters and returns results for each item.\n    Each item is processed independently - if one fails, others will still be processed.\n    Results are returned in the same order as input items.\n\n    Each result contains either:\n    - success: {\"status\": \"success\", \"task_id\": \"...\", \"source_id\": \"...\"}\n    - error: {\"status\": \"error\", \"error\": \"...\", \"code\": \"...\", \"source_id\": \"...\"}\n    ",
+        "description": "\nBatch version of `/split/voice_clean/`: starts up to 100 tasks in one request.\nEach item takes the same parameters as `/split/voice_clean/`.\n\nThe whole request is rejected if any item has invalid parameters.\nValid items are started independently: if one fails to start, the others still start.\n`results` keeps the order of `items`, and each result is either of:\n\n```\n{\"status\": \"success\", \"task_id\": \"...\", \"source_id\": \"...\"}\n{\"status\": \"error\", \"error\": \"...\", \"code\": \"...\", \"source_id\": \"...\"}\n```\n\nPoll the `task_id` values with `/check/`.\n",
         "tags": [
           "Batch Stem Separation"
         ],
@@ -1006,7 +1006,7 @@
             }
           }
         },
-        "description": "\n    For 'voice_pack_id' parameter use 'pack_id' from /voice_packs/list/ endpoint or one of legal packs: ['ALEX_KAYE', 'STASIA_FAYE', 'NICOLAAS_HAAS', 'NIK_ZEL', 'OLIA_CHEBO', 'YVAR_DE_GROOT', 'VETRANA']\n\n    Result of /check/ includes 1 track with label 'converted_mix'.\n    {\"label\":\"converted_mix\", \"type\":\"back\", \"url\":\"...\"}\n    ",
+        "description": "\nReplaces the voice in the file with the voice from a voice pack.\n\nFor `voice_pack_id`, use the `pack_id` of your own pack from `/voice_packs/list/`, or one of the ready-made packs: `ALEX_KAYE`, `STASIA_FAYE`, `NICOLAAS_HAAS`, `NIK_ZEL`, `OLIA_CHEBO`, `YVAR_DE_GROOT`, `VETRANA`.\n\n**Result**\n\n`/check/` returns 1 track:\n\n```\n{\"type\": \"back\", \"label\": \"converted_mix\", \"url\": \"...\"}\n```\n",
         "tags": [
           "Voice Change"
         ],
@@ -1719,11 +1719,11 @@
               }
             ],
             "default": "auto",
-            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\nKeep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.\n'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1815,11 +1815,11 @@
               }
             ],
             "default": "auto",
-            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\nKeep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.\n'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1993,11 +1993,11 @@
               }
             ],
             "default": "auto",
-            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\nKeep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.\n'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -2173,11 +2173,11 @@
               }
             ],
             "default": "auto",
-            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
+            "description": "\nSplitter model to use. 'auto' selects the latest available model for the selected stems.\nKeep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.\n'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.\n\nMain model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).\nNewer models give better separation quality: for vocals, andromeda is better than perseus.\nOlder models sometimes work better on certain recordings: for example, orion can give better results\non noisy vintage recordings. Test with your own audio.\n\nlynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.\nlyra is a separate model for the 'music' stem.\n"
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -2789,6 +2789,24 @@
   "servers": [
     {
       "url": "https://www.lalal.ai"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Common",
+      "description": "\nEndpoints every task uses: upload a file, follow its tasks, get the results, clean up.\n\n- One `source_id` from `/upload/` can start several tasks, for example vocals and drums from the same song.\n- Poll all your tasks with one `/check/` request: it takes up to 200 `task_ids` and allows 30 requests per minute.\n- A task stays in `/check/` for 24 hours after it finishes.\n- `/cancel/all/` and `/delete/` cancel only the tasks started with the same license key as the request.\n"
+    },
+    {
+      "name": "Stem Separation",
+      "description": "\nSplits audio into parts, called stems: vocals, drums, bass, a voice and its background noise, and so on.\nEvery request sets two things: what to extract — `stem`, or `stem_list` in `/split/multistem/` — and `splitter`, which model extracts it.\n\n**1. Pick the endpoint by what is in your audio**\n\n| Your audio | Endpoint |\n|---|---|\n| A song: extract the vocals or one instrument | `/split/stem_separator/` |\n| A song: extract several instruments in one request | `/split/multistem/` |\n| Speech with background noise: crowd, traffic, office | `/split/voice_clean/` |\n| Speech with background music | `/split/demuser/` |\n\nThe `vocals` stem of `/split/stem_separator/` and `/split/voice_clean/` both extract a human voice, but from different audio.\n`vocals` is made for singing in music, usually songs. `/split/voice_clean/` is made for speech among non-musical noise.\nDo not send speech recordings to `vocals`.\n\n**2. Pick the stem that matches your task most precisely**\n\nTo extract a guitar of any kind, use `guitar`, not `electric_guitar`, even if you expect only an electric guitar.\nThe stems of each endpoint are listed in its description.\n\n**3. Leave `splitter` as `auto`**\n\n`auto` picks the newest model available for the stem, and newer models separate better: for vocals, andromeda is better than perseus.\nWe release new models regularly. With `auto` your integration gets each new model the day it is released, with no change on your side.\nA splitter set by name stays on that model until you update your code, and your results fall behind.\n\nSend `\"splitter\": \"auto\"` explicitly or omit the field: the API accepts `auto`, though the `SplitterType` enum in the OpenAPI schema does not list it.\n\nModels from oldest to newest: phoenix (2022) → orion (2023) → perseus (2024) → andromeda (2025).\nlynx and lyra are not in this series: they are separate models for the `voice` and `music` stems.\n\nNew models do not come out for every stem at once.\nSo a broader stem on a newer model can beat a narrower stem on an older one:\n`guitar` on andromeda works better than `electric_guitar` on perseus, unless the song also has an acoustic guitar you want to keep apart.\n\n**4. Test on your own audio**\n\nOn some material an older model works better, for example on noisy vintage recordings. It is rare, but it happens.\nIf the result is not good enough, try another `splitter` on a few of your files.\n"
+    },
+    {
+      "name": "Batch Stem Separation",
+      "description": "\nStarts up to 100 tasks in one request, for example the same stem from 100 songs.\n\n- Choose the endpoint, stem and splitter as for a single file: see [Stem Separation](#tag/stem-separation).\n- Each started item becomes an ordinary task with its own `task_id` and is charged like a single start. There is no batch ID and no archive.\n- Poll the returned `task_id` values with `/check/`.\n- There is no batch version of `/split/multistem/`.\n"
+    },
+    {
+      "name": "Voice Change",
+      "description": "\nReplaces the voice in a recording with another voice from a voice pack.\n\n1. Upload the file with `/upload/`.\n2. Pick a voice pack: one of the ready-made packs listed in `/change_voice/`, or your own pack from `/voice_packs/list/`.\n3. Start `/change_voice/` and poll `/check/` for the result.\n"
     }
   ]
 }

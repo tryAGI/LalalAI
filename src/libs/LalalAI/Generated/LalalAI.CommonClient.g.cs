@@ -4,6 +4,11 @@
 namespace LalalAI
 {
     /// <summary>
+    /// Endpoints every task uses: upload a file, follow its tasks, get the results, clean up.<br/>
+    /// - One `source_id` from `/upload/` can start several tasks, for example vocals and drums from the same song.<br/>
+    /// - Poll all your tasks with one `/check/` request: it takes up to 200 `task_ids` and allows 30 requests per minute.<br/>
+    /// - A task stays in `/check/` for 24 hours after it finishes.<br/>
+    /// - `/cancel/all/` and `/delete/` cancel only the tasks started with the same license key as the request.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

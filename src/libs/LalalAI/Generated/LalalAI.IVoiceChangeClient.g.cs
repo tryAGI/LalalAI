@@ -4,6 +4,10 @@
 namespace LalalAI
 {
     /// <summary>
+    /// Replaces the voice in a recording with another voice from a voice pack.<br/>
+    /// 1. Upload the file with `/upload/`.<br/>
+    /// 2. Pick a voice pack: one of the ready-made packs listed in `/change_voice/`, or your own pack from `/voice_packs/list/`.<br/>
+    /// 3. Start `/change_voice/` and poll `/check/` for the result.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

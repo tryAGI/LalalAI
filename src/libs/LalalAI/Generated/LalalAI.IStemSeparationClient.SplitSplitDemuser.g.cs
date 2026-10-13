@@ -6,12 +6,16 @@ namespace LalalAI
     {
         /// <summary>
         /// Clean voice from background music<br/>
-        ///     Typical usage case - is voice with background music.<br/>
-        ///     Demuser will separate voice (stem) and music (back).<br/>
-        ///     Result of /check/ includes 2 tracks:<br/>
-        ///     - stem:{"type":"stem", "label":"music", "url":"..."}<br/>
-        ///     - back:{"type":"back", "label":"no_music", "url":"..."}<br/>
-        ///
+        /// Separates a voice from background music, for example in a video or a podcast.<br/>
+        /// You get two files: the music, and the rest of the recording without it, usually the voice.<br/>
+        /// For speech with non-musical noise use `/split/voice_clean/`. For vocals in a song use `/split/stem_separator/`.<br/>
+        /// The only stem is `music`. With `splitter: auto` the request currently uses lyra, the model made for this stem.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 2 tracks:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "music", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_music", "url": "..."}    the voice<br/>
+        /// ```
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -24,12 +28,16 @@ namespace LalalAI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Clean voice from background music<br/>
-        ///     Typical usage case - is voice with background music.<br/>
-        ///     Demuser will separate voice (stem) and music (back).<br/>
-        ///     Result of /check/ includes 2 tracks:<br/>
-        ///     - stem:{"type":"stem", "label":"music", "url":"..."}<br/>
-        ///     - back:{"type":"back", "label":"no_music", "url":"..."}<br/>
-        ///
+        /// Separates a voice from background music, for example in a video or a podcast.<br/>
+        /// You get two files: the music, and the rest of the recording without it, usually the voice.<br/>
+        /// For speech with non-musical noise use `/split/voice_clean/`. For vocals in a song use `/split/stem_separator/`.<br/>
+        /// The only stem is `music`. With `splitter: auto` the request currently uses lyra, the model made for this stem.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 2 tracks:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "music", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_music", "url": "..."}    the voice<br/>
+        /// ```
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -42,12 +50,16 @@ namespace LalalAI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Clean voice from background music<br/>
-        ///     Typical usage case - is voice with background music.<br/>
-        ///     Demuser will separate voice (stem) and music (back).<br/>
-        ///     Result of /check/ includes 2 tracks:<br/>
-        ///     - stem:{"type":"stem", "label":"music", "url":"..."}<br/>
-        ///     - back:{"type":"back", "label":"no_music", "url":"..."}<br/>
-        ///
+        /// Separates a voice from background music, for example in a video or a podcast.<br/>
+        /// You get two files: the music, and the rest of the recording without it, usually the voice.<br/>
+        /// For speech with non-musical noise use `/split/voice_clean/`. For vocals in a song use `/split/stem_separator/`.<br/>
+        /// The only stem is `music`. With `splitter: auto` the request currently uses lyra, the model made for this stem.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns 2 tracks:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "music", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_music", "url": "..."}    the voice<br/>
+        /// ```
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>

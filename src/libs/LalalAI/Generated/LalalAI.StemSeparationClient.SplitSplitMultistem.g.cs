@@ -43,16 +43,21 @@ namespace LalalAI
 
         /// <summary>
         /// Split a file into multiple stems in one request (multistem feature)<br/>
-        ///     WARNING: The stems are internally extracted one by one, so the processing time is proportional to the number of stems selected.<br/>
-        ///     You will be charged an equal amount of minutes for each stem.<br/>
-        ///     For example, if you have an audio file with a duration of 1 minute,<br/>
-        ///     with stem_list=["vocals", "drum"], you will be charged 2 minutes (1 minute for "vocals", 1 minute for "drum").<br/>
-        ///     At the /check/ endpoint you will receive &lt;number_of_stems&gt; tracks with 1 additional track which is the source without all selected stems.<br/>
-        ///     Example response tracks for stem_list=["vocals", "drum"]:<br/>
-        ///     - stem:{"type":"stem", "label":"vocals", "url":"..."}<br/>
-        ///     - stem:{"type":"stem", "label":"drum", "url":"..."}<br/>
-        ///     - rest of source:{"type":"back", "label":"no_multistem", "url":"..."}<br/>
-        ///
+        /// Extracts several stems from a song in one request, for example vocals, drums and bass.<br/>
+        /// Stems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.<br/>
+        /// With `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.<br/>
+        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass` and `piano` on the newer andromeda:<br/>
+        /// if quality matters more than the number of requests, start it once per stem.<br/>
+        /// **Time and price**<br/>
+        /// Stems are extracted one by one, so processing time grows with the number of stems.<br/>
+        /// Each stem is charged separately: a 1-minute file with `stem_list: ["vocals", "drum"]` costs 2 minutes.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns one track per stem and one track with the rest of the song. For `stem_list: ["vocals", "drum"]`:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "vocals", "url": "..."}<br/>
+        /// {"type": "stem", "label": "drum", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_multistem", "url": "..."}<br/>
+        /// ```
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -75,16 +80,21 @@ namespace LalalAI
         }
         /// <summary>
         /// Split a file into multiple stems in one request (multistem feature)<br/>
-        ///     WARNING: The stems are internally extracted one by one, so the processing time is proportional to the number of stems selected.<br/>
-        ///     You will be charged an equal amount of minutes for each stem.<br/>
-        ///     For example, if you have an audio file with a duration of 1 minute,<br/>
-        ///     with stem_list=["vocals", "drum"], you will be charged 2 minutes (1 minute for "vocals", 1 minute for "drum").<br/>
-        ///     At the /check/ endpoint you will receive &lt;number_of_stems&gt; tracks with 1 additional track which is the source without all selected stems.<br/>
-        ///     Example response tracks for stem_list=["vocals", "drum"]:<br/>
-        ///     - stem:{"type":"stem", "label":"vocals", "url":"..."}<br/>
-        ///     - stem:{"type":"stem", "label":"drum", "url":"..."}<br/>
-        ///     - rest of source:{"type":"back", "label":"no_multistem", "url":"..."}<br/>
-        ///
+        /// Extracts several stems from a song in one request, for example vocals, drums and bass.<br/>
+        /// Stems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.<br/>
+        /// With `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.<br/>
+        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass` and `piano` on the newer andromeda:<br/>
+        /// if quality matters more than the number of requests, start it once per stem.<br/>
+        /// **Time and price**<br/>
+        /// Stems are extracted one by one, so processing time grows with the number of stems.<br/>
+        /// Each stem is charged separately: a 1-minute file with `stem_list: ["vocals", "drum"]` costs 2 minutes.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns one track per stem and one track with the rest of the song. For `stem_list: ["vocals", "drum"]`:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "vocals", "url": "..."}<br/>
+        /// {"type": "stem", "label": "drum", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_multistem", "url": "..."}<br/>
+        /// ```
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -564,16 +574,21 @@ namespace LalalAI
         }
         /// <summary>
         /// Split a file into multiple stems in one request (multistem feature)<br/>
-        ///     WARNING: The stems are internally extracted one by one, so the processing time is proportional to the number of stems selected.<br/>
-        ///     You will be charged an equal amount of minutes for each stem.<br/>
-        ///     For example, if you have an audio file with a duration of 1 minute,<br/>
-        ///     with stem_list=["vocals", "drum"], you will be charged 2 minutes (1 minute for "vocals", 1 minute for "drum").<br/>
-        ///     At the /check/ endpoint you will receive &lt;number_of_stems&gt; tracks with 1 additional track which is the source without all selected stems.<br/>
-        ///     Example response tracks for stem_list=["vocals", "drum"]:<br/>
-        ///     - stem:{"type":"stem", "label":"vocals", "url":"..."}<br/>
-        ///     - stem:{"type":"stem", "label":"drum", "url":"..."}<br/>
-        ///     - rest of source:{"type":"back", "label":"no_multistem", "url":"..."}<br/>
-        ///
+        /// Extracts several stems from a song in one request, for example vocals, drums and bass.<br/>
+        /// Stems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.<br/>
+        /// With `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.<br/>
+        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass` and `piano` on the newer andromeda:<br/>
+        /// if quality matters more than the number of requests, start it once per stem.<br/>
+        /// **Time and price**<br/>
+        /// Stems are extracted one by one, so processing time grows with the number of stems.<br/>
+        /// Each stem is charged separately: a 1-minute file with `stem_list: ["vocals", "drum"]` costs 2 minutes.<br/>
+        /// **Result**<br/>
+        /// `/check/` returns one track per stem and one track with the rest of the song. For `stem_list: ["vocals", "drum"]`:<br/>
+        /// ```<br/>
+        /// {"type": "stem", "label": "vocals", "url": "..."}<br/>
+        /// {"type": "stem", "label": "drum", "url": "..."}<br/>
+        /// {"type": "back", "label": "no_multistem", "url": "..."}<br/>
+        /// ```
         /// </summary>
         /// <param name="sourceId">
         /// ID of the source file to be processed.<br/>
