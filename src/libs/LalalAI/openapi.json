@@ -1723,7 +1723,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1819,7 +1819,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1997,7 +1997,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -2177,7 +2177,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
