@@ -62,14 +62,14 @@ namespace LalalAI
         /// <inheritdoc/>
         public global::LalalAI.AutoSDKClientOptions Options { get; }
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::LalalAI.StemSeparationSourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider.Value;
+            get => JsonSerializerContextProvider?.Value ?? global::LalalAI.StemSeparationSourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 
