@@ -55,38 +55,38 @@ namespace LalalAI
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LalalAI.CheckV1ErrorResult? Error1 { get; init; }
+        public global::LalalAI.CheckV1ErrorResult? Error { get; init; }
 #else
-        public global::LalalAI.CheckV1ErrorResult? Error1 { get; }
+        public global::LalalAI.CheckV1ErrorResult? Error { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
-        public bool IsError1 => Error1 != null;
+        public bool IsError => Error != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickError1(
+        public bool TryPickError(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::LalalAI.CheckV1ErrorResult? value)
         {
-            value = Error1;
-            return IsError1;
+            value = Error;
+            return IsError;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResult PickError1() => Error1 is { } value
+        public global::LalalAI.CheckV1ErrorResult PickError() => Error is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Error1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
         ///
@@ -166,38 +166,38 @@ namespace LalalAI
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LalalAI.ErrorResult? Error2 { get; init; }
+        public global::LalalAI.ErrorResult? ServerError { get; init; }
 #else
-        public global::LalalAI.ErrorResult? Error2 { get; }
+        public global::LalalAI.ErrorResult? ServerError { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerError))]
 #endif
-        public bool IsError2 => Error2 != null;
+        public bool IsServerError => ServerError != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickError2(
+        public bool TryPickServerError(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::LalalAI.ErrorResult? value)
         {
-            value = Error2;
-            return IsError2;
+            value = ServerError;
+            return IsServerError;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.ErrorResult PickError2() => Error2 is { } value
+        public global::LalalAI.ErrorResult PickServerError() => ServerError is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Error2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerError' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -229,20 +229,20 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::LalalAI.CheckV1ErrorResult?(Result @this) => @this.Error1;
+        public static implicit operator global::LalalAI.CheckV1ErrorResult?(Result @this) => @this.Error;
 
         /// <summary>
         ///
         /// </summary>
         public Result(global::LalalAI.CheckV1ErrorResult? value)
         {
-            Error1 = value;
+            Error = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Result FromError1(global::LalalAI.CheckV1ErrorResult? value) => new Result(value);
+        public static Result FromError(global::LalalAI.CheckV1ErrorResult? value) => new Result(value);
 
         /// <summary>
         ///
@@ -298,20 +298,20 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::LalalAI.ErrorResult?(Result @this) => @this.Error2;
+        public static implicit operator global::LalalAI.ErrorResult?(Result @this) => @this.ServerError;
 
         /// <summary>
         ///
         /// </summary>
         public Result(global::LalalAI.ErrorResult? value)
         {
-            Error2 = value;
+            ServerError = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Result FromError2(global::LalalAI.ErrorResult? value) => new Result(value);
+        public static Result FromServerError(global::LalalAI.ErrorResult? value) => new Result(value);
 
         /// <summary>
         ///
@@ -319,29 +319,29 @@ namespace LalalAI
         public Result(
             global::LalalAI.CheckV1ResponseResultDiscriminatorStatus? status,
             global::LalalAI.CheckV1ProgressResult? progress,
-            global::LalalAI.CheckV1ErrorResult? error1,
+            global::LalalAI.CheckV1ErrorResult? error,
             global::LalalAI.CheckV1CancelledResult? cancelled,
             global::LalalAI.CheckV1SuccessResult? success,
-            global::LalalAI.ErrorResult? error2
+            global::LalalAI.ErrorResult? serverError
             )
         {
             Status = status;
 
             Progress = progress;
-            Error1 = error1;
+            Error = error;
             Cancelled = cancelled;
             Success = success;
-            Error2 = error2;
+            ServerError = serverError;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Error2 as object ??
+            ServerError as object ??
             Success as object ??
             Cancelled as object ??
-            Error1 as object ??
+            Error as object ??
             Progress as object
             ;
 
@@ -350,10 +350,10 @@ namespace LalalAI
         /// </summary>
         public override string? ToString() =>
             Progress?.ToString() ??
-            Error1?.ToString() ??
+            Error?.ToString() ??
             Cancelled?.ToString() ??
             Success?.ToString() ??
-            Error2?.ToString()
+            ServerError?.ToString()
             ;
 
         /// <summary>
@@ -361,7 +361,7 @@ namespace LalalAI
         /// </summary>
         public bool Validate()
         {
-            return IsProgress && !IsError1 && !IsCancelled && !IsSuccess && !IsError2 || !IsProgress && IsError1 && !IsCancelled && !IsSuccess && !IsError2 || !IsProgress && !IsError1 && IsCancelled && !IsSuccess && !IsError2 || !IsProgress && !IsError1 && !IsCancelled && IsSuccess && !IsError2 || !IsProgress && !IsError1 && !IsCancelled && !IsSuccess && IsError2;
+            return IsProgress && !IsError && !IsCancelled && !IsSuccess && !IsServerError || !IsProgress && IsError && !IsCancelled && !IsSuccess && !IsServerError || !IsProgress && !IsError && IsCancelled && !IsSuccess && !IsServerError || !IsProgress && !IsError && !IsCancelled && IsSuccess && !IsServerError || !IsProgress && !IsError && !IsCancelled && !IsSuccess && IsServerError;
         }
 
         /// <summary>
@@ -369,10 +369,10 @@ namespace LalalAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LalalAI.CheckV1ProgressResult, TResult>? progress = null,
-            global::System.Func<global::LalalAI.CheckV1ErrorResult, TResult>? error1 = null,
+            global::System.Func<global::LalalAI.CheckV1ErrorResult, TResult>? error = null,
             global::System.Func<global::LalalAI.CheckV1CancelledResult, TResult>? cancelled = null,
             global::System.Func<global::LalalAI.CheckV1SuccessResult, TResult>? success = null,
-            global::System.Func<global::LalalAI.ErrorResult, TResult>? error2 = null,
+            global::System.Func<global::LalalAI.ErrorResult, TResult>? serverError = null,
             bool validate = true)
         {
             if (validate)
@@ -384,9 +384,9 @@ namespace LalalAI
             {
                 return progress(__value0);
             }
-            else if (Error1 is { } __value1 && error1 != null)
+            else if (Error is { } __value1 && error != null)
             {
-                return error1(__value1);
+                return error(__value1);
             }
             else if (Cancelled is { } __value2 && cancelled != null)
             {
@@ -396,9 +396,9 @@ namespace LalalAI
             {
                 return success(__value3);
             }
-            else if (Error2 is { } __value4 && error2 != null)
+            else if (ServerError is { } __value4 && serverError != null)
             {
-                return error2(__value4);
+                return serverError(__value4);
             }
 
             return default(TResult);
@@ -410,13 +410,13 @@ namespace LalalAI
         public void Match(
             global::System.Action<global::LalalAI.CheckV1ProgressResult>? progress = null,
 
-            global::System.Action<global::LalalAI.CheckV1ErrorResult>? error1 = null,
+            global::System.Action<global::LalalAI.CheckV1ErrorResult>? error = null,
 
             global::System.Action<global::LalalAI.CheckV1CancelledResult>? cancelled = null,
 
             global::System.Action<global::LalalAI.CheckV1SuccessResult>? success = null,
 
-            global::System.Action<global::LalalAI.ErrorResult>? error2 = null,
+            global::System.Action<global::LalalAI.ErrorResult>? serverError = null,
             bool validate = true)
         {
             if (validate)
@@ -428,9 +428,9 @@ namespace LalalAI
             {
                 progress?.Invoke(__value0);
             }
-            else if (Error1 is { } __value1)
+            else if (Error is { } __value1)
             {
-                error1?.Invoke(__value1);
+                error?.Invoke(__value1);
             }
             else if (Cancelled is { } __value2)
             {
@@ -440,9 +440,9 @@ namespace LalalAI
             {
                 success?.Invoke(__value3);
             }
-            else if (Error2 is { } __value4)
+            else if (ServerError is { } __value4)
             {
-                error2?.Invoke(__value4);
+                serverError?.Invoke(__value4);
             }
         }
 
@@ -451,10 +451,10 @@ namespace LalalAI
         /// </summary>
         public void Switch(
             global::System.Action<global::LalalAI.CheckV1ProgressResult>? progress = null,
-            global::System.Action<global::LalalAI.CheckV1ErrorResult>? error1 = null,
+            global::System.Action<global::LalalAI.CheckV1ErrorResult>? error = null,
             global::System.Action<global::LalalAI.CheckV1CancelledResult>? cancelled = null,
             global::System.Action<global::LalalAI.CheckV1SuccessResult>? success = null,
-            global::System.Action<global::LalalAI.ErrorResult>? error2 = null,
+            global::System.Action<global::LalalAI.ErrorResult>? serverError = null,
             bool validate = true)
         {
             if (validate)
@@ -466,9 +466,9 @@ namespace LalalAI
             {
                 progress?.Invoke(__value0);
             }
-            else if (Error1 is { } __value1)
+            else if (Error is { } __value1)
             {
-                error1?.Invoke(__value1);
+                error?.Invoke(__value1);
             }
             else if (Cancelled is { } __value2)
             {
@@ -478,9 +478,9 @@ namespace LalalAI
             {
                 success?.Invoke(__value3);
             }
-            else if (Error2 is { } __value4)
+            else if (ServerError is { } __value4)
             {
-                error2?.Invoke(__value4);
+                serverError?.Invoke(__value4);
             }
         }
 
@@ -493,13 +493,13 @@ namespace LalalAI
             {
                 Progress,
                 typeof(global::LalalAI.CheckV1ProgressResult),
-                Error1,
+                Error,
                 typeof(global::LalalAI.CheckV1ErrorResult),
                 Cancelled,
                 typeof(global::LalalAI.CheckV1CancelledResult),
                 Success,
                 typeof(global::LalalAI.CheckV1SuccessResult),
-                Error2,
+                ServerError,
                 typeof(global::LalalAI.ErrorResult),
             };
             const int offset = unchecked((int)2166136261);
@@ -518,10 +518,10 @@ namespace LalalAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.CheckV1ProgressResult?>.Default.Equals(Progress, other.Progress) &&
-                global::System.Collections.Generic.EqualityComparer<global::LalalAI.CheckV1ErrorResult?>.Default.Equals(Error1, other.Error1) &&
+                global::System.Collections.Generic.EqualityComparer<global::LalalAI.CheckV1ErrorResult?>.Default.Equals(Error, other.Error) &&
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.CheckV1CancelledResult?>.Default.Equals(Cancelled, other.Cancelled) &&
                 global::System.Collections.Generic.EqualityComparer<global::LalalAI.CheckV1SuccessResult?>.Default.Equals(Success, other.Success) &&
-                global::System.Collections.Generic.EqualityComparer<global::LalalAI.ErrorResult?>.Default.Equals(Error2, other.Error2)
+                global::System.Collections.Generic.EqualityComparer<global::LalalAI.ErrorResult?>.Default.Equals(ServerError, other.ServerError)
                 ;
         }
 

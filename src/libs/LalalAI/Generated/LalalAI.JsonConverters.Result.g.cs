@@ -28,12 +28,12 @@ namespace LalalAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1ProgressResult)}");
                 progress = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::LalalAI.CheckV1ErrorResult? error1 = default;
+            global::LalalAI.CheckV1ErrorResult? error = default;
             if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.Error)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ErrorResult> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1ErrorResult)}");
-                error1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LalalAI.CheckV1CancelledResult? cancelled = default;
             if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.Cancelled)
@@ -49,25 +49,25 @@ namespace LalalAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1SuccessResult)}");
                 success = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::LalalAI.ErrorResult? error2 = default;
-            if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.Error)
+            global::LalalAI.ErrorResult? serverError = default;
+            if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.ServerError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.ErrorResult> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.ErrorResult)}");
-                error2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                serverError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::LalalAI.Result(
                 discriminator?.Status,
                 progress,
 
-                error1,
+                error,
 
                 cancelled,
 
                 success,
 
-                error2
+                serverError
                 );
 
             return __value;
@@ -88,11 +88,11 @@ namespace LalalAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1ProgressResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgress(), typeInfo);
             }
-            else if (value.IsError1)
+            else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ErrorResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1ErrorResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError1(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
             else if (value.IsCancelled)
             {
@@ -106,11 +106,11 @@ namespace LalalAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1SuccessResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSuccess(), typeInfo);
             }
-            else if (value.IsError2)
+            else if (value.IsServerError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.ErrorResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.ErrorResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError2(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickServerError(), typeInfo);
             }
         }
     }
