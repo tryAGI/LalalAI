@@ -53,13 +53,12 @@ namespace LalalAI
         /// | `bass` | Bass | andromeda |<br/>
         /// | `piano` | Piano | andromeda |<br/>
         /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
-        /// | `electric_guitar` | Electric guitar only | perseus |<br/>
-        /// | `acoustic_guitar` | Acoustic guitar only | perseus |<br/>
+        /// | `electric_guitar` | Electric guitar only | andromeda |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | andromeda |<br/>
         /// | `synthesizer` | Synthesizers | phoenix |<br/>
         /// | `strings` | String instruments | phoenix |<br/>
         /// | `wind` | Wind instruments | phoenix |<br/>
-        /// To extract a guitar, use `guitar` even if you expect only an electric one: it runs on a newer model.<br/>
-        /// Use `electric_guitar` or `acoustic_guitar` only to separate the two kinds of guitar from each other.<br/>
+        /// `guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.<br/>
         /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
         /// **Result**<br/>
         /// `/check/` returns 2 tracks:<br/>
@@ -106,13 +105,12 @@ namespace LalalAI
         /// | `bass` | Bass | andromeda |<br/>
         /// | `piano` | Piano | andromeda |<br/>
         /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
-        /// | `electric_guitar` | Electric guitar only | perseus |<br/>
-        /// | `acoustic_guitar` | Acoustic guitar only | perseus |<br/>
+        /// | `electric_guitar` | Electric guitar only | andromeda |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | andromeda |<br/>
         /// | `synthesizer` | Synthesizers | phoenix |<br/>
         /// | `strings` | String instruments | phoenix |<br/>
         /// | `wind` | Wind instruments | phoenix |<br/>
-        /// To extract a guitar, use `guitar` even if you expect only an electric one: it runs on a newer model.<br/>
-        /// Use `electric_guitar` or `acoustic_guitar` only to separate the two kinds of guitar from each other.<br/>
+        /// `guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.<br/>
         /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
         /// **Result**<br/>
         /// `/check/` returns 2 tracks:<br/>
@@ -579,13 +577,12 @@ namespace LalalAI
         /// | `bass` | Bass | andromeda |<br/>
         /// | `piano` | Piano | andromeda |<br/>
         /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
-        /// | `electric_guitar` | Electric guitar only | perseus |<br/>
-        /// | `acoustic_guitar` | Acoustic guitar only | perseus |<br/>
+        /// | `electric_guitar` | Electric guitar only | andromeda |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | andromeda |<br/>
         /// | `synthesizer` | Synthesizers | phoenix |<br/>
         /// | `strings` | String instruments | phoenix |<br/>
         /// | `wind` | Wind instruments | phoenix |<br/>
-        /// To extract a guitar, use `guitar` even if you expect only an electric one: it runs on a newer model.<br/>
-        /// Use `electric_guitar` or `acoustic_guitar` only to separate the two kinds of guitar from each other.<br/>
+        /// `guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.<br/>
         /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
         /// **Result**<br/>
         /// `/check/` returns 2 tracks:<br/>

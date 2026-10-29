@@ -17,7 +17,7 @@ namespace LalalAI
     /// `vocals` is made for singing in music, usually songs. `/split/voice_clean/` is made for speech among non-musical noise.<br/>
     /// Do not send speech recordings to `vocals`.<br/>
     /// **2. Pick the stem that matches your task most precisely**<br/>
-    /// To extract a guitar of any kind, use `guitar`, not `electric_guitar`, even if you expect only an electric guitar.<br/>
+    /// To extract all guitars into one track, use `guitar`. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.<br/>
     /// The stems of each endpoint are listed in its description.<br/>
     /// **3. Leave `splitter` as `auto`**<br/>
     /// `auto` picks the newest model available for the stem, and newer models separate better: for vocals, andromeda is better than perseus.<br/>
@@ -26,9 +26,6 @@ namespace LalalAI
     /// Send `"splitter": "auto"` explicitly or omit the field: the API accepts `auto`, though the `SplitterType` enum in the OpenAPI schema does not list it.<br/>
     /// Models from oldest to newest: phoenix (2022) → orion (2023) → perseus (2024) → andromeda (2025).<br/>
     /// lynx and lyra are not in this series: they are separate models for the `voice` and `music` stems.<br/>
-    /// New models do not come out for every stem at once.<br/>
-    /// So a broader stem on a newer model can beat a narrower stem on an older one:<br/>
-    /// `guitar` on andromeda works better than `electric_guitar` on perseus, unless the song also has an acoustic guitar you want to keep apart.<br/>
     /// **4. Test on your own audio**<br/>
     /// On some material an older model works better, for example on noisy vintage recordings. It is rare, but it happens.<br/>
     /// If the result is not good enough, try another `splitter` on a few of your files.<br/>
