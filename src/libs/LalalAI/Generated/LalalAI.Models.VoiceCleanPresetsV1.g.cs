@@ -11,12 +11,15 @@ namespace LalalAI
         /// <summary>
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
         /// Keep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.<br/>
+        /// Exception: for the 'voice' stem 'auto' currently stays on lynx; cepheus, a newer model for 'voice', is available by name only.<br/>
         /// 'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.<br/>
         /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
         /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
         /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
         /// on noisy vintage recordings. Test with your own audio.<br/>
         /// lynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.<br/>
+        /// cepheus is another specialized model for the 'voice' stem.<br/>
+        /// Its results can differ noticeably from lynx: compare both models on your recordings before switching.<br/>
         /// lyra is a separate model for the 'music' stem.<br/>
         /// Default Value: auto
         /// </summary>
@@ -50,10 +53,12 @@ namespace LalalAI
         public string Stem { get; set; } = "voice";
 
         /// <summary>
-        /// How much to boost a quiet voice after noise removal.<br/>
-        /// 0 (Mild): leaves the volume unchanged.<br/>
-        /// 1 (Normal): moderate boost.<br/>
-        /// 2 (Aggressive): noticeably stronger boost.<br/>
+        /// Works differently depending on the splitter.<br/>
+        /// lynx, andromeda and phoenix: 0 (Mild) and 1 (Normal) preserve the original voice volume;<br/>
+        /// 2 (Aggressive) compresses and normalizes the voice to make its quiet parts louder.<br/>
+        /// cepheus, perseus and orion: 0 (Mild) preserves more voice detail, but may keep some background noise;<br/>
+        /// 1 (Normal) removes noise more strictly, but some of the voice may go to the noise track;<br/>
+        /// 2 (Aggressive) is the same as 1, plus compression and normalization of the voice.<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noise_cancelling_level")]
@@ -71,12 +76,15 @@ namespace LalalAI
         /// <param name="splitter">
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
         /// Keep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.<br/>
+        /// Exception: for the 'voice' stem 'auto' currently stays on lynx; cepheus, a newer model for 'voice', is available by name only.<br/>
         /// 'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.<br/>
         /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
         /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
         /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
         /// on noisy vintage recordings. Test with your own audio.<br/>
         /// lynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.<br/>
+        /// cepheus is another specialized model for the 'voice' stem.<br/>
+        /// Its results can differ noticeably from lynx: compare both models on your recordings before switching.<br/>
         /// lyra is a separate model for the 'music' stem.<br/>
         /// Default Value: auto
         /// </param>
@@ -91,10 +99,12 @@ namespace LalalAI
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="noiseCancellingLevel">
-        /// How much to boost a quiet voice after noise removal.<br/>
-        /// 0 (Mild): leaves the volume unchanged.<br/>
-        /// 1 (Normal): moderate boost.<br/>
-        /// 2 (Aggressive): noticeably stronger boost.<br/>
+        /// Works differently depending on the splitter.<br/>
+        /// lynx, andromeda and phoenix: 0 (Mild) and 1 (Normal) preserve the original voice volume;<br/>
+        /// 2 (Aggressive) compresses and normalizes the voice to make its quiet parts louder.<br/>
+        /// cepheus, perseus and orion: 0 (Mild) preserves more voice detail, but may keep some background noise;<br/>
+        /// 1 (Normal) removes noise more strictly, but some of the voice may go to the noise track;<br/>
+        /// 2 (Aggressive) is the same as 1, plus compression and normalization of the voice.<br/>
         /// Default Value: 0
         /// </param>
         /// <param name="stem">
