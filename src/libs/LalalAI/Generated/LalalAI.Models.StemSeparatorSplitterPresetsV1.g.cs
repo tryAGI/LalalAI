@@ -11,12 +11,15 @@ namespace LalalAI
         /// <summary>
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
         /// Keep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.<br/>
+        /// Exception: for the 'voice' stem 'auto' currently stays on lynx; cepheus, a newer model for 'voice', is available by name only.<br/>
         /// 'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.<br/>
         /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
         /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
         /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
         /// on noisy vintage recordings. Test with your own audio.<br/>
         /// lynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.<br/>
+        /// cepheus is another specialized model for the 'voice' stem.<br/>
+        /// Its results can differ noticeably from lynx: compare both models on your recordings before switching.<br/>
         /// lyra is a separate model for the 'music' stem.<br/>
         /// Default Value: auto
         /// </summary>
@@ -91,12 +94,15 @@ namespace LalalAI
         /// <param name="splitter">
         /// Splitter model to use. 'auto' selects the latest available model for the selected stems.<br/>
         /// Keep 'auto' unless you have tested another model on your audio: it switches to new models as they are released.<br/>
+        /// Exception: for the 'voice' stem 'auto' currently stays on lynx; cepheus, a newer model for 'voice', is available by name only.<br/>
         /// 'auto' is not listed in the SplitterType enum, but the API accepts it: send it explicitly or omit the field.<br/>
         /// Main model series, from oldest to newest: phoenix (v3) → orion (v4) → perseus (v5) → andromeda (v6).<br/>
         /// Newer models give better separation quality: for vocals, andromeda is better than perseus.<br/>
         /// Older models sometimes work better on certain recordings: for example, orion can give better results<br/>
         /// on noisy vintage recordings. Test with your own audio.<br/>
         /// lynx (v7) is a specialized lightweight model for the 'voice' stem, outside this series despite its higher version number.<br/>
+        /// cepheus is another specialized model for the 'voice' stem.<br/>
+        /// Its results can differ noticeably from lynx: compare both models on your recordings before switching.<br/>
         /// lyra is a separate model for the 'music' stem.<br/>
         /// Default Value: auto
         /// </param>

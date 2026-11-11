@@ -23,9 +23,10 @@ namespace LalalAI
     /// `auto` picks the newest model available for the stem, and newer models separate better: for vocals, andromeda is better than perseus.<br/>
     /// We release new models regularly. With `auto` your integration gets each new model the day it is released, with no change on your side.<br/>
     /// A splitter set by name stays on that model until you update your code, and your results fall behind.<br/>
+    /// Exception: for the `voice` stem `auto` currently stays on lynx. cepheus, a newer model for `voice`, is available by name only: set `"splitter": "cepheus"` to compare it with lynx on your recordings.<br/>
     /// Send `"splitter": "auto"` explicitly or omit the field: the API accepts `auto`, though the `SplitterType` enum in the OpenAPI schema does not list it.<br/>
     /// Models from oldest to newest: phoenix (2022) → orion (2023) → perseus (2024) → andromeda (2025).<br/>
-    /// lynx and lyra are not in this series: they are separate models for the `voice` and `music` stems.<br/>
+    /// lynx, cepheus and lyra are not in this series: lynx and cepheus are separate models for the `voice` stem, lyra for the `music` stem.<br/>
     /// **4. Test on your own audio**<br/>
     /// On some material an older model works better, for example on noisy vintage recordings. It is rare, but it happens.<br/>
     /// If the result is not good enough, try another `splitter` on a few of your files.<br/>

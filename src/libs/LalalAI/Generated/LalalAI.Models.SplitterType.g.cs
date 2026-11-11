@@ -15,6 +15,10 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
+        Cepheus,
+        /// <summary>
+        ///
+        /// </summary>
         Lynx,
         /// <summary>
         ///
@@ -47,6 +51,7 @@ namespace LalalAI
             return value switch
             {
                 SplitterType.Andromeda => "andromeda",
+                SplitterType.Cepheus => "cepheus",
                 SplitterType.Lynx => "lynx",
                 SplitterType.Lyra => "lyra",
                 SplitterType.Orion => "orion",
@@ -63,6 +68,7 @@ namespace LalalAI
             return value switch
             {
                 "andromeda" => SplitterType.Andromeda,
+                "cepheus" => SplitterType.Cepheus,
                 "lynx" => SplitterType.Lynx,
                 "lyra" => SplitterType.Lyra,
                 "orion" => SplitterType.Orion,
