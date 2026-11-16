@@ -19,9 +19,9 @@ namespace LalalAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presets")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.PresetsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.Presets4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LalalAI.Presets Presets { get; set; }
+        public required global::LalalAI.Presets4 Presets { get; set; }
 
         /// <summary>
         /// Default Value: cancelled
@@ -50,7 +50,7 @@ namespace LalalAI
 #endif
         public CheckV1CancelledResult(
             string sourceId,
-            global::LalalAI.Presets presets,
+            global::LalalAI.Presets4 presets,
             string? status)
         {
             this.SourceId = sourceId ?? throw new global::System.ArgumentNullException(nameof(sourceId));

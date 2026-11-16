@@ -17,33 +17,33 @@ namespace LalalAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1CancelledResultPresetsDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1CancelledResultPresetsDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1CancelledResultPresetsDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::LalalAI.DemuserSplitterPresetsV1? demuser = default;
-            if (discriminator?.Label == global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel.Demuser)
+            if (discriminator?.Label == global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel.Demuser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.DemuserSplitterPresetsV1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.DemuserSplitterPresetsV1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.DemuserSplitterPresetsV1)}");
                 demuser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LalalAI.VoiceCleanPresetsV1? voiceClean = default;
-            if (discriminator?.Label == global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel.VoiceClean)
+            if (discriminator?.Label == global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel.VoiceClean)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.VoiceCleanPresetsV1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.VoiceCleanPresetsV1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.VoiceCleanPresetsV1)}");
                 voiceClean = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LalalAI.StemSeparatorSplitterPresetsV1? stemSeparator = default;
-            if (discriminator?.Label == global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel.StemSeparator)
+            if (discriminator?.Label == global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel.StemSeparator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.StemSeparatorSplitterPresetsV1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.StemSeparatorSplitterPresetsV1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.StemSeparatorSplitterPresetsV1)}");
                 stemSeparator = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LalalAI.MultistemSplitterPresetsV1? multistem = default;
-            if (discriminator?.Label == global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel.Multistem)
+            if (discriminator?.Label == global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel.Multistem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.MultistemSplitterPresetsV1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.MultistemSplitterPresetsV1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.MultistemSplitterPresetsV1)}");

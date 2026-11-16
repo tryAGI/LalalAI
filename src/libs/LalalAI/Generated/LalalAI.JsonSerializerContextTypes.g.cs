@@ -82,7 +82,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Presets? Type11 { get; set; }
+        public global::LalalAI.Presets4? Type11 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -90,7 +90,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant2? Type13 { get; set; }
+        public global::LalalAI.PresetsVariant24? Type13 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -110,7 +110,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator? Type18 { get; set; }
+        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator2? Type18 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -118,7 +118,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator2? Type20 { get; set; }
+        public global::LalalAI.CheckV1CancelledResultPresetsDiscriminator? Type20 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -126,15 +126,15 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Presets2? Type22 { get; set; }
+        public global::LalalAI.Presets? Type22 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant22? Type23 { get; set; }
+        public global::LalalAI.PresetsVariant2? Type23 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator? Type24 { get; set; }
+        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2? Type24 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -142,7 +142,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2? Type26 { get; set; }
+        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminator? Type26 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -162,7 +162,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator? Type31 { get; set; }
+        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator2? Type31 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -170,7 +170,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator2? Type33 { get; set; }
+        public global::LalalAI.CheckV1ProgressResultPresetsDiscriminator? Type33 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -178,7 +178,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Result? Type35 { get; set; }
+        public global::LalalAI.Result2? Type35 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -198,15 +198,15 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Presets4? Type40 { get; set; }
+        public global::LalalAI.Presets2? Type40 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.PresetsVariant24? Type41 { get; set; }
+        public global::LalalAI.PresetsVariant22? Type41 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator? Type42 { get; set; }
+        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator2? Type42 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -214,7 +214,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator2? Type44 { get; set; }
+        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminator? Type44 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -282,7 +282,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.Result2? Type61 { get; set; }
+        public global::LalalAI.Result? Type61 { get; set; }
         /// <summary>
         ///
         /// </summary>

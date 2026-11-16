@@ -19,9 +19,9 @@ namespace LalalAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presets")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.Presets4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.Presets2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LalalAI.Presets4 Presets { get; set; }
+        public required global::LalalAI.Presets2 Presets { get; set; }
 
         /// <summary>
         /// Default Value: success
@@ -58,7 +58,7 @@ namespace LalalAI
 #endif
         public CheckV1SuccessResult(
             string sourceId,
-            global::LalalAI.Presets4 presets,
+            global::LalalAI.Presets2 presets,
             global::LalalAI.SplitTracksResult result,
             string? status)
         {

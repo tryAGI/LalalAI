@@ -12,7 +12,7 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        public global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel? Label { get; }
+        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? Label { get; }
 
         /// <summary>
         ///
@@ -257,7 +257,7 @@ namespace LalalAI
         ///
         /// </summary>
         public PresetsVariant22(
-            global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel? label,
+            global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? label,
             global::LalalAI.DemuserSplitterPresetsV1? demuser,
             global::LalalAI.VoiceCleanPresetsV1? voiceClean,
             global::LalalAI.StemSeparatorSplitterPresetsV1? stemSeparator,

@@ -17,40 +17,19 @@ namespace LalalAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ResponseResultDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ResponseResultDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1ResponseResultDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CancelResponseResultDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CancelResponseResultDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CancelResponseResultDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::LalalAI.CheckV1ProgressResult? progress = default;
-            if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.Progress)
+            global::LalalAI.CancelSuccess? success = default;
+            if (discriminator?.Status == global::LalalAI.CancelResponseResultDiscriminatorStatus.Success)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ProgressResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ProgressResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1ProgressResult)}");
-                progress = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::LalalAI.CheckV1ErrorResult? error = default;
-            if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.Error)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ErrorResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1ErrorResult)}");
-                error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::LalalAI.CheckV1CancelledResult? cancelled = default;
-            if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.Cancelled)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1CancelledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1CancelledResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1CancelledResult)}");
-                cancelled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::LalalAI.CheckV1SuccessResult? success = default;
-            if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.Success)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1SuccessResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1SuccessResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CheckV1SuccessResult)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CancelSuccess), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CancelSuccess> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.CancelSuccess)}");
                 success = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LalalAI.ErrorResult? serverError = default;
-            if (discriminator?.Status == global::LalalAI.CheckV1ResponseResultDiscriminatorStatus.ServerError)
+            if (discriminator?.Status == global::LalalAI.CancelResponseResultDiscriminatorStatus.ServerError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.ErrorResult> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LalalAI.ErrorResult)}");
@@ -59,12 +38,6 @@ namespace LalalAI.JsonConverters
 
             var __value = new global::LalalAI.Result(
                 discriminator?.Status,
-                progress,
-
-                error,
-
-                cancelled,
-
                 success,
 
                 serverError
@@ -82,28 +55,10 @@ namespace LalalAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsProgress)
+            if (value.IsSuccess)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ProgressResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ProgressResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1ProgressResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgress(), typeInfo);
-            }
-            else if (value.IsError)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1ErrorResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1ErrorResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1ErrorResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
-            }
-            else if (value.IsCancelled)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1CancelledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1CancelledResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1CancelledResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCancelled(), typeInfo);
-            }
-            else if (value.IsSuccess)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CheckV1SuccessResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CheckV1SuccessResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CheckV1SuccessResult).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LalalAI.CancelSuccess), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LalalAI.CancelSuccess?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LalalAI.CancelSuccess).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSuccess(), typeInfo);
             }
             else if (value.IsServerError)

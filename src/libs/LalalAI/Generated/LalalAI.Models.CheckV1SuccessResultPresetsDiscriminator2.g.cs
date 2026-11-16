@@ -11,8 +11,9 @@ namespace LalalAI
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("task_type")]
-        public string? TaskType { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("label")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.CheckV1SuccessResultPresetsDiscriminatorLabelJsonConverter))]
+        public global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? Label { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -23,14 +24,14 @@ namespace LalalAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckV1SuccessResultPresetsDiscriminator2" /> class.
         /// </summary>
-        /// <param name="taskType"></param>
+        /// <param name="label"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CheckV1SuccessResultPresetsDiscriminator2(
-            string? taskType)
+            global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel? label)
         {
-            this.TaskType = taskType;
+            this.Label = label;
         }
 
         /// <summary>
