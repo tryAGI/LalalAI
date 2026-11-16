@@ -19,9 +19,9 @@ namespace LalalAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presets")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.Presets2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LalalAI.JsonConverters.PresetsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LalalAI.Presets2 Presets { get; set; }
+        public required global::LalalAI.Presets Presets { get; set; }
 
         /// <summary>
         /// Default Value: error
@@ -58,7 +58,7 @@ namespace LalalAI
 #endif
         public CheckV1ErrorResult(
             string sourceId,
-            global::LalalAI.Presets2 presets,
+            global::LalalAI.Presets presets,
             global::LalalAI.TaskMetaError error,
             string? status)
         {

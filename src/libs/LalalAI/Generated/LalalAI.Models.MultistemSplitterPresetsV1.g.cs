@@ -30,7 +30,7 @@ namespace LalalAI
         /// <summary>
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'vocals', 'voice'} stems.<br/>
+        /// Only for {'voice', 'vocals'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dereverb_enabled")]
@@ -93,7 +93,7 @@ namespace LalalAI
         /// <param name="dereverbEnabled">
         /// Enabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.<br/>
         /// Disabling dereverb preserves the natural echo of the recording for authenticity.<br/>
-        /// Only for {'vocals', 'voice'} stems.<br/>
+        /// Only for {'voice', 'vocals'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="encoderFormat">

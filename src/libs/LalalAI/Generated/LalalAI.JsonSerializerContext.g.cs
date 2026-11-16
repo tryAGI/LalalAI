@@ -75,25 +75,25 @@ namespace LalalAI
 
             typeof(global::LalalAI.JsonConverters.TaskStartErrorCodesNullableJsonConverter),
 
+            typeof(global::LalalAI.JsonConverters.Presets4JsonConverter),
+
+            typeof(global::LalalAI.JsonConverters.PresetsVariant24JsonConverter),
+
             typeof(global::LalalAI.JsonConverters.PresetsJsonConverter),
 
             typeof(global::LalalAI.JsonConverters.PresetsVariant2JsonConverter),
-
-            typeof(global::LalalAI.JsonConverters.Presets2JsonConverter),
-
-            typeof(global::LalalAI.JsonConverters.PresetsVariant22JsonConverter),
 
             typeof(global::LalalAI.JsonConverters.Presets3JsonConverter),
 
             typeof(global::LalalAI.JsonConverters.PresetsVariant23JsonConverter),
 
-            typeof(global::LalalAI.JsonConverters.ResultJsonConverter),
-
-            typeof(global::LalalAI.JsonConverters.Presets4JsonConverter),
-
-            typeof(global::LalalAI.JsonConverters.PresetsVariant24JsonConverter),
-
             typeof(global::LalalAI.JsonConverters.Result2JsonConverter),
+
+            typeof(global::LalalAI.JsonConverters.Presets2JsonConverter),
+
+            typeof(global::LalalAI.JsonConverters.PresetsVariant22JsonConverter),
+
+            typeof(global::LalalAI.JsonConverters.ResultJsonConverter),
 
             typeof(global::LalalAI.JsonConverters.ResultsItemJsonConverter),
 
@@ -142,40 +142,40 @@ namespace LalalAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.InternalErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1CancelledResult))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets), TypeInfoPropertyName = "Presets2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets4), TypeInfoPropertyName = "Presets42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.VoiceChangePresetsV1))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant2), TypeInfoPropertyName = "PresetsVariant22_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant24), TypeInfoPropertyName = "PresetsVariant242")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.DemuserSplitterPresetsV1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.VoiceCleanPresetsV1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.StemSeparatorSplitterPresetsV1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.MultistemSplitterPresetsV1))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1CancelledResultPresetsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1CancelledResultPresetsDiscriminatorLabel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1CancelledResultPresetsDiscriminator2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1CancelledResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1CancelledResultPresetsDiscriminatorLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1CancelledResultPresetsDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ErrorResult))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets2), TypeInfoPropertyName = "Presets22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant22), TypeInfoPropertyName = "PresetsVariant222")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ErrorResultPresetsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1ErrorResultPresetsDiscriminatorLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets), TypeInfoPropertyName = "Presets2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant2), TypeInfoPropertyName = "PresetsVariant22_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ErrorResultPresetsDiscriminator2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ErrorResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1ErrorResultPresetsDiscriminatorLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ErrorResultPresetsDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.TaskMetaError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ProgressResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets3), TypeInfoPropertyName = "Presets32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant23), TypeInfoPropertyName = "PresetsVariant232")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ProgressResultPresetsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ProgressResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1ProgressResultPresetsDiscriminatorLabel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ProgressResultPresetsDiscriminator2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ProgressResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1ProgressResultPresetsDiscriminatorLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ProgressResultPresetsDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1Response))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Result), TypeInfoPropertyName = "Result2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Result2), TypeInfoPropertyName = "Result22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1SuccessResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.ErrorResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ResponseResultDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1ResponseResultDiscriminatorStatus), TypeInfoPropertyName = "CheckV1ResponseResultDiscriminatorStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets4), TypeInfoPropertyName = "Presets42")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant24), TypeInfoPropertyName = "PresetsVariant242")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1SuccessResultPresetsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1SuccessResultPresetsDiscriminatorLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Presets2), TypeInfoPropertyName = "Presets22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant22), TypeInfoPropertyName = "PresetsVariant222")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1SuccessResultPresetsDiscriminator2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1SuccessResultPresetsDiscriminatorLabel), TypeInfoPropertyName = "CheckV1SuccessResultPresetsDiscriminatorLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1SuccessResultPresetsDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.SplitTracksResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.SplitterType), TypeInfoPropertyName = "SplitterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
@@ -192,7 +192,7 @@ namespace LalalAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CheckV1Request))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CancelResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Result2), TypeInfoPropertyName = "Result22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.Result), TypeInfoPropertyName = "Result2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CancelSuccess))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CancelResponseResultDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.CancelResponseResultDiscriminatorStatus), TypeInfoPropertyName = "CancelResponseResultDiscriminatorStatus2")]

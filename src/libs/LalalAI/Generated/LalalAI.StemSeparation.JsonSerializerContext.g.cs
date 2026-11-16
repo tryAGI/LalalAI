@@ -22,14 +22,14 @@ namespace LalalAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.InternalErrorResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant2), TypeInfoPropertyName = "PresetsVariant22_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant24), TypeInfoPropertyName = "PresetsVariant242")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.DemuserSplitterPresetsV1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.VoiceCleanPresetsV1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.StemSeparatorSplitterPresetsV1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.MultistemSplitterPresetsV1))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant22), TypeInfoPropertyName = "PresetsVariant222")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant2), TypeInfoPropertyName = "PresetsVariant22_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant23), TypeInfoPropertyName = "PresetsVariant232")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant24), TypeInfoPropertyName = "PresetsVariant242")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant22), TypeInfoPropertyName = "PresetsVariant222")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.SplitterType), TypeInfoPropertyName = "SplitterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.EncoderFormat), TypeInfoPropertyName = "EncoderFormat2")]
@@ -45,10 +45,10 @@ namespace LalalAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.AnyOf<global::LalalAI.ApiV1ErrorResponse, global::LalalAI.CommonErrorResponse>), TypeInfoPropertyName = "AnyOfApiV1ErrorResponseCommonErrorResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.AnyOf<string, object, global::System.Collections.Generic.IList<object>>?), TypeInfoPropertyName = "NullableAnyOfStringObjectIListObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant2?), TypeInfoPropertyName = "NullablePresetsVariant22_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant22?), TypeInfoPropertyName = "NullablePresetsVariant222")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant23?), TypeInfoPropertyName = "NullablePresetsVariant232")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant24?), TypeInfoPropertyName = "NullablePresetsVariant242")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant2?), TypeInfoPropertyName = "NullablePresetsVariant22_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant23?), TypeInfoPropertyName = "NullablePresetsVariant232")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.PresetsVariant22?), TypeInfoPropertyName = "NullablePresetsVariant222")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.SplitterType?), TypeInfoPropertyName = "NullableSplitterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LalalAI.EncoderFormat?), TypeInfoPropertyName = "NullableEncoderFormat2")]
@@ -105,10 +105,10 @@ namespace LalalAI
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            options.Converters.Add(new global::LalalAI.JsonConverters.PresetsVariant2JsonConverter());
-            options.Converters.Add(new global::LalalAI.JsonConverters.PresetsVariant22JsonConverter());
-            options.Converters.Add(new global::LalalAI.JsonConverters.PresetsVariant23JsonConverter());
             options.Converters.Add(new global::LalalAI.JsonConverters.PresetsVariant24JsonConverter());
+            options.Converters.Add(new global::LalalAI.JsonConverters.PresetsVariant2JsonConverter());
+            options.Converters.Add(new global::LalalAI.JsonConverters.PresetsVariant23JsonConverter());
+            options.Converters.Add(new global::LalalAI.JsonConverters.PresetsVariant22JsonConverter());
             options.Converters.Add(new global::LalalAI.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<object>>());
             options.Converters.Add(new global::LalalAI.JsonConverters.AnyOfJsonConverter<global::LalalAI.ApiV1ErrorResponse, global::LalalAI.CommonErrorResponse>());
             options.Converters.Add(new global::LalalAI.JsonConverters.AnyOfJsonConverter<global::LalalAI.ApiV1ErrorResponse, global::LalalAI.CommonErrorResponse>());

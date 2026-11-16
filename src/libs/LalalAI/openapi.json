@@ -726,7 +726,7 @@
             }
           }
         },
-        "description": "\nExtracts several stems from a song in one request, for example vocals, drums and bass.\n\nStems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.\n\nWith `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.\n`/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar` and `acoustic_guitar` on the newer andromeda:\nif quality matters more than the number of requests, start it once per stem.\n\n**Time and price**\n\nStems are extracted one by one, so processing time grows with the number of stems.\nEach stem is charged separately: a 1-minute file with `stem_list: [\"vocals\", \"drum\"]` costs 2 minutes.\n\n**Result**\n\n`/check/` returns one track per stem and one track with the rest of the song. For `stem_list: [\"vocals\", \"drum\"]`:\n\n```\n{\"type\": \"stem\", \"label\": \"vocals\", \"url\": \"...\"}\n{\"type\": \"stem\", \"label\": \"drum\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_multistem\", \"url\": \"...\"}\n```\n",
+        "description": "\nExtracts several stems from a song in one request, for example vocals, drums and bass.\n\nStems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.\n\nWith `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.\n`/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar` and `acoustic_guitar` on the newer andromeda:\nif quality matters more than the number of requests, start it once per stem.\n\n`dereverb_enabled: true` is rejected for multistem with two or more stems including `vocals`, and ignored for multistem without `vocals`. To remove echo from vocals, start `/split/stem_separator/` with `stem: vocals`.\n\n**Time and price**\n\nStems are extracted one by one, so processing time grows with the number of stems.\nEach stem is charged separately: a 1-minute file with `stem_list: [\"vocals\", \"drum\"]` costs 2 minutes.\n\n**Result**\n\n`/check/` returns one track per stem and one track with the rest of the song. For `stem_list: [\"vocals\", \"drum\"]`:\n\n```\n{\"type\": \"stem\", \"label\": \"vocals\", \"url\": \"...\"}\n{\"type\": \"stem\", \"label\": \"drum\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_multistem\", \"url\": \"...\"}\n```\n",
         "tags": [
           "Stem Separation"
         ],
@@ -1723,7 +1723,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1819,7 +1819,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1998,7 +1998,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -2178,7 +2178,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'voice', 'vocals'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
