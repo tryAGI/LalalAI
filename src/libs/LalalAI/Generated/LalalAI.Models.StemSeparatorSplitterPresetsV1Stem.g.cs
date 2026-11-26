@@ -8,7 +8,7 @@ namespace LalalAI
     /// 'vocals' extracts vocals from music, typically songs. To extract speech from non-musical noise, use /split/voice_clean/.<br/>
     /// Choose the stem that best matches your task: 'guitar' extracts all guitars into one track,<br/>
     /// 'electric_guitar' and 'acoustic_guitar' extract only one kind of guitar.<br/>
-    /// 'guitar' is available only with andromeda. 'synthesizer', 'strings', and 'wind' are available only with phoenix.<br/>
+    /// The splitters accepted for each stem are listed in the /split/stem_separator/ description.<br/>
     /// Example: vocals
     /// </summary>
     public enum StemSeparatorSplitterPresetsV1Stem
