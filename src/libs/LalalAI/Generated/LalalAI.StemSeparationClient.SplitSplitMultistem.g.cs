@@ -45,8 +45,10 @@ namespace LalalAI
         /// Split a file into multiple stems in one request (multistem feature)<br/>
         /// Extracts several stems from a song in one request, for example vocals, drums and bass.<br/>
         /// Stems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.<br/>
-        /// With `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.<br/>
-        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar` and `acoustic_guitar` on the newer andromeda:<br/>
+        /// With two or more stems the request accepts only these splitters: perseus, orion, phoenix.<br/>
+        /// With `splitter: auto` it currently uses perseus.<br/>
+        /// With one stem the request accepts the same splitters as `/split/stem_separator/`, and `auto` picks the same model.<br/>
+        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar` on a newer model than perseus, see its stem table:<br/>
         /// if quality matters more than the number of requests, start it once per stem.<br/>
         /// `dereverb_enabled: true` is rejected for multistem with two or more stems including `vocals`, and ignored for multistem without `vocals`. To remove echo from vocals, start `/split/stem_separator/` with `stem: vocals`.<br/>
         /// **Time and price**<br/>
@@ -83,8 +85,10 @@ namespace LalalAI
         /// Split a file into multiple stems in one request (multistem feature)<br/>
         /// Extracts several stems from a song in one request, for example vocals, drums and bass.<br/>
         /// Stems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.<br/>
-        /// With `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.<br/>
-        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar` and `acoustic_guitar` on the newer andromeda:<br/>
+        /// With two or more stems the request accepts only these splitters: perseus, orion, phoenix.<br/>
+        /// With `splitter: auto` it currently uses perseus.<br/>
+        /// With one stem the request accepts the same splitters as `/split/stem_separator/`, and `auto` picks the same model.<br/>
+        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar` on a newer model than perseus, see its stem table:<br/>
         /// if quality matters more than the number of requests, start it once per stem.<br/>
         /// `dereverb_enabled: true` is rejected for multistem with two or more stems including `vocals`, and ignored for multistem without `vocals`. To remove echo from vocals, start `/split/stem_separator/` with `stem: vocals`.<br/>
         /// **Time and price**<br/>
@@ -578,8 +582,10 @@ namespace LalalAI
         /// Split a file into multiple stems in one request (multistem feature)<br/>
         /// Extracts several stems from a song in one request, for example vocals, drums and bass.<br/>
         /// Stems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.<br/>
-        /// With `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.<br/>
-        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar` and `acoustic_guitar` on the newer andromeda:<br/>
+        /// With two or more stems the request accepts only these splitters: perseus, orion, phoenix.<br/>
+        /// With `splitter: auto` it currently uses perseus.<br/>
+        /// With one stem the request accepts the same splitters as `/split/stem_separator/`, and `auto` picks the same model.<br/>
+        /// `/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar` on a newer model than perseus, see its stem table:<br/>
         /// if quality matters more than the number of requests, start it once per stem.<br/>
         /// `dereverb_enabled: true` is rejected for multistem with two or more stems including `vocals`, and ignored for multistem without `vocals`. To remove echo from vocals, start `/split/stem_separator/` with `stem: vocals`.<br/>
         /// **Time and price**<br/>

@@ -508,7 +508,7 @@
             }
           }
         },
-        "description": "\nExtracts one stem from a song. You get two files: the stem and the rest of the song without it.\n\nFor speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).\n\n**Stems**\n\n| Stem | What it extracts | `auto` currently picks |\n|---|---|---|\n| `vocals` | Singing: lead and backing vocals | andromeda |\n| `drum` | Drums | andromeda |\n| `bass` | Bass | andromeda |\n| `piano` | Piano | andromeda |\n| `guitar` | Any guitar, electric and acoustic together | andromeda |\n| `electric_guitar` | Electric guitar only | andromeda |\n| `acoustic_guitar` | Acoustic guitar only | andromeda |\n| `synthesizer` | Synthesizers | phoenix |\n| `strings` | String instruments | phoenix |\n| `wind` | Wind instruments | phoenix |\n\n`guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.\n\nLeave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).\n\n**Result**\n\n`/check/` returns 2 tracks:\n\n```\n{\"type\": \"stem\", \"label\": \"<stem>\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_<stem>\", \"url\": \"...\"}\n```\n\n**Lead and backing vocals**\n\nFor the `vocals` stem, set `multivocal: \"lead_back\"` to get lead and backing vocals as separate tracks.\n`/check/` then returns 4 tracks. The backing vocals track is left out if the song has none.\n\n- `vocals@0` (`stem`): lead vocals.\n- `vocals@1` (`stem`): backing vocals.\n- `no_vocals` (`back`): instrumental.\n- `mix_no_lead` (`back`): instrumental with backing vocals.\n",
+        "description": "\nExtracts one stem from a song. You get two files: the stem and the rest of the song without it.\n\nFor speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).\n\n**Stems**\n\n| Stem | What it extracts | `auto` currently picks | Accepted splitters |\n|---|---|---|---|\n| `vocals` | Singing: lead and backing vocals | andromeda | andromeda, perseus, orion, phoenix |\n| `drum` | Drums | andromeda | andromeda, perseus, orion, phoenix |\n| `bass` | Bass | andromeda | andromeda, perseus, orion, phoenix |\n| `piano` | Piano | andromeda | andromeda, perseus, orion, phoenix |\n| `guitar` | Any guitar, electric and acoustic together | andromeda | andromeda |\n| `electric_guitar` | Electric guitar only | andromeda | andromeda, perseus, orion, phoenix |\n| `acoustic_guitar` | Acoustic guitar only | andromeda | andromeda, perseus, orion, phoenix |\n| `synthesizer` | Synthesizers | phoenix | phoenix |\n| `strings` | String instruments | phoenix | phoenix |\n| `wind` | Wind instruments | phoenix | phoenix |\n\nA splitter not listed for the stem is rejected.\n\n`guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.\n\nLeave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).\n\n**Result**\n\n`/check/` returns 2 tracks:\n\n```\n{\"type\": \"stem\", \"label\": \"<stem>\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_<stem>\", \"url\": \"...\"}\n```\n\n**Lead and backing vocals**\n\nFor the `vocals` stem, set `multivocal: \"lead_back\"` to get lead and backing vocals as separate tracks.\n`/check/` then returns 4 tracks. The backing vocals track is left out if the song has none.\n\n- `vocals@0` (`stem`): lead vocals.\n- `vocals@1` (`stem`): backing vocals.\n- `no_vocals` (`back`): instrumental.\n- `mix_no_lead` (`back`): instrumental with backing vocals.\n",
         "tags": [
           "Stem Separation"
         ],
@@ -726,7 +726,7 @@
             }
           }
         },
-        "description": "\nExtracts several stems from a song in one request, for example vocals, drums and bass.\n\nStems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.\n\nWith `splitter: auto` and two or more stems the request currently uses perseus. With one stem it uses the same model as `/split/stem_separator/`.\n`/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar` and `acoustic_guitar` on the newer andromeda:\nif quality matters more than the number of requests, start it once per stem.\n\n`dereverb_enabled: true` is rejected for multistem with two or more stems including `vocals`, and ignored for multistem without `vocals`. To remove echo from vocals, start `/split/stem_separator/` with `stem: vocals`.\n\n**Time and price**\n\nStems are extracted one by one, so processing time grows with the number of stems.\nEach stem is charged separately: a 1-minute file with `stem_list: [\"vocals\", \"drum\"]` costs 2 minutes.\n\n**Result**\n\n`/check/` returns one track per stem and one track with the rest of the song. For `stem_list: [\"vocals\", \"drum\"]`:\n\n```\n{\"type\": \"stem\", \"label\": \"vocals\", \"url\": \"...\"}\n{\"type\": \"stem\", \"label\": \"drum\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_multistem\", \"url\": \"...\"}\n```\n",
+        "description": "\nExtracts several stems from a song in one request, for example vocals, drums and bass.\n\nStems: `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar`.\n\nWith two or more stems the request accepts only these splitters: perseus, orion, phoenix.\nWith `splitter: auto` it currently uses perseus.\n\nWith one stem the request accepts the same splitters as `/split/stem_separator/`, and `auto` picks the same model.\n`/split/stem_separator/` currently runs `vocals`, `drum`, `bass`, `piano`, `electric_guitar`, `acoustic_guitar` on a newer model than perseus, see its stem table:\nif quality matters more than the number of requests, start it once per stem.\n\n`dereverb_enabled: true` is rejected for multistem with two or more stems including `vocals`, and ignored for multistem without `vocals`. To remove echo from vocals, start `/split/stem_separator/` with `stem: vocals`.\n\n**Time and price**\n\nStems are extracted one by one, so processing time grows with the number of stems.\nEach stem is charged separately: a 1-minute file with `stem_list: [\"vocals\", \"drum\"]` costs 2 minutes.\n\n**Result**\n\n`/check/` returns one track per stem and one track with the rest of the song. For `stem_list: [\"vocals\", \"drum\"]`:\n\n```\n{\"type\": \"stem\", \"label\": \"vocals\", \"url\": \"...\"}\n{\"type\": \"stem\", \"label\": \"drum\", \"url\": \"...\"}\n{\"type\": \"back\", \"label\": \"no_multistem\", \"url\": \"...\"}\n```\n",
         "tags": [
           "Stem Separation"
         ],
@@ -1723,7 +1723,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for vocals, voice stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1819,7 +1819,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for vocals, voice stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -1998,7 +1998,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for vocals, voice stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },
@@ -2015,7 +2015,7 @@
             "description": "Format for output audio. If None - convert to source file format."
           },
           "stem": {
-            "description": "\nStem to extract.\n\n'vocals' extracts vocals from music, typically songs. To extract speech from non-musical noise, use /split/voice_clean/.\n\nChoose the stem that best matches your task: 'guitar' extracts all guitars into one track,\n'electric_guitar' and 'acoustic_guitar' extract only one kind of guitar.\n\n'guitar' is available only with andromeda. 'synthesizer', 'strings', and 'wind' are available only with phoenix.\n",
+            "description": "\nStem to extract.\n\n'vocals' extracts vocals from music, typically songs. To extract speech from non-musical noise, use /split/voice_clean/.\n\nChoose the stem that best matches your task: 'guitar' extracts all guitars into one track,\n'electric_guitar' and 'acoustic_guitar' extract only one kind of guitar.\n\nThe splitters accepted for each stem are listed in the /split/stem_separator/ description.\n",
             "enum": [
               "vocals",
               "drum",
@@ -2178,7 +2178,7 @@
           },
           "dereverb_enabled": {
             "default": false,
-            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for {'vocals', 'voice'} stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
+            "description": "\nEnabling dereverb removes echo from the audio for clarity, which may slightly alter the voice.\n\nDisabling dereverb preserves the natural echo of the recording for authenticity.\nOnly for vocals, voice stems: ignored for other stems. Rejected for multistem with two or more stems including vocals.",
             "title": "Dereverb Enabled",
             "type": "boolean"
           },

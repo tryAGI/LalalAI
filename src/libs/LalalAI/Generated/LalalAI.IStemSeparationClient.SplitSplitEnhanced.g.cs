@@ -9,18 +9,19 @@ namespace LalalAI
         /// Extracts one stem from a song. You get two files: the stem and the rest of the song without it.<br/>
         /// For speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).<br/>
         /// **Stems**<br/>
-        /// | Stem | What it extracts | `auto` currently picks |<br/>
-        /// |---|---|---|<br/>
-        /// | `vocals` | Singing: lead and backing vocals | andromeda |<br/>
-        /// | `drum` | Drums | andromeda |<br/>
-        /// | `bass` | Bass | andromeda |<br/>
-        /// | `piano` | Piano | andromeda |<br/>
-        /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
-        /// | `electric_guitar` | Electric guitar only | andromeda |<br/>
-        /// | `acoustic_guitar` | Acoustic guitar only | andromeda |<br/>
-        /// | `synthesizer` | Synthesizers | phoenix |<br/>
-        /// | `strings` | String instruments | phoenix |<br/>
-        /// | `wind` | Wind instruments | phoenix |<br/>
+        /// | Stem | What it extracts | `auto` currently picks | Accepted splitters |<br/>
+        /// |---|---|---|---|<br/>
+        /// | `vocals` | Singing: lead and backing vocals | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `drum` | Drums | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `bass` | Bass | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `piano` | Piano | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `guitar` | Any guitar, electric and acoustic together | andromeda | andromeda |<br/>
+        /// | `electric_guitar` | Electric guitar only | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `synthesizer` | Synthesizers | phoenix | phoenix |<br/>
+        /// | `strings` | String instruments | phoenix | phoenix |<br/>
+        /// | `wind` | Wind instruments | phoenix | phoenix |<br/>
+        /// A splitter not listed for the stem is rejected.<br/>
         /// `guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.<br/>
         /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
         /// **Result**<br/>
@@ -51,18 +52,19 @@ namespace LalalAI
         /// Extracts one stem from a song. You get two files: the stem and the rest of the song without it.<br/>
         /// For speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).<br/>
         /// **Stems**<br/>
-        /// | Stem | What it extracts | `auto` currently picks |<br/>
-        /// |---|---|---|<br/>
-        /// | `vocals` | Singing: lead and backing vocals | andromeda |<br/>
-        /// | `drum` | Drums | andromeda |<br/>
-        /// | `bass` | Bass | andromeda |<br/>
-        /// | `piano` | Piano | andromeda |<br/>
-        /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
-        /// | `electric_guitar` | Electric guitar only | andromeda |<br/>
-        /// | `acoustic_guitar` | Acoustic guitar only | andromeda |<br/>
-        /// | `synthesizer` | Synthesizers | phoenix |<br/>
-        /// | `strings` | String instruments | phoenix |<br/>
-        /// | `wind` | Wind instruments | phoenix |<br/>
+        /// | Stem | What it extracts | `auto` currently picks | Accepted splitters |<br/>
+        /// |---|---|---|---|<br/>
+        /// | `vocals` | Singing: lead and backing vocals | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `drum` | Drums | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `bass` | Bass | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `piano` | Piano | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `guitar` | Any guitar, electric and acoustic together | andromeda | andromeda |<br/>
+        /// | `electric_guitar` | Electric guitar only | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `synthesizer` | Synthesizers | phoenix | phoenix |<br/>
+        /// | `strings` | String instruments | phoenix | phoenix |<br/>
+        /// | `wind` | Wind instruments | phoenix | phoenix |<br/>
+        /// A splitter not listed for the stem is rejected.<br/>
         /// `guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.<br/>
         /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
         /// **Result**<br/>
@@ -93,18 +95,19 @@ namespace LalalAI
         /// Extracts one stem from a song. You get two files: the stem and the rest of the song without it.<br/>
         /// For speech recordings use `/split/voice_clean/` (noise in the background) or `/split/demuser/` (music in the background).<br/>
         /// **Stems**<br/>
-        /// | Stem | What it extracts | `auto` currently picks |<br/>
-        /// |---|---|---|<br/>
-        /// | `vocals` | Singing: lead and backing vocals | andromeda |<br/>
-        /// | `drum` | Drums | andromeda |<br/>
-        /// | `bass` | Bass | andromeda |<br/>
-        /// | `piano` | Piano | andromeda |<br/>
-        /// | `guitar` | Any guitar, electric and acoustic together | andromeda |<br/>
-        /// | `electric_guitar` | Electric guitar only | andromeda |<br/>
-        /// | `acoustic_guitar` | Acoustic guitar only | andromeda |<br/>
-        /// | `synthesizer` | Synthesizers | phoenix |<br/>
-        /// | `strings` | String instruments | phoenix |<br/>
-        /// | `wind` | Wind instruments | phoenix |<br/>
+        /// | Stem | What it extracts | `auto` currently picks | Accepted splitters |<br/>
+        /// |---|---|---|---|<br/>
+        /// | `vocals` | Singing: lead and backing vocals | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `drum` | Drums | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `bass` | Bass | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `piano` | Piano | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `guitar` | Any guitar, electric and acoustic together | andromeda | andromeda |<br/>
+        /// | `electric_guitar` | Electric guitar only | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `acoustic_guitar` | Acoustic guitar only | andromeda | andromeda, perseus, orion, phoenix |<br/>
+        /// | `synthesizer` | Synthesizers | phoenix | phoenix |<br/>
+        /// | `strings` | String instruments | phoenix | phoenix |<br/>
+        /// | `wind` | Wind instruments | phoenix | phoenix |<br/>
+        /// A splitter not listed for the stem is rejected.<br/>
         /// `guitar` extracts all guitars into one track. To get only one kind of guitar, use `electric_guitar` or `acoustic_guitar`.<br/>
         /// Leave `splitter` as `auto` to get new models as soon as they are released, see [Stem Separation](#tag/stem-separation).<br/>
         /// **Result**<br/>
